@@ -27,7 +27,7 @@ class WorkshopProject(models.Model):
     name = models.CharField(max_length=200, unique=True, null=False)
     tech = models.CharField(max_length=200, unique=True, null=False)
     details = models.TextField(null=False)
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
+    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='projects')
     img = models.ImageField(null=True, upload_to = 'images/workshops/projects/')
     video_link = models.CharField(max_length=200, null=False, default="https://")
 
@@ -36,7 +36,7 @@ class WorkshopProject(models.Model):
 
 
 class WorkshopPlan(models.Model):
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
+    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='plans')
     team_limit = models.IntegerField(default=1)
     details = models.CharField(max_length=600, null=False)
     title = models.CharField(max_length = 50, null=False)
@@ -47,7 +47,7 @@ class WorkshopPlan(models.Model):
 
 
 class WorkshopFaqs(models.Model):
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
+    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='faqs')
     question = models.CharField(max_length=200, null=False)
     answer = models.TextField(null=False)
 
@@ -55,7 +55,7 @@ class WorkshopFaqs(models.Model):
         return str(self.workshop) +"  Faq"
 
 class WorkshopOrganiser(models.Model):
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
+    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='organisers')
     member_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

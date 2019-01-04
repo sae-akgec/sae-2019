@@ -20,7 +20,7 @@ class Event(models.Model):
 class EventTimeline(models.Model):
     date = models.DateField(null=False)
     venue = models.CharField(max_length=50, null=False)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='timeline')
     achievement = models.CharField(max_length=200, null=False)
 
     def __str__(self):
@@ -28,7 +28,7 @@ class EventTimeline(models.Model):
 
 
 class EventTeam(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='team')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

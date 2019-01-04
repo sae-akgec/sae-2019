@@ -15,3 +15,11 @@ class EventTimlineSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventTimeline
         fields = '__all__'
+
+class EventDetailSerializer(serializers.ModelSerializer):
+    team = EventTeamSerializer(many=True)
+    timeline = EventTimlineSerializer(many=True)
+
+    class Meta:
+        model = Event
+        fields = '__all__'

@@ -6,6 +6,7 @@ class WorkshopSerializer(serializers.ModelSerializer):
         model = Workshop
         fields = '__all__'
 
+
 class WorkshopFaqsSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkshopFaqs
@@ -24,4 +25,14 @@ class WorkshopPlanSerializer(serializers.ModelSerializer):
 class WorkshopProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkshopProject
+        fields = '__all__'
+
+class WorkshopDetailSerializer(serializers.ModelSerializer):
+    faqs = WorkshopFaqsSerializer(many=True)
+    projects = WorkshopProjectSerializer(many=True)
+    plans = WorkshopPlanSerializer(many=True)
+    organisers = WorkshopOrganiserSerializer(many=True)
+
+    class Meta:
+        model = Workshop
         fields = '__all__'
