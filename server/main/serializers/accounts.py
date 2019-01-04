@@ -168,15 +168,15 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ['user', 'has_email_verified', 'image', 'fathers_name', 'university_roll', 'branch',
-        'department', 'membership_id', 'year', 'gender', 'aadhar_no', 'phn_no', 'fb_link', 'li_link']
+        fields = ['user', 'has_email_verified', 'image', 'std_no', 'university_roll', 'branch',
+        'department', 'membership_id', 'year', 'gender', 'section', 'phn_no', 'fb_link', 'li_link', 'address']
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ['image', 'fathers_name', 'university_roll', 'branch',
-        'department', 'membership_id', 'year', 'gender', 'aadhar_no', 'phn_no', 'fb_link', 'li_link']
+        fields = ['image', 'std_no', 'university_roll', 'branch', 'department', 'membership_id',
+         'year', 'gender', 'section', 'phn_no', 'fb_link', 'li_link', 'address']
 
 class UserLoginSerializer(JSONWebTokenSerializer):
     username_field = 'username_or_email'

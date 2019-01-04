@@ -153,6 +153,12 @@ class UserProfile(base_models.TimeStampedModel, Verification):
         (4, '4th')
     )
 
+    SECTION_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3')
+    )
+
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE
     )
@@ -161,16 +167,17 @@ class UserProfile(base_models.TimeStampedModel, Verification):
         max_length=40
     )
     image = models.ImageField(null=True, upload_to = 'images/members/')
-    fathers_name = models.CharField(max_length=50, null=True)
     university_roll = models.CharField(max_length=15, null=True)
+    std_no = models.CharField(max_length=15, null=True)
     branch = models.CharField(max_length=50, null=True)
+    section = models.IntegerField(default=0, null=True, choices=SECTION_CHOICES)
     fb_link = models.CharField(max_length=50, null=True)
     li_link = models.CharField(max_length=50, null=True)
     department = models.CharField(max_length=20, null=True)
     membership_id = models.CharField(max_length=20, null=True)
     year = models.IntegerField(default=0, null=True, choices=YEAR_CHOICES)
     gender = models.CharField(max_length=10, null=True, choices=GENDER_CHOICES)
-    aadhar_no = models.CharField(null=True, max_length=16, validators=[RegexValidator(regex='^.{12}$', message='Length has to be 16', code='nomatch')])
+    address = models.TextField(null=True)
     phn_no = models.CharField(null=True, max_length=10, validators=[RegexValidator(regex='^.{10}$', message='Length has to be 10', code='nomatch')])
 
 
