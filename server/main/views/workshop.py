@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet, ViewSet
 
 from ..models.workshop import Workshop, WorkshopFaqs, WorkshopOrganiser, WorkshopPlan, WorkshopProject
-from ..serializers.test import WorkshopSerializer, WorkshopFaqsSerializer, WorkshopOrganiserSerializer, WorkshopPlanSerializer, WorkshopProjectSerializer
+from ..serializers.workshop import WorkshopSerializer, WorkshopFaqsSerializer, WorkshopOrganiserSerializer, WorkshopPlanSerializer, WorkshopProjectSerializer
 
 
 class WorkshopView(ModelViewSet):

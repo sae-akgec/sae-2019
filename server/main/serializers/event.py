@@ -10,7 +10,7 @@ class EventTeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventTeam
         fields = '__all__'
-
+        
 class EventTimlineSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventTimeline

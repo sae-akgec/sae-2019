@@ -12,5 +12,5 @@ class EventTeamView(ModelViewSet):
     queryset = EventTeam.objects.all()
 
 class EventTimelineView(ModelViewSet):
-    serializer_class = EventTimelineSerializer
+    serializer_class = EventTimlineSerializer
     queryset = EventTimeline.objects.all()
