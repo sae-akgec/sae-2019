@@ -17,6 +17,7 @@ class Workshop(models.Model):
     status = models.CharField(max_length=60, default = "Comming Soon..")
     wall_status = models.BooleanField(default=False)
     theme_color = models.CharField(max_length=10, default = "#84859d")
+    video_link = models.CharField(max_length=200, null=False, default="https://")
 
     def __str__(self):
         return str(self.name)
@@ -28,6 +29,7 @@ class WorkshopProject(models.Model):
     details = models.TextField(null=False)
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
     img = models.ImageField(null=True, upload_to = 'images/workshops/projects/')
+    video_link = models.CharField(max_length=200, null=False, default="https://")
 
     def __str__(self):
         return str(self.name)
