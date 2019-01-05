@@ -1,0 +1,11 @@
+#main{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#main h1{
+    padding-top: 40vh;
+    color: #fff;
+    font-weight: 400;
+}

@@ -1,0 +1,68 @@
+<div id="navbar" class="">
+    <nav class="navbar navbar-expand-md" id="inner-navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="text-muted">
+                <i class="fa fa-bars"></i> Menu</span>
+        </button>
+        <div class="justify-content-end order-md-2 order-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" *ngIf="!isActive">
+                    <a class="nav-link active" routerLink="./auth/signin">
+                        <i class="fa fa-user-o"></i> Sign in</a>
+                </li>
+                <li class="nav-item" *ngIf="isActive">
+                    <a class="nav-link active" (click)="signOut()">
+                        <i class="fa fa-user-o"></i> Sign out</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse order-md-1 order-2" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" routerLink="">Home</a>
+                </li>
+                <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" routerLink="./team">Team</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link active" routerLink="./user/classroom">Dashboard</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link active" routerLink="./contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="empty-navbar">
+
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#latestModalCenter" style="display:none;" id="latestTimeout">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="latestModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" *ngIf="latest_workshop">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center" id="exampleModalLongTitle">{{latest_workshop.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img src={{latest_workshop.logo_url}} class="img-fluid">
+                </div>
+                <h3 class="text-center">{{latest_workshop.name}}</h3>
+                <p class="text-muted">{{latest_workshop.short_description}}</p>
+                <div id="modalButton" class="text-center">
+                    <a routerLink="./workshop/{{latest_workshop.name}}"><button data-dismiss="modal">Know More</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

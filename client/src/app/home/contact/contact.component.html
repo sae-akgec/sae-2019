@@ -1,0 +1,124 @@
+<div>
+    <!-- This is header section -->
+    <div id="header">
+        <div class="">
+
+        </div>
+        <div class="text-center img-section" [ngStyle]="{'background-image': 'url('+contact_img+')'}">
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+
+    <!-- This is form section -->
+    <div id="contactForm">
+        <div class="row no-gutters">
+            <div class="col-12 col-lg-6 contact-left order-2 order-lg-1">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-11 col-md-10 col-lg-10">
+                        <div class="contact-left-header">
+                            <h3>Contact Us</h3>
+                            <p>Send us a message or give us a call.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-11 col-md-10 col-lg-10 contact-main">
+                        <h6>Vaibhav Kanodia(President)</h6>
+                        <p>Contact No:
+                            <span>+91 7275166208</span>
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-10 col-lg-10 contact-main">
+                        <h6>Arvind Gupta(Vice President)</h6>
+                        <p>Contact No:
+                            <span>+91 9695695257</span>
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-10 col-lg-10 contact-main">
+                        <h6>Saurabh Singh(Innovation Head)</h6>
+                        <p>Contact No:
+                            <span>+91 7065210476</span>
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-10 col-lg-10 contact-main">
+                        <h6>Chirag Agrawal(Program Chairman)</h6>
+                        <p>Contact No:
+                            <span>+91 9643367459</span>
+                        </p>
+                    </div>
+                    <div class="col-11 col-md-10 col-lg-10 contact-main">
+                        <h6>Shashi Kushwaha(Secretary)</h6>
+                        <p>Contact No:
+                            <span>+91 9540141285</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 order-1 order-lg-2">
+                <div class="form-right">
+                    <h3>Contact Form</h3>
+                    <p class="text-muted"> How can we help you?</p>
+                    <p>All contact form fields are required.</p>
+                </div>
+                <form class="row no-gutters" [formGroup]="contactForm" (ngSubmit)="contact()">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="textBox">
+                            <input class="text" type="textbox" onkeyup="this.setAttribute('value', this.value);" value="" formControlName="full_name" [ngStyle]="!contactForm.controls['full_name'].valid && contactForm.controls['full_name'].touched ?{'border-color': '#EF9A9A'}:{}"
+                            />
+                            <label class="label" [ngStyle]="!contactForm.controls['full_name'].valid && contactForm.controls['full_name'].touched ?{'color': '#FF5252'}:{}">Full Name</label>
+                            <label class="error text-right" *ngIf="!contactForm.controls['full_name'].valid && contactForm.controls['full_name'].touched">Please Enter your full name</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="textBox">
+                            <input class="text" type="textbox" onkeyup="this.setAttribute('value', this.value);" value="" formControlName="phone_number" [ngStyle]="!contactForm.controls['phone_number'].valid && contactForm.controls['phone_number'].touched ?{'border-color': '#EF9A9A'}:{}"
+                            />
+                            <label class="label" [ngStyle]="!contactForm.controls['phone_number'].valid && contactForm.controls['phone_number'].touched ?{'color': '#FF5252'}:{}">Phone Number</label>
+                            <label class="error text-right" *ngIf="!contactForm.controls['phone_number'].valid && contactForm.controls['phone_number'].touched">Please Enter a valid Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="textBox">
+                            <input class="text" type="textbox" onkeyup="this.setAttribute('value', this.value);" value="" formControlName="email" [ngStyle]="!contactForm.controls['email'].valid && contactForm.controls['email'].touched ?{'border-color': '#EF9A9A'}:{}"
+                            />
+                            <label class="label" [ngStyle]="!contactForm.controls['email'].valid && contactForm.controls['email'].touched ?{'color': '#FF5252'}:{}">Email</label>
+                            <label class="error text-right" *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">Please Enter a valid email</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="textBox">
+                            <input class="text" type="textbox" onkeyup="this.setAttribute('value', this.value);" value="" formControlName="subject" [ngStyle]="!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched ?{'border-color': '#EF9A9A'}:{}"
+                            />
+                            <label class="label" [ngStyle]="!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched ?{'color': '#FF5252'}:{}">Subject</label>
+                            <label class="error text-right" *ngIf="!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched">Please Enter a valid subject</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <textarea rows="4" formControlName="description"></textarea>
+                        <label class="error text-right" *ngIf="!contactForm.controls['description'].valid && contactForm.controls['description'].touched">Please Enter description</label>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <button type="submit" class="btn btn-secondary" [disabled]="!contactForm.valid">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Contact Us</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You response has been recorded we will contact you soon</p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-danger" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button style="display:none;" id="modalButton" data-toggle="modal" href="#myModal"></button>
+</div>

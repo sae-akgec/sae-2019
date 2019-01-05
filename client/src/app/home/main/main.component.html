@@ -1,0 +1,119 @@
+<header id="header">
+    <!-- This div will contain information -->
+    <div class="row no-gutters justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+            <h1>
+                Setting the Global Standard in Automotive World
+            </h1>
+            <p>Our Vision is to Continuously Enrich Knowledge Base of Practitioners in Mobility Industry and Institutions in
+                the Service of Humanity.</p>
+        </div>
+    </div>
+    <!-- This div will contain image at absolute -->
+    <div>
+        <img class="img-fluid" src="{{header_img}}">
+    </div>
+</header>
+
+<!-- This is events Section -->
+<article id="event">
+    <div class="text-center">
+        <h1>Events</h1>
+    </div>
+    <div class="row no-gutters equal" *ngIf="events">
+        <div class="col-12 col-md-6 col-lg" *ngFor="let event of events; let i = index">
+            <div class="event-container">
+                <div>
+                    <img src="{{event.logo}}" class="mx-auto d-block">
+                </div>
+                <div class="text-center">
+                    <h5 [ngStyle]="{'color': event.theme_color}">{{event.name}}</h5>
+                    <p class="text-muted">{{event.short_description}}</p>
+                    <button (mouseover)="evhovered = i" (mouseout)="evhovered = -1" [ngStyle]="evhovered === i
+                        ?{
+                            'border': '2px solid ' + event.theme_color,
+                            'background':event.theme_color,
+                            'color':'#fff'
+                        }
+                        :{
+                            'border': '2px solid ' + event.theme_color,
+                            'background': '#fff',
+                            'color': event.theme_color
+                        }" (click)="eventRouter(event.id)">Know more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- This is workshop section -->
+<article id="workshop">
+    <div class="text-center">
+        <h1>Workshop</h1>
+    </div>
+    <div class="row no-gutters clearfix" *ngIf="workshops">
+        <div class="col-12 col-md-6 col-lg" *ngFor="let workshop of workshops; let i = index">
+            <div class="work-container">
+                <div>
+                    <img src="{{workshop.logo_url}}" class="mx-auto d-block">
+                </div>
+                <div class="text-center">
+                    <h3 [ngStyle]="{'color': workshop.theme_color}">{{workshop.name}}</h3>
+                    <p class="text-muted">{{workshop.short_description}}</p>
+                    <button (mouseover)="wrhovered = i" (mouseout)="wrhovered = -1" [ngStyle]="wrhovered === i
+                        ?{
+                            'border': '2px solid ' + workshop.theme_color,
+                            'background':workshop.theme_color,
+                            'color':'#fff'
+                        }
+                        :{
+                            'border': '2px solid ' + workshop.theme_color,
+                            'background': '#fff',
+                            'color': workshop.theme_color
+                        }" (click)="workshopRouter(workshop.name)">Find out more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- About -->
+<article id="about">
+    <div class="text-center">
+        <h1>About Us</h1>
+        <img src="{{about_img}}" class="img-fluid">
+    </div>
+    <div class="row no-gutters justify-content-center">
+        <div class="col-12 col-md-5 col-lg-4">
+            <div class="about-box">
+                <p class="text-muted">
+                    SAEINDIA ,founded in 1994, is an affiliate society of SAE International, registered as an Indian non-profit engineering and
+                    scientific society dedicated to the advancement of mobility community in India. SAE India holds a variety
+                    of competitions every year for engineering students across the country.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4">
+            <div class="about-box">
+                <p class="text-muted">
+                    As an individual member driven society of mobility practitioners, SAEINDIA comprises members who are individuals from the
+                    mobility community, which includes engineers and executives. Principal emphasis is placed on transport
+                    industries such as automotive, aerospace, and commercial vehicles.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- About news -->
+<article id="news">
+    <div>
+        <div>
+            <img src="{{news_img}}" class="img-fluid">
+        </div>
+        <div class="text-center">
+            <p class="text-muted">Stay informed with sae akgec Extras – all the news, reviews and insights from the automotive world.</p>
+            <button>Latest News</button>
+        </div>
+    </div>
+</article>

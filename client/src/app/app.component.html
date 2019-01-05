@@ -1,20 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid">
+    <div>
+        <div class="container header">
+            <div class="header-left">
+                <h1>SAE AKGEC</h1>
+                <p> Society of Automotive Engineers</p>
+            </div>
+            <div class="header-right">
 
+            </div>
+        </div>
+        <div class="content-container container">
+            <app-navbar></app-navbar>
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div>
+        <div class="container footer">
+            <div class="row no-gutters justify-content-between">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="box">
+                            <h5>Contact Us</h5>
+                            <p>For Enquiries:</p>
+                            <p class="phone">+91 9560779377</p>
+                            <p>Or fill out our
+                                <a routerLink="./contact">Contact Form</a>
+                            </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="box">
+                            <h5>Society of Automotive Engineers</h5>
+                            <p>Copyright © 2018 sae akgec. All rights reserved.</p>
+                            <p>Made By: Sae Members</p>
+                            <div>
+                                <a href="http://goog.gl/Fc7nWZ">
+                                    <i class="fa fa-facebook "></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCV2Mlb40Cmham8BrsnKM2XQ">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-img">
+            <img src="{{footer_img}}" class="img-fluid">
+        </div>
+    </div>
+</div>

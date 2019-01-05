@@ -1,0 +1,23 @@
+<article id="team">
+    <div *ngIf="members">
+        <h3 class="text-center">
+            <span>SAE-AKGEC FAMILY</span>
+        </h3>
+        <div class="row no-gutters justify-content-center equal">
+            <div class="team-container" *ngFor="let member of members">
+                <div class="team-member image-fluid">
+                    <div class="member-pic" [ngStyle]="{'background-image': 'url('+member.img+')'}">
+                    </div>
+                    <div class="member-info">
+                        <h6 class="text-name">{{member.name}}</h6>
+                        <h6 class="text-left">{{member.department}}</h6>
+                        <h6 class="text-contact">{{member.branch}} {{member.year}} year</h6>
+                    </div>
+                    <div class="member-dept" [ngStyle]="{'background': '#656684'}">
+                        <h6>{{member.category}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

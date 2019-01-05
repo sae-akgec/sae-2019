@@ -1,0 +1,188 @@
+/* Header Styling goes here */
+header{
+    background: #84859d;
+    color: #fff;
+}
+
+header h1{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: 200;
+}
+
+header p{
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+header img{
+    margin-top: -13vh;
+}
+
+/* Workshop styles */
+#workshop h1{
+    padding-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(245, 152, 77);
+    font-weight: 200;
+    font-size: 45px;
+}
+#workshop div.work-container{
+    padding: 30px;
+}
+
+#workshop div.work-container:hover{
+    z-index: 4;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    background: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 0px 8px 8px rgba(97, 94, 94, 0.068)
+}
+
+#workshop div.work-container img{
+    margin: 50px auto;
+    max-height: 100px !important;
+    min-height: 100px !important;
+}
+
+#workshop div.work-container h3{
+    font-weight: 500;
+}
+
+#workshop div.work-container p{
+    padding: 20px 30px 10px 30px;
+    font-weight: 600;
+    height: 200px;
+}
+
+#workshop div.work-container button{
+    padding: 12px 50px;
+    border-radius: 25px;
+    transition: all 1s fade-in;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+}
+#workshop div.work-container button:focus{
+    outline: none;
+}
+
+/* Events styles */
+#event{
+    background: #fff
+}
+#event h1{
+    padding-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(245, 152, 77);
+    font-weight: 200;
+    font-size: 45px;
+}
+#event div.event-container{
+    padding: 15px;
+    background: #fff;
+}
+
+#event div.event-container:hover{
+    z-index: 4;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    background: #fff;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    box-shadow: 0px 0px 8px 8px rgba(97, 94, 94, 0.068)
+}
+
+#event div.event-container img{
+    margin: 25px auto;
+    margin-top: 60px;
+    height: 70px;
+}
+
+#event div.event-container h5{
+    font-weight: 500;
+}
+
+#event div.event-container p{
+    padding: 10px 10px;
+    font-weight: 600;
+    height: 180px;
+    font-size: 14px;
+}
+
+#event div.event-container button{
+    padding: 8px 30px;
+    border-radius: 20px;
+    transition: all 1s fade-in;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 14px;
+
+}
+#event div.event-container button:focus{
+    outline: none;
+}
+
+/* About Styles */
+#about{
+    background: #fff;
+    padding: 100px 20px 50px 20px; 
+}
+
+#about h1{
+    margin-bottom: 30px;
+    color: rgb(245, 152, 77);
+    font-weight: 200;
+    font-size: 45px;
+}
+
+#about div.row{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+#about div.row .about-box{
+    padding: 20px 30px;
+}
+#about div.row .about-box p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* News style */
+#news{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#news p{
+    margin: 50px 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+#news button{
+    padding: 12px 50px;
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid rgb(245, 152, 77);
+    color: rgb(245, 152, 77);
+    transition: all 1s fade-in;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+#news button:focus{
+    outline: none;
+}
+#news button:hover{
+    background: rgb(245, 152, 77);
+    color: #fff;
+}
