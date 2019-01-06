@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LandingService } from './landing.service';
+
 
 @Component({
   selector: 'app-landing-header',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _landingService:LandingService) { }
 
   ngOnInit() {
+    var elm = document.getElementById('world');
+    this._landingService.headerThree(elm);
   }
 
 }

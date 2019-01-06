@@ -27,6 +27,7 @@ import { LandingContactComponent } from './landing/landing-contact/landing-conta
 import { LandingAboutComponent } from './landing/landing-about/landing-about.component';
 
 import { MainRoutingModule } from "./main-routing.module";
+import { LandingService } from './landing/landing-header/landing.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,6 @@ import { MainRoutingModule } from "./main-routing.module";
   imports: [
     CommonModule, MainRoutingModule
   ],
-  providers: []
+  providers: [LandingService]
 })
 export class MainModule { }
