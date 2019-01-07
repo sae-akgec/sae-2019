@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three-orbitcontrols-ts';
-declare var TweenMax: any;
+declare var TweenMax, Power4: any;
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +15,6 @@ export class LandingService {
   }
 
   headerThree(rootElem) {
-    
-
     //THREEJS RELATED VARIABLES 
 
     let scene,
@@ -46,8 +46,8 @@ export class LandingService {
     function init() {
       scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0x363d3d, -1, 3000);
-      HEIGHT = window.innerHeight;
-      WIDTH = window.innerWidth;
+      HEIGHT = rootElem.clientHeight;
+      WIDTH = rootElem.clientWidth;
       aspectRatio = WIDTH / HEIGHT;
       fieldOfView = 60;
       nearPlane = 1;
@@ -80,8 +80,8 @@ export class LandingService {
     }
 
     function onWindowResize() {
-      HEIGHT = window.innerHeight;
-      WIDTH = window.innerWidth;
+      HEIGHT = rootElem.clientHeight;
+      WIDTH = rootElem.clientWidth;
       windowHalfX = WIDTH / 2;
       windowHalfY = HEIGHT / 2;
       renderer.setSize(WIDTH, HEIGHT);
@@ -395,12 +395,12 @@ export class LandingService {
     }
 
     Cow.prototype.blink = function () {
-      TweenMax.to(this.leftEye.scale, .3, { y: 0, ease: TweenMax.Strong.easeInOut, yoyo: true, repeat: 3 });
+      TweenMax.to(this.leftEye.scale, .3, { y: 0, ease: Power4.easeInOut, yoyo: true, repeat: 3 });
 
-      TweenMax.to(this.rightEye.scale, .3, { y: 0, ease: TweenMax.Strong.easeInOut, yoyo: true, repeat: 3 });
+      TweenMax.to(this.rightEye.scale, .3, { y: 0, ease: Power4.easeInOut, yoyo: true, repeat: 3 });
 
-      TweenMax.to(this.leftIris.scale, .3, { y: 0, ease: TweenMax.Strong.easeInOut, yoyo: true, repeat: 3 });
-      TweenMax.to(this.rightIris.scale, .3, { y: 0, ease: TweenMax.Strong.easeInOut, yoyo: true, repeat: 3 });
+      TweenMax.to(this.leftIris.scale, .3, { y: 0, ease: Power4.easeInOut, yoyo: true, repeat: 3 });
+      TweenMax.to(this.rightIris.scale, .3, { y: 0, ease: Power4.easeInOut, yoyo: true, repeat: 3 });
     }
 
     let Planet = function () {

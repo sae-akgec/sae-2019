@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LandingService } from './landing.service';
+import { ASSETS } from 'src/app/shared/assets';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { LandingService } from './landing.service';
   styleUrls: ['./landing-header.component.css']
 })
 export class LandingHeaderComponent implements OnInit {
+  HEADER_BACKGOUND = ASSETS + '/landing_header.svg';
 
   constructor(private _landingService:LandingService) { }
 
