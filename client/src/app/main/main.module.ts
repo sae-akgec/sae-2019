@@ -29,6 +29,9 @@ import { LandingAboutComponent } from './landing/landing-about/landing-about.com
 import { MainRoutingModule } from "./main-routing.module";
 import { LandingService } from './landing/landing-header/landing.service';
 
+// Material Modules
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -51,7 +54,7 @@ import { LandingService } from './landing/landing-header/landing.service';
     LandingContactComponent,
     LandingAboutComponent],
   imports: [
-    CommonModule, MainRoutingModule
+    CommonModule, MainRoutingModule, MatCardModule
   ],
   providers: [LandingService]
 })

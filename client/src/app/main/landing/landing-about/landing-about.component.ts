@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-landing-about',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingAboutComponent implements OnInit {
 
+  ABOUT_BACKGOUND = ASSETS + "/landing_about.svg";
   constructor() { }
 
   ngOnInit() {
