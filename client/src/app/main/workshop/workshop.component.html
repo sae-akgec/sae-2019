@@ -1,3 +1,209 @@
-<p>
-  workshop works!
-</p>
+<div *ngIf="workshop" id="workshop">
+  <!-- Header  goes here -->
+  <header id="header" [ngStyle]="{'background-image': 'url('+workshop.background_url+')'}">
+    <div class="text-center">
+      <h1 [ngStyle]="{'color': workshop.theme_color}">{{workshop.name}}</h1>
+      <h4>Registration</h4>
+      <p *ngIf="workshop.reg_status">{{workshop.reg_start_date}} to {{workshop.reg_end_date}}</p>
+      <p *ngIf="!workshop.reg_status">Registration are closed!!</p>
+      <div><a [routerLink]="['/user/register']">
+          <button (mouseover)="hover = true" (mouseout)="hover = false" [ngStyle]="hover
+                      ?{
+                          'border': '1px solid ' + workshop.theme_color,
+                          'background':workshop.theme_color,
+                          'color':'#fff',
+                          'transition':'all .3s'
+                      }
+                      :{
+                          'border': '1px solid ' + workshop.theme_color,
+                          'background': 'transparent',
+                          'color': workshop.theme_color,
+                          'transition':'all .3s'
+                      }"
+            [disabled]="!workshop.reg_status">Enroll Now</button>
+        </a> </div>
+    </div>
+  </header>
+
+  <!-- Logo goes here -->
+  <article id="logo">
+    <div>
+      <img src="{{workshop.logo_url}}" class="mx-auto d-block " [ngStyle]="{'border': '2px solid ' + workshop.theme_color}">
+    </div>
+  </article>
+
+  <!-- Descriptions with date block goes here -->
+  <article id="description">
+    <div class="row no-gutters justify-content-center">
+      <div class="col-12 col-md-7 col-lg-8">
+        <h3>Description</h3>
+        <div class="text-muted" innerHtml="{{workshop.description}}"></div>
+      </div>
+      <div class="col-12 col-sm-9 col-md-5 col-lg-4" class="date">
+        <div class="date-container" [ngStyle]="{'border': '2px solid ' + workshop.theme_color}">
+          <h5 class="text-center" [ngStyle]="{'background': workshop.theme_color}">Important Dates</h5>
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Registration Starts</strong>
+                </td>
+                <td>{{workshop.reg_start_date}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Registration Ends</strong>
+                </td>
+                <td>{{workshop.reg_end_date}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Workshop Starts</strong>
+                </td>
+                <td>{{workshop.start_date}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Workshop End</strong>
+                </td>
+                <td>{{workshop.end_date}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Projects section goes here -->
+  <article id="projects">
+    <div *ngIf="workshop.projects">
+      <div class="projects-header text-center">
+        <h3 [ngStyle]="{'color': workshop.theme_color}">
+          <span>Projects</span>
+        </h3>
+      </div>
+      <div>
+        <section class="row clearfix" id="project-container" *ngFor="let project of workshop.projects">
+          <div class="col-md-6 col-12" id="project-container-image">
+            <div class="type" [ngStyle]="{'background': workshop.theme_color}">{{project.tech}}</div>
+            <img src="{{project.img}}" class="project-image">
+          </div>
+          <div class="col-md-6 col-12" id="project-container-text">
+            <h1 class="heading" [ngStyle]="{'color': workshop.theme_color}">{{project.name}}</h1>
+            <p class="paragraph-2">{{project.details}}</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+
+  <!-- Team section goes here -->
+  <article id="team">
+    <div *ngIf="workshop.organisers">
+      <h3 class="text-center">
+        <span [ngStyle]="{
+                  'color': workshop.theme_color,
+                  'border-bottom':'1px solid ' + workshop.theme_color
+              }">Coordinators</span>
+      </h3>
+      <div class="row no-gutters justify-content-center equal">
+        <div class="team-container" *ngFor="let member of workshop.organisers">
+          <div class="team-member image-fluid">
+            <div class="member-pic" [ngStyle]="{'background-image': 'url('+member.img+')'}">
+            </div>
+            <div class="member-info">
+              <h6 class="text-name">{{member.name}}</h6>
+              <h6 class="text-left">{{member.department}}</h6>
+              <h6 class="text-contact"><a href="tel:{{member.contact}}"><i class="fa fa-phone"></i>{{member.contact}}</a></h6>
+            </div>
+            <div class="member-dept" [ngStyle]="{'background': workshop.theme_color}">
+              <h6>{{member.category}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Plans section Goes here -->
+  <article id="plans" [ngStyle]="{'background-image': 'linear-gradient(to bottom right,#fff,'+workshop.theme_color+'21)'}"
+    *ngIf="workshop.reg_status">
+    <div *ngIf="workshop.plans">
+      <h3 class="text-center">
+        <span [ngStyle]="{
+                      'color': workshop.theme_color,
+                      'border-bottom':'1px solid ' + workshop.theme_color
+                  }">Start
+          Learning</span>
+      </h3>
+      <div class="row no-gutters justify-content-center row-eq-height">
+        <div *ngFor="let plan of workshop.plans" class="plan-container" [ngStyle]="{'border': '2px solid #fff'}">
+          <div>
+            <div class="text-center">
+              <p [ngStyle]="{'background': workshop.theme_color}">Maximum Members: {{plan.team_limit}}</p>
+            </div>
+            <div class="plan-details text-center">
+              <h6 [ngStyle]="{'color': workshop.theme_color}">
+                <i class="fa fa-inr fa-2x"></i>
+                <span> {{plan.price / plan.team_limit}}</span>
+              </h6>
+              <h5 class="text-muted">{{plan.title}}</h5>
+              <hr [ngStyle]="{
+                              'color': workshop.theme_color,
+                              'border-top':'2px solid ' + workshop.theme_color
+                          }">
+              <div>
+                <p>{{plan.details}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center"><a [routerLink]="['/user/register']">
+          <button (mouseover)="hover = true" (mouseout)="hover = false" [ngStyle]="hover
+                  ?{
+                      'border': '1px solid ' + workshop.theme_color,
+                      'background':workshop.theme_color,
+                      'color':'#fff',
+                      'transition':'all .3s'
+                  }
+                  :{
+                      'border': '1px solid ' + workshop.theme_color,
+                      'background': 'transparent',
+                      'color': workshop.theme_color,
+                      'transition':'all .3s'
+                  }">Enroll
+            Now</button></a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Faqs section Goes here -->
+  <article id="faqs" *ngIf="workshop.reg_status">
+    <div *ngIf="workshop.faqs">
+      <h3 class="text-center">
+        <span>FAQs</span>
+      </h3>
+      <div *ngFor="let faq of workshop.faqs; let j=index" class="row no-gutters justify-content-center">
+        <div class="col-12 col-md-10 col-lg-7">
+          <div class="faq-container">
+            <h6>
+              <button class="text-left text-muted" (click)="btn = j">
+                <i class="fa fa-angle-right "></i>
+                {{faq.question}}</button>
+            </h6>
+            <p [ngStyle]="btn ===j
+                      ?{
+                          'display': 'block'
+                      }
+                      :{
+                          'display':'none'
+                      }"
+              class="text-muted">{{faq.answer}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
