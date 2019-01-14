@@ -1,3 +1,38 @@
-<p>
-  landing-workshops works!
-</p>
+<div>
+  <div *ngFor="let workshop of workshops; 
+             let index =index;
+             let isOdd=odd;
+             let isEven=even">
+    <div *ngIf="isOdd" class="row">
+      <div class="col-md-6 col-12" [ngStyle]="{'background-image': 'url(' + ODD_BACKGOUND + ')'}">
+        <img src="{{workshop.img}}" class="img-fluid">
+      </div>
+      <div class="col-md-6 col-12">
+        <h3>workshop.title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur..</p>
+        <p>
+          <button>Learn More</button>
+        </p>
+      </div>
+    </div>
+    <div *ngIf="isEven">
+      <div class="col-md-6 col-12">
+        <h3>workshop.title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur..</p>
+        <p>
+          <button>Learn More</button>
+        </p>
+      </div>
+      <div class="col-md-6 col-12" [ngStyle]="{'background-image': 'url(' + ODD_BACKGOUND + ')'}">
+        <img src="{{workshop.img}}" class="img-fluid">
+      </div>
+    </div>
+
+  </div>
+</div>

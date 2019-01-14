@@ -1,5 +1,14 @@
 .main-container{
     background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
     background-position: center center;  
+    padding: 70px 10px;
+}
+
+.container .top-section{
+    padding-bottom: 50px;
+    color: #6d6792;
+}
+
+.container img{
+    margin-bottom: 50px;
 }

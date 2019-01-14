@@ -1,3 +1,107 @@
-<p>
-  event works!
-</p>
+<div *ngIf="event" id="event">
+  <!-- Header  goes here -->
+  <header id="header" [ngStyle]="{'background-image': 'url('+event.img+')'}">
+    <div class="text-center">
+      <h1 [ngStyle]="{'color': event.theme_color}">{{event.name}}</h1>
+      <h4>{{event.status}}</h4>
+    </div>
+  </header>
+
+  <!-- Logo goes here -->
+  <article id="logo">
+    <div>
+      <img src="{{event.logo}}" class="mx-auto d-block " [ngStyle]="{'border': '2px solid ' + event.theme_color}">
+    </div>
+  </article>
+
+  <!-- Descriptions with date block goes here -->
+  <article id="description">
+    <div class="row no-gutters justify-content-center">
+      <div class="col-12 col-md-7 col-lg-8">
+        <h3>Description</h3>
+        <p class="text-muted">{{event.description}}</p>
+      </div>
+      <div class="col-12 col-sm-9 col-md-5 col-lg-4" class="date">
+        <div class="date-container" [ngStyle]="{'border': '2px solid ' + event.theme_color}">
+          <h5 class="text-center" [ngStyle]="{'background': event.theme_color}">Know More</h5>
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Offical link</strong>
+                </td>
+                <td>
+                  <a href="{{event.offical_link}}">Offical Link</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Current Status</strong>
+                </td>
+                <td>{{event.status}}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Event Date</strong>
+                </td>
+                <td>{{event.date}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Team section goes here -->
+  <article id="team">
+    <div *ngIf="event.team">
+      <h3 class="text-center">
+        <span [ngStyle]="{
+                      'color': event.theme_color,
+                      'border-bottom':'1px solid ' + event.theme_color
+                  }">Team
+          Members</span>
+      </h3>
+      <div class="row no-gutters justify-content-center equal">
+        <div class="team-container" *ngFor="let member of event.team">
+          <div class="team-member image-fluid">
+            <div class="member-pic" [ngStyle]="{'background-image': 'url('+member.img+')'}">
+            </div>
+            <div class="member-info">
+              <h6 class="text-name">{{member.name}}</h6>
+              <h6 class="text-left">{{member.department}}</h6>
+              <h6 class="text-contact">{{member.branch}} {{member.year}} year</h6>
+            </div>
+            <div class="member-dept" [ngStyle]="{'background': event.theme_color}">
+              <h6>{{member.category}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- Timeline section Goes here -->
+  <article id="timeline">
+    <div *ngIf="event.timeline">
+      <h3 class="text-center">Achievements</h3>
+      <ul class="timeline">
+
+        <!-- Item 1 -->
+        <li *ngFor="let time of event.timeline; let j=index">
+          <div [ngClass]="j%2===0 ?'direction-l':'direction-r'">
+            <div class="flag-wrapper">
+              <span class="flag">{{time.venue}}</span>
+              <span class="time-wrapper">
+                <span class="time">{{time.date}}</span>
+              </span>
+            </div>
+            <div class="desc">{{time.achievement}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+</div>

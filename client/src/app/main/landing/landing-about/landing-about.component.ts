@@ -9,6 +9,7 @@ import { ASSETS } from 'src/app/shared/assets';
 export class LandingAboutComponent implements OnInit {
 
   ABOUT_BACKGOUND = ASSETS + "/landing_about.svg";
+  ABOUT_IMAGE = ASSETS + "/about.svg"
   constructor() { }
 
   ngOnInit() {
