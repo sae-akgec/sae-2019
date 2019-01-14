@@ -1,0 +1,34 @@
+header{
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#world {
+  width: 100%;
+  height:90vh;
+  overflow: hidden;
+}
+.header-left{
+  padding: 20px;
+}
+
+.header-left h1{
+  font-size: 3.8rem;
+  color: #6d6792;
+}
+
+.header-left p{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header-left button{
+  padding: 10px 50px;
+  background: #6d6792;
+  border: 1px solid #6d6792;
+  border-radius: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}

@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 
+import { MainModule } from "./main/main.module";
+import { SharedModule } from "./shared/shared.module";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +18,9 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
     AppRoutingModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
-    NbLayoutModule
+    NbLayoutModule,
+    MainModule, 
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
