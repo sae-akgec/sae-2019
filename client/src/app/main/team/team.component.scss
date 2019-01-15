@@ -1,3 +1,18 @@
+$primary: hsl(222,80%,50%);
+$primary-light: hsl(222,50%,95%);
+
+$secondary: hsl(350,80%,50%);
+
+$red: hsl(10,80%,50%);
+$orange: hsl(50,80%,50%);
+
+@mixin mobile ($size: 640px) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+  
+
 #team{
     padding:30px 10px 70px 10px;
     background: #f7f7f9;
@@ -18,60 +33,147 @@
     width: 170px;
     margin: 10px;
 }
-#team div .team-member{
-    background-color: #000;
-    height: 200px;
-    overflow: hidden;  
-    position: relative;    
-}
 
-#team div .member-pic{
-    height: 150px;
+.card {
+    color: inherit;
+    cursor: pointer;
+    width: 220px;
+    min-width: 220px;
+    height: 220px;
+    min-height: 220px;
+    margin: 1rem;
+    position: relative;
+  }
+  
+.front,
+.back {
+display: flex;
+border-radius: 6px;
+background-position: center;
+background-size: cover;
+text-align: center;
+justify-content: center;
+align-items: center;
+position: absolute;
+height: 100%;
+width: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+transform-style: preserve-3d;
+transition: ease-in-out 600ms;
+// overflow: hidden;
+}
+  
+  .front {
     background-size: cover;
-}
-#team div .member-info{
-    height: 100px;
+    // background-blend-mode: overlay;
+    padding: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: #fff;
-    background-color: #212121;
-    transition: 1s;
-    z-index: 15;
-    padding-left: 10px;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-#team div .member-info:hover{
-    margin-top: -50px;
-    transform: scale(1.05);
-
-}
-#team div .member-info h6.text-name{
-    padding-top: 15px;
-    padding-bottom:10px;
-    font-size: 15px;
-}
-#team div .member-info h6.text-left{
-    padding-top: 5px;
-    font-size: 10px;
-    font-weight: 600; 
-}
-#team div .member-info h6.text-contact{
-    font-size: 12px;
-    font-weight: 600; 
-}
-
-#team div .member-dept{
+    overflow: hidden;
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, adjust-hue($primary, -20deg), $primary);
+      opacity: .25;
+      z-index: -1;
+    }
+    .card:hover & {
+      transform: rotateY(180deg);
+    }
+    .card:nth-child(even):hover & {
+      transform: rotateY(-180deg);
+    }
+  }
+  
+  .back {
+    background: #fff;
+    transform: rotateY(-180deg);
+    padding: 0 2em;
+    
+    .button {
+      background: linear-gradient(135deg, adjust-hue($primary, -20deg), $primary);
+      
+      &:before {
+        box-shadow: 0 0 10px 10px rgba($primary, 0.25);
+      background-color: rgba($primary, 0.25);
+      }
+    }
+    
+    .card:hover & {
+      transform: rotateY(0deg);
+    }
+    
+    .card:nth-child(even) & {
+      transform: rotateY(180deg);
+      
+      .button {
+      background: linear-gradient(135deg, adjust-hue($secondary, -20deg), $secondary);
+      
+      &:before {
+        box-shadow: 0 0 10px 10px rgba($secondary, 0.25);
+      background-color: rgba($secondary, 0.25);
+      }
+    }
+    }
+    
+    .card:nth-child(even):hover & {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  .button {
+    $height: 40px;
+    transform: translateZ($height);
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-weight: bold;
     color: #fff;
-    top: 0px;
-    left:0;
-    z-index: 10;
-    padding-top: 0px;
-    position: absolute;
+    padding: .5em 1em;
+    border-radius: 100px;
+    font: inherit;
+    border: none;
+    position: relative;
+      transform-style: preserve-3d;
+    transition: 300ms ease;
+    
+    &:before {
+    transition: 300ms ease;
+      position: absolute;
+      display: block;
+      content: '';
+      transform: translateZ(-$height);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      height: calc(100% - 20px);
+      width: calc(100% - 20px);
+      border-radius: 100px;
+      left: 10px;
+      top: 16px;
+    }
+    
+    &:hover {
+      transform: translateZ($height + 15px);
+      
+      &:before {
+        transform: translateZ(-($height + 15px));
+      }
+    }
+    
+    &:active {
+      transform: translateZ($height/2);
+      
+      &:before {
+        transform: translateZ(-($height/2));
+          top: 12px;
+      }
+    }
 }
-
-#team div .member-dept h6{
-    font-weight: 400;
-    padding: 5px 15px;
-    margin-bottom: 0px;
-    font-size: 13px;
-}
+  
