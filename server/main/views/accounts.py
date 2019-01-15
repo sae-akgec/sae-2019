@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 from ..models.accounts import UserProfile
 from ..serializers.accounts import (UserRegistrationSerializer, UserLoginSerializer, UserSerializer,
- UserProfileSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer, UpdateProfileSerializer)
+ UserProfileSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer, UpdateProfileSerializer, TeamSerializer)
 
 User = get_user_model()
 
@@ -126,4 +126,10 @@ class UpdateProfileAPIView(generics.UpdateAPIView):
 
     def pre_save(self, obj):
         obj.user = self.request.user
+
+class TeamAPIView(generics.ListAPIView):
+    permission_classes = (permissions.AllowAny, )
+    serializer_class = TeamSerializer
+    queryset = UserProfile.objects.all()
+
 

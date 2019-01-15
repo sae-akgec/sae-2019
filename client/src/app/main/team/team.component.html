@@ -5,14 +5,17 @@
     </h3>
     <div class="row no-gutters justify-content-center equal">
       <div class="team-container">
-        <div class="card">
-          <div class="front">
-            <p>Lorem ipsum dolor sit amet consectetur adipisi.</p>
+        <div class="card" *ngFor="let member of members">
+          <div class="front" [ngStyle]="{'background-image': 'url(' + member.image + ')'}">
+            <p>{{member.user.first_name}} {{member.user.last_name}}</p>
           </div>
           <div class="back">
             <div>
-              <p>Deepanshu Tyagi</p>
-              <button class="button"> Click Here </button>
+              <p>{{member.branch}}</p>
+              <p>
+                <a href="{{member.fb_link}}"><i class="fa fa-facebook"></i></a>
+                <a href="{{member.li_link}}"><i class="fa fa-linkedin"></i></a>
+              </p>
             </div>
           </div>
         </div>

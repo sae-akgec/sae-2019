@@ -5,7 +5,7 @@ from rest_framework import permissions
 
 
 
-from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, UserRegistrationAPIView, 
+from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, UserRegistrationAPIView, TeamAPIView,
                            UserLoginView, PasswordResetAPIView, PasswordResetConfirmView, UpdateProfileAPIView)
 
 from .views.event import EventView, EventTeamView, EventTimelineView
@@ -42,6 +42,7 @@ workshop_registration_router.register(r'', WorkshopRegistrationView)
 urlpatterns = [
    url(r'^docs/', include_docs_urls(title="api-doc", public=True, permission_classes=[])),
    url(r'^auth/login/', UserLoginView.as_view(), name='login'),
+   url(r'^team/', TeamAPIView.as_view(), name='team'),
    url(r'^auth/register/', UserRegistrationAPIView.as_view(), name='regsiter'),
    url(r'^auth/verify/(?P<verification_key>.+)/$', UserEmailVerificationAPIView.as_view(), name='email_verify'),
    url(r'^auth/password_reset/$', PasswordResetAPIView.as_view(), name='password_change'),

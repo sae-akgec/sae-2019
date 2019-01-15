@@ -178,6 +178,13 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
         fields = ['image', 'std_no', 'university_roll', 'branch', 'department', 'membership_id',
          'year', 'gender', 'section', 'phn_no', 'fb_link', 'li_link', 'address']
 
+class TeamSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+    class Meta:
+        model = UserProfile
+        fields = ['user', 'image', 'branch', 'department', 'fb_link', 'li_link', 'year', 'branch', 'id']
+
+
 class UserLoginSerializer(JSONWebTokenSerializer):
     username_field = 'username_or_email'
 
