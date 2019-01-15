@@ -160,7 +160,7 @@ class UserProfile(base_models.TimeStampedModel, Verification):
     )
 
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,  related_name='profile'
     )
 
     verification_key = models.CharField(

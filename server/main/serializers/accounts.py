@@ -161,6 +161,18 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['email', 'first_name', 'last_name']
 
+class ProfileUserSerializer(serializers.ModelSerializer):
+
+    image = serializers.ImageField(source='profile.image')
+    phn_no = serializers.CharField(source='profile.phn_no')
+    fb_link = serializers.CharField(source='profile.fb_link')
+    li_link = serializers.CharField(source='profile.li_link')
+    branch = serializers.CharField(source='profile.branch')
+    department = serializers.CharField(source='profile.department')
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'image', 'phn_no', 'fb_link', 'li_link', 'branch', 'department']
 
 class UserProfileSerializer(serializers.ModelSerializer):
 

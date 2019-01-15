@@ -6,7 +6,7 @@
       <h4>Registration</h4>
       <p *ngIf="workshop.reg_status">{{workshop.reg_start_date}} to {{workshop.reg_end_date}}</p>
       <p *ngIf="!workshop.reg_status">Registration are closed!!</p>
-      <div><a [routerLink]="['/user/register']">
+      <div><a [routerLink]="['register']">
           <button (mouseover)="hover = true" (mouseout)="hover = false" [ngStyle]="hover
                       ?{
                           'border': '1px solid ' + workshop.theme_color,
@@ -108,17 +108,18 @@
               }">Coordinators</span>
       </h3>
       <div class="row no-gutters justify-content-center equal">
-        <div class="team-container" *ngFor="let member of workshop.organisers">
-          <div class="team-member image-fluid">
-            <div class="member-pic" [ngStyle]="{'background-image': 'url('+member.img+')'}">
-            </div>
-            <div class="member-info">
-              <h6 class="text-name">{{member.name}}</h6>
-              <h6 class="text-left">{{member.department}}</h6>
-              <h6 class="text-contact"><a href="tel:{{member.contact}}"><i class="fa fa-phone"></i>{{member.contact}}</a></h6>
-            </div>
-            <div class="member-dept" [ngStyle]="{'background': workshop.theme_color}">
-              <h6>{{member.category}}</h6>
+        <div class="col-fixed-220 team-card" *ngFor="let organiser of workshop.organisers">
+          <div class="front" [ngStyle]="{'background-image': 'url(' + organiser.member.image + ')'}">
+            <p>{{organiser.member.first_name}} {{organiser.member.last_name}}</p>
+          </div>
+          <div class="back">
+            <div>
+              <p>{{organiser.member.branch}}</p>
+              <p>{{organiser.member.phn_no}}</p>
+              <p>
+                <a href="{{organiser.member.fb_link}}"><i class="fab fa-facebook-square"></i></a>
+                <a href="{{organiser.member.li_link}}"><i class="fab fa-linkedin"></i></a>
+              </p>
             </div>
           </div>
         </div>
@@ -128,7 +129,7 @@
 
   <!-- Plans section Goes here -->
   <article id="plans" [ngStyle]="{'background-image': 'linear-gradient(to bottom right,#fff,'+workshop.theme_color+'21)'}"
-    *ngIf="workshop.reg_status">
+    >
     <div *ngIf="workshop.plans">
       <h3 class="text-center">
         <span [ngStyle]="{
@@ -160,7 +161,7 @@
           </div>
         </div>
       </div>
-      <div class="text-center"><a [routerLink]="['/user/register']">
+      <div class="text-center"><a [routerLink]="['register']">
           <button (mouseover)="hover = true" (mouseout)="hover = false" [ngStyle]="hover
                   ?{
                       'border': '1px solid ' + workshop.theme_color,
@@ -173,17 +174,20 @@
                       'background': 'transparent',
                       'color': workshop.theme_color,
                       'transition':'all .3s'
-                  }">Enroll
+                  }" [disabled]="!workshop.reg_status">Enroll
             Now</button></a>
       </div>
     </div>
   </article>
 
   <!-- Faqs section Goes here -->
-  <article id="faqs" *ngIf="workshop.reg_status">
+  <article id="faqs" >
     <div *ngIf="workshop.faqs">
       <h3 class="text-center">
-        <span>FAQs</span>
+        <span [ngStyle]="{
+          'color': workshop.theme_color,
+          'border-bottom':'1px solid ' + workshop.theme_color
+      }">FAQs</span>
       </h3>
       <div *ngFor="let faq of workshop.faqs; let j=index" class="row no-gutters justify-content-center">
         <div class="col-12 col-md-10 col-lg-7">

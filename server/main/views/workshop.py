@@ -12,6 +12,7 @@ class WorkshopView(ModelViewSet):
     serializer_class = WorkshopSerializer
     queryset = Workshop.objects.all()
     parser_classes = [MultiPartParser, FormParser, JSONParser]
+    lookup_field = 'slug'
 
     def get_serializer_class(self):
         if self.action == 'retrieve':

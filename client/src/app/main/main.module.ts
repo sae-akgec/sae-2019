@@ -36,7 +36,7 @@ import { LandingService } from './landing/landing-header/landing.service';
 
 // Material Modules
 import { MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule } from '@angular/material';
-import { MainService } from './man.service';
+import { MainService } from './main.service';
 
 @NgModule({
   declarations: [

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Workshop(models.Model):
     name = models.CharField(max_length=200, unique=True, null=False)
     venue = models.CharField(max_length=50, null=False)
+    slug = models.CharField(max_length=20, unique=True, null=False)
     logo_url = models.ImageField(null=True, upload_to = 'images/workshops/')
     background_url = models.ImageField(null=True, upload_to = 'images/workshops/')
     description = models.TextField(null=False)
@@ -56,7 +57,7 @@ class WorkshopFaqs(models.Model):
 
 class WorkshopOrganiser(models.Model):
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='organisers')
-    member_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    member = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.workshop) + " " + str(self.member_id)
+        return str(self.workshop)

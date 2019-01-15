@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../man.service';
+import { MainService } from '../main.service';
 
 @Component({
   selector: 'app-team',

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from ..models.workshop import Workshop, WorkshopFaqs, WorkshopOrganiser, WorkshopPlan, WorkshopProject
+from .accounts import ProfileUserSerializer
 
 class WorkshopSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,6 +14,7 @@ class WorkshopFaqsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class WorkshopOrganiserSerializer(serializers.ModelSerializer):
+    member = ProfileUserSerializer()
     class Meta:
         model = WorkshopOrganiser
         fields = '__all__'

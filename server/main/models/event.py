@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Event(models.Model):
     name =  models.CharField(max_length=50, unique=True, null=False)
+    slug = models.CharField(max_length=20, unique=True, null=False)
     description = models.TextField(null=False)
     date = models.DateField(null=True)
     status = models.CharField(max_length=60, default="Comming Soon..")
