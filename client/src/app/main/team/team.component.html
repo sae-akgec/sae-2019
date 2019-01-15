@@ -1,22 +1,21 @@
 <article id="team">
-  <div>
+  <div class="container">
     <h3 class="text-center">
       <span>SAE-AKGEC FAMILY</span>
     </h3>
     <div class="row no-gutters justify-content-center equal">
-      <div class="team-container">
-        <div class="card" *ngFor="let member of members">
-          <div class="front" [ngStyle]="{'background-image': 'url(' + member.image + ')'}">
-            <p>{{member.user.first_name}} {{member.user.last_name}}</p>
-          </div>
-          <div class="back">
-            <div>
-              <p>{{member.branch}}</p>
-              <p>
-                <a href="{{member.fb_link}}"><i class="fa fa-facebook"></i></a>
-                <a href="{{member.li_link}}"><i class="fa fa-linkedin"></i></a>
-              </p>
-            </div>
+      <div class="col-fixed-220 team-card" *ngFor="let member of members">
+        <div class="front" [ngStyle]="{'background-image': 'url(' + member.image + ')'}">
+          <p>{{member.user.first_name}} {{member.user.last_name}}</p>
+        </div>
+        <div class="back">
+          <div>
+            <p>{{member.branch}}</p>
+            <p>{{member.department}}</p>
+            <p>
+              <a href="{{member.fb_link}}"><i class="fab fa-facebook-square"></i></a>
+              <a href="{{member.li_link}}"><i class="fab fa-linkedin"></i></a>
+            </p>
           </div>
         </div>
       </div>
