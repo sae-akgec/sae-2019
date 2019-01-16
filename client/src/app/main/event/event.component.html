@@ -1,21 +1,21 @@
-<div *ngIf="event" id="event">
+<div id="event">
   <!-- Header  goes here -->
-  <header id="header" [ngStyle]="{'background-image': 'url('+event.img+')'}">
+  <!-- <header id="header" [ngStyle]="{'background-image': 'url('+event.img+')'}">
     <div class="text-center">
       <h1 [ngStyle]="{'color': event.theme_color}">{{event.name}}</h1>
       <h4>{{event.status}}</h4>
     </div>
-  </header>
+  </header> -->
 
   <!-- Logo goes here -->
-  <article id="logo">
+  <!-- <article id="logo">
     <div>
       <img src="{{event.logo}}" class="mx-auto d-block " [ngStyle]="{'border': '2px solid ' + event.theme_color}">
     </div>
-  </article>
+  </article> -->
 
   <!-- Descriptions with date block goes here -->
-  <article id="description">
+  <!-- <article id="description">
     <div class="row no-gutters justify-content-center">
       <div class="col-12 col-md-7 col-lg-8">
         <h3>Description</h3>
@@ -51,10 +51,10 @@
         </div>
       </div>
     </div>
-  </article>
+  </article> -->
 
   <!-- Team section goes here -->
-  <article id="team">
+  <!-- <article id="team">
     <div *ngIf="event.team">
       <h3 class="text-center">
         <span [ngStyle]="{
@@ -80,28 +80,24 @@
         </div>
       </div>
     </div>
-  </article>
+  </article> -->
 
 
   <!-- Timeline section Goes here -->
   <article id="timeline">
-    <div *ngIf="event.timeline">
-      <h3 class="text-center">Achievements</h3>
-      <ul class="timeline">
+    <div class="box slide"><span>What else you want ! ;)</span></div>
+    <div class="box slide"><span>Super Simple</span></div>
+    <div class="box slide"><span>Responsive</span></div>
+    <div class="box slide"><span>GSAP Timeline</span></div>
+    <div class="box slide"><span>GSAP Timeline</span></div>
+    <div class="box slide"><span>GSAP Timeline</span></div>
+    <div class="box slide"><span>GSAP Timeline</span></div>
+    <div class="box slide"><span>Full Screen Slider (linear) #2</span></div>
 
-        <!-- Item 1 -->
-        <li *ngFor="let time of event.timeline; let j=index">
-          <div [ngClass]="j%2===0 ?'direction-l':'direction-r'">
-            <div class="flag-wrapper">
-              <span class="flag">{{time.venue}}</span>
-              <span class="time-wrapper">
-                <span class="time">{{time.date}}</span>
-              </span>
-            </div>
-            <div class="desc">{{time.achievement}}</div>
-          </div>
-        </li>
-      </ul>
+    <div id="timeline-nav">
+      <div id="prevtBtn" class='fa fa-chevron-circle-left'></div>
+      <div id="nextBtn" class='fa fa-chevron-circle-right'></div>
     </div>
+    <div id="Dots"></div>
   </article>
 </div>

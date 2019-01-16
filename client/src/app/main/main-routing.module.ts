@@ -7,6 +7,7 @@ import { BlogListComponent } from './blogs/blog-list/blog-list.component';
 import { BlogDetailComponent } from './blogs/blog-detail/blog-detail.component';
 import { TeamComponent } from "./team/team.component";
 import { WorkshopComponent } from './workshop/workshop.component';
+import { EventComponent } from './event/event.component';
 
 const routes: Routes = [
     {path:'', component:MainComponent, children:[
@@ -16,7 +17,8 @@ const routes: Routes = [
         {path: ':id', component:BlogDetailComponent}]
       },
       {path: 'team', component:TeamComponent},
-      {path: 'workshops/:id', component:WorkshopComponent}
+      {path: 'workshops/:id', component:WorkshopComponent},
+      {path: 'events/:id', component:EventComponent}
     ]}
 ];
 
