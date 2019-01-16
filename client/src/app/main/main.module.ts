@@ -33,6 +33,7 @@ import { BlogDetailComponent } from './blogs/blog-detail/blog-detail.component';
 
 import { MainRoutingModule } from "./main-routing.module";
 import { LandingService } from './landing/landing-header/landing.service';
+import { LandingTService } from "./landing/landing-testimonials/landing-t.service";
 
 // Material Modules
 import { MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule } from '@angular/material';
@@ -64,6 +65,6 @@ import { MainService } from './main.service';
      MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, HttpClientModule,
      RouterModule, FormsModule, ReactiveFormsModule, 
   ],
-  providers: [LandingService, MainService]
+  providers: [LandingService, MainService, LandingTService]
 })
 export class MainModule { }

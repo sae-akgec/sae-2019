@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LandingTService } from './landing-t.service';
 
 @Component({
   selector: 'app-landing-testimonials',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingTestimonialsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tService:LandingTService) { }
 
   ngOnInit() {
+    this.tService.headerThree(document.getElementById('canvas'))
   }
 
 }
