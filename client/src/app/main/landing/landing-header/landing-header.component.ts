@@ -9,13 +9,12 @@ import { ASSETS } from 'src/app/shared/assets';
   styleUrls: ['./landing-header.component.scss']
 })
 export class LandingHeaderComponent implements OnInit {
-  HEADER_BACKGOUND = ASSETS + '/landing_header.svg';
-
-  constructor(private _landingService:LandingService) { }
+  HEADER_BACKGOUND = ASSETS + '/landing-header.jpg';
+  constructor(private tService:LandingService) { }
 
   ngOnInit() {
-    var elm = document.getElementById('world');
-    this._landingService.headerThree(elm);
+    this.tService.headerThree(document.getElementById('canvas'))
   }
+
 
 }
