@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ASSETS } from 'src/app/shared/assets';
+import { MainService } from '../../main.service';
+
 
 @Component({
   selector: 'app-landing-events',
@@ -8,10 +10,15 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class LandingEventsComponent implements OnInit {
   EVENTSIMAGE = ASSETS + "/placeholder.svg";
-
-  constructor() { }
+  events:any[]
+  constructor(private mainService:MainService) { }
 
   ngOnInit() {
+    this.mainService.getEvents().subscribe(
+      (events)=>{
+        this.events = events['results']
+      }
+    )
   }
 
 }
