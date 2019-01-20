@@ -185,6 +185,7 @@ transition: ease-in-out 600ms;
     position: relative;
     min-height: 650px;
     width: 100%;
+    background: #1d1e22;
 }
 
 #timeline-nav{ 
@@ -233,34 +234,33 @@ transition: ease-in-out 600ms;
 }
 
 .box:nth-child(1) {
-  background-color: #ff002f;
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --image-gradient: linear-gradient(to right, #f5af19, #f12711);
 }
 .box:nth-child(2) {
-  background-color: #00718b;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --image-gradient: linear-gradient(to right, #2C5364, #203A43, #0F2027);
 }
 .box:nth-child(3) {
-  background-color: #4a5619;
+  background: #5A3F37;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C7744, #5A3F37); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --image-gradient: linear-gradient(to right, #2C7744, #5A3F37);
 }
 .box:nth-child(4) {
-  background-color: #ff002f;
-}
-.box:nth-child(5) {
-  background-color: #006f73;
-}
-.box:nth-child(6) {
-  background-color: #4a5619;
-}
-.box:nth-child(7) {
-  background-color: #ff002f;
-}
-.box:nth-child(8) {
-  background-color: #006f73;
+  background: #ad5389;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+--image-gradient: linear-gradient(to right, #3c1053, #ad5389);
 }
 
 // Timeline item
 .blog-slider {
     width: 95%;
-    position: relative;
     max-width: 800px;
     margin: auto;
     background: #fff;
@@ -269,7 +269,7 @@ transition: ease-in-out 600ms;
     border-radius: 25px;
     height: 400px;
     transition: all .3s;
-    margin-top: 60px;
+    margin-top: 120px;
   
    
   @media screen and (max-width: 992px) {
@@ -303,7 +303,7 @@ transition: ease-in-out 600ms;
     width: 300px;
     flex-shrink: 0;
     height: 300px;
-    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+    background-image: var(--image-gradient);
     box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
     border-radius: 20px;
     transform: translateX(-80px);
@@ -317,9 +317,9 @@ transition: ease-in-out 600ms;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+    background-image: var(--image-gradient);
       border-radius: 20px;
-    opacity: 0.8;
+    opacity: 0.6;
 }
     
     img {
@@ -397,7 +397,7 @@ transition: ease-in-out 600ms;
   
   &__button {
         display: inline-flex;
-    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+    background-image: var(--image-gradient);
     padding: 15px 35px;
     border-radius: 50px;
     color: #fff;
