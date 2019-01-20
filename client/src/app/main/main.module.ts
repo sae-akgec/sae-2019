@@ -36,6 +36,7 @@ import { LandingService } from './landing/landing-header/landing.service';
 // Material Modules
 import { MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule } from '@angular/material';
 import { MainService } from './main.service';
+import { EventTimelineComponent } from './event/event-timeline/event-timeline.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MainService } from './main.service';
     LandingWorkshopsComponent,
     LandingBlogsComponent,
     LandingContactComponent,
-    LandingAboutComponent],
+    LandingAboutComponent,
+    EventTimelineComponent],
   imports: [
     CommonModule, MainRoutingModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule,
      MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, HttpClientModule,

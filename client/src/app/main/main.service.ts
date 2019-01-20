@@ -12,7 +12,7 @@ export class MainService {
     this.domain = DOMAIN
   }
 
-  getTeam():Observable<any[]>{
+  getTeam():Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type':'application/json; charset=utf-8'
     });
@@ -24,6 +24,13 @@ export class MainService {
       'Content-Type':'application/json; charset=utf-8'
     });
     return this.http.get<any>(this.domain + '/api/workshops/' + slug + '/', {headers: headers})
+  }
+
+  getEvent(slug):Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json; charset=utf-8'
+    });
+    return this.http.get<any>(this.domain + '/api/events/' + slug + '/', {headers: headers})
   }
 
   getEvents():Observable<any>{

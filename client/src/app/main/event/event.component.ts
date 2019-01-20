@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from "../main.service";
 declare var TimelineLite, Back: any;
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event',
@@ -8,11 +9,24 @@ declare var TimelineLite, Back: any;
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
-
-  constructor(private mainService: MainService) { }
+  event: any;
+  slug: any;
+  constructor(private mainService: MainService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.timline()
+    this.activeRoute.params.subscribe(params => {
+      if (params['id']) {
+        this.slug = params['id']
+        this.mainService.getEvent(params['id']).subscribe(
+          (event) => {
+            this.event = event;
+            this.timline();
+          }, (err) => {
+            console.log(err);
+          });
+      }
+    });
+    
   }
   timline() {
     var slides = document.querySelectorAll('.slide'), tl = new TimelineLite({ paused: true });
