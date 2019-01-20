@@ -1,7 +1,14 @@
-<i id="burger" class="material-icons" (click)="burger()">menu</i>
-<i id="quit" class="material-icons" (click)="quit()">clear</i>
-<div id="links">
-    <a href="">Lorem</a>
-    <a href="">Ispum</a>
-    <a href="">TKT</a>
-</div>
+<i id="burger" class="material-icons" (click)="navOpen()">menu</i>
+<aside id="navAside">
+    <div class="outer-close toggle-overlay">
+        <a class="close" (click)="navOpen()"><span></span></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Pricing</a></li>
+            <li><a href="#!">Documentation</a></li>
+            <li><a href="#!">About</a></li>
+        </ul>
+    </nav>
+</aside>

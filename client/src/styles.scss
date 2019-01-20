@@ -101,7 +101,7 @@ font-family: 'GT';
   display: block;
   width: 50px;
   height: 50px;
-  background: #1b1464;
+  background: #05BCC9;
 }
 
 .loader-container {
@@ -129,7 +129,7 @@ font-family: 'GT';
   position: absolute;
   width: 17px;
   height: 17px;
-  color: #1b1464;
+  color: #05BCC9;
   content: "";
 }
 
@@ -157,4 +157,22 @@ font-family: 'GT';
   border-bottom: 1px solid;
   bottom: -6px;
   right: -6px;
+}
+
+.theme-button-lg {
+  display: block;
+  padding: 15px 45px;
+  border: 2px solid #05BCC9;
+  background: #fff;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #05BCC9;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);
+    color: #fff;
+    border-image: linear-gradient(45deg, #9682C8 10%, #05BCC9);
+    cursor: pointer;
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from '../../main.service';
 
 @Component({
   selector: 'app-landing-workshops',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingWorkshopsComponent implements OnInit {
 
-  constructor() { }
+  workshops:any;
+  constructor(private mainService:MainService) { }
 
   ngOnInit() {
+    this.mainService.getWorkshops().subscribe(
+      (workshops)=>{
+        this.workshops = workshops['results']
+      }, 
+      (err)=>{
+        console.log(err)
+      }
+    )
   }
 
 }

@@ -32,6 +32,13 @@ export class MainService {
     });
     return this.http.get<any>(this.domain + '/api/events/', {headers: headers})
   }
+
+  getWorkshops():Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json; charset=utf-8'
+    });
+    return this.http.get<any>(this.domain + '/api/workshops/', {headers: headers})
+  }
   
 //   regsiter(body:any): Observable<any>{
 //     const headers = new HttpHeaders({

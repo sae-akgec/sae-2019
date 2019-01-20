@@ -3,34 +3,39 @@
              let index =index;
              let isOdd=odd;
              let isEven=even">
-    <div *ngIf="isOdd" class="row">
-      <div class="col-md-6 col-12" [ngStyle]="{'background-image': 'url(' + ODD_BACKGOUND + ')'}">
-        <img src="{{workshop.img}}" class="img-fluid">
-      </div>
+    <div *ngIf="isOdd" class="row main-row">
       <div class="col-md-6 col-12">
-        <h3>workshop.title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur..</p>
-        <p>
-          <button>Learn More</button>
-        </p>
+        <img src="{{workshop.logo_url}}">
+      </div>
+      <div class="col-md-6 col-12 text-container">
+        <div class="row justify-content-left">
+          <div class="col-lg-8 col-md-10 col-12">
+            <h2>{{workshop.name}}</h2>
+            <p>{{workshop.short_description}}</p>
+            <p>
+              <button class="theme-button-lg">Learn More</button>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <div *ngIf="isEven">
-      <div class="col-md-6 col-12">
-        <h3>workshop.title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur..</p>
-        <p>
-          <button>Learn More</button>
-        </p>
+    <div *ngIf="isEven" class="row main-row">
+      <div class="col-md-6 col-12 text-container">
+        <div class="row">
+          <div class="col-lg-4 col-md-2 col-12">
+
+          </div>
+          <div class="col-lg-8 col-md-10 col-12">
+            <h2>{{workshop.name}}</h2>
+            <p>{{workshop.short_description}}</p>
+            <p>
+              <button class="theme-button-lg">Learn More</button>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 col-12" [ngStyle]="{'background-image': 'url(' + ODD_BACKGOUND + ')'}">
-        <img src="{{workshop.img}}" class="img-fluid">
+      <div class="col-md-6 col-12">
+        <img src="{{workshop.logo_url}}">
       </div>
     </div>
 
