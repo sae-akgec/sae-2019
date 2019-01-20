@@ -18,7 +18,7 @@ aside {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: linear-gradient(45deg, #9682C8 50%, #05BCC9);
+    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);
 	opacity: 0;
 	visibility: hidden;
 	transition: all .5s ease;
@@ -41,7 +41,7 @@ nav {
 		li {
 			align-items: center;
 			flex: 1;
-			line-height: 20vh;
+			line-height: 10vh;
 			a {
         font-size: 1.5em;
 				transition: all 0.5s ease;
@@ -80,12 +80,12 @@ nav {
 button {
 	padding: 15px 40px;
 	background: transparent;
-	border: 1px solid rgba(255, 255, 255, .4);
+	border: 1px solid #fff;
 	color: white;
 	border-radius: 8px;
 	transition: all .5s ease;
 	&:hover {
-		border: 1px solid rgba(255, 255, 255, 1);
+		border: 1px solid #fff;
 	}
 }
 .close {

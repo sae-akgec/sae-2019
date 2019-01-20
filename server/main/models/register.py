@@ -90,6 +90,7 @@ class WorkshopParticipant(models.Model):
         ('F', 'Female'),
         ('O', 'Others'),
     )
+    
     YEAR_CHOICES = (
         (1, '1st'),
         (2, '2nd'),

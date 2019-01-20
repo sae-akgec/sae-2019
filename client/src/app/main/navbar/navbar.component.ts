@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
 
   navOpen(){
     let aside = document.getElementById('navAside');
-    console.log("Hello")
     aside.classList.toggle('open');
   }
 }

@@ -5,10 +5,12 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#!">Features</a></li>
-            <li><a href="#!">Pricing</a></li>
-            <li><a href="#!">Documentation</a></li>
-            <li><a href="#!">About</a></li>
+            <li><a href="#about" (click)="navOpen()">About</a></li>
+            <li><a routerLink="/team" (click)="navOpen()">Team</a></li>
+            <li><a routerLink="/workshops/innovacion" (click)="navOpen()">Innovacion</a></li>
+            <li><a routerLink="/workshops/aacar" (click)="navOpen()">Acar</a></li>
+            <li><a routerLink="/blogs" (click)="navOpen()">Blogs</a></li>
+            <li><a routerLink="/conatactus" (click)="navOpen()">Contact Us</a></li>
         </ul>
     </nav>
 </aside>
