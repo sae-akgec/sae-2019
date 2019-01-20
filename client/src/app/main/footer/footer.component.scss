@@ -30,7 +30,7 @@ footer {
   background: rgb(55,55,55);
   margin-top: auto;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 .footer-list-top {
   width: 33.333%
@@ -42,10 +42,10 @@ footer {
 .footer-list-header {
   padding: 10px 0 5px 0;
   color: #fff;
-  font: 2.3vw "Oswald", sans-serif
+  font-size: 2em;
 }
 .footer-list-anchor {
-  font: 1.3em "Open Sans", sans-serif
+  font-size: 1em;
 }
 .footer-social-section {
   width: 100%;
@@ -72,7 +72,7 @@ footer {
 .footer-social-connect {
   display: flex;
   align-items: center;
-  font: 3.5em "Oswald", sans-serif;
+  font-size: 2em;
   color: #fff
 }
 .footer-social-small {
@@ -80,7 +80,7 @@ footer {
   padding: 0px 20px
 }
 .footer-social-overlap > a {
-  font-size: 3em
+  font-size: 2em
 }
 .footer-social-overlap > a:not(:first-child) {
   margin-left: 0.38em
@@ -95,7 +95,7 @@ footer {
   margin-right: auto
 }
 .footer-bottom-wrapper {
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #fff
 }
 .footer-address {
@@ -104,19 +104,19 @@ footer {
 }
 @media only screen and (max-width: 768px) {
   .footer-list-header {
-    font-size: 2em
+    font-size: 1.5em
   }
   .footer-list-anchor {
-    font-size: 1.1em
+    font-size: 1em
   }
   .footer-social-connect {
-    font-size: 2.5em
+    font-size: 1.5em
   }
   .footer-social-overlap > a {
-    font-size: 2.24em
+    font-size: 1.5em
   }
   .footer-bottom-wrapper {
-    font-size: 1.3em
+    font-size: 1em
   }
 }
 @media only screen and (max-width: 568px) {
@@ -127,10 +127,10 @@ footer {
     width: 100%
   }
   .footer-list-header {
-    font-size: 3em;
+    font-size: 2em;
   }
   .footer-list-anchor {
-    font-size: 1.5em
+    font-size: 1em
   }
   .footer-social-section {
     justify-content: center
@@ -175,18 +175,18 @@ footer {
 }
 @media only screen and (max-width: 320px) {
   .footer-list-header {
-    font-size: 2.2em
+    font-size: 1.6em
   }
   .footer-list-anchor {
-    font-size: 1.2em
+    font-size: 1em
   }
   .footer-social-connect {
-    font-size: 2.4em
+    font-size: 1.6em
   }
   .footer-social-overlap > a {
-    font-size: 2.24em
+    font-size: 1.5em
   }
   .footer-bottom-wrapper {
-    font-size: 1.3em
+    font-size: 1em
   }
 }

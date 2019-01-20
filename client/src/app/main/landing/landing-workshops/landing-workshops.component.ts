@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-landing-workshops',
@@ -9,6 +10,7 @@ import { MainService } from '../../main.service';
 export class LandingWorkshopsComponent implements OnInit {
 
   workshops:any;
+  ABOUT_IMAGE = ASSETS + "/landing_about.svg"
   constructor(private mainService:MainService) { }
 
   ngOnInit() {

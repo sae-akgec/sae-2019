@@ -1,14 +1,13 @@
-<div>
+<div [ngStyle]="{'background-image': 'url('+ ABOUT_IMAGE +')'}" class="main-container" id="workshops">
   <div *ngFor="let workshop of workshops; 
              let index =index;
              let isOdd=odd;
              let isEven=even">
     <div *ngIf="isOdd" class="row main-row">
-      <div class="col-md-6 col-12">
-        <img src="{{workshop.logo_url}}">
-      </div>
-      <div class="col-md-6 col-12 text-container">
-        <div class="row justify-content-left">
+      <div class="col-md-6 col-12 order-md-first order-last">
+        <div class="row text-container">
+          <div class="col-lg-4 col-md-2 col-12">
+          </div>
           <div class="col-lg-8 col-md-10 col-12">
             <h2>{{workshop.name}}</h2>
             <p>{{workshop.short_description}}</p>
@@ -17,14 +16,17 @@
             </p>
           </div>
         </div>
+      </div>
+      <div class="col-md-6 col-12 order-md-last order-first">
+        <img src="{{workshop.logo_url}}">
       </div>
     </div>
     <div *ngIf="isEven" class="row main-row">
-      <div class="col-md-6 col-12 text-container">
-        <div class="row">
-          <div class="col-lg-4 col-md-2 col-12">
-
-          </div>
+      <div class="col-md-6 col-12">
+        <img src="{{workshop.logo_url}}">
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="row text-container justify-content-left">
           <div class="col-lg-8 col-md-10 col-12">
             <h2>{{workshop.name}}</h2>
             <p>{{workshop.short_description}}</p>
@@ -33,9 +35,6 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-12">
-        <img src="{{workshop.logo_url}}">
       </div>
     </div>
 
