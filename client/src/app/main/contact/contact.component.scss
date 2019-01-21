@@ -43,11 +43,13 @@ $white: #fff;
     top: 1rem;
 
     .ellipses-inner{
-        
+        padding-top: 5rem;
+        padding-left: 3rem;
         h2{
+        position: relative;
         margin: 0 auto;
         text-transform: uppercase;
-        letter-spacing: 2rem;
+        letter-spacing: 1rem;
         font-size: 3rem;
         font-weight: 400;
         opacity: 0.5;
@@ -62,11 +64,8 @@ $white: #fff;
             position: relative;
             top: -0.65rem;
             left: -5.05rem;
-        }
-        }
-    }
-    .greeting {
-        
+            }
+       }
     }
 
 }
@@ -88,7 +87,7 @@ $white: #fff;
 
     &:after {
       content: "";
-      background-image: url('https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png');
+      background-image: url('http://www.campingquai.it/wp-content/uploads/2017/01/ellipses_dial.png');
       background-repeat: no-repeat;
       background-position: center;
       top: 0;

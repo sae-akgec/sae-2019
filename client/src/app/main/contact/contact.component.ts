@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ASSETS } from 'src/app/shared/assets';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,7 @@ export class ContactComponent implements OnInit {
   myParams: object = {};
   width: number = 100;
   height: number = 100;
-
+  INNOVACION = ASSETS + "/17443.svg";
   ngOnInit() {
     this.myStyle = {
       'position': 'absolute',
