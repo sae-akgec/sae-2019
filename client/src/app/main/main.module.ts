@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ParticlesModule } from 'angular-particle';
 
 import { MainComponent } from './main.component';
 
@@ -60,7 +61,7 @@ import { MainService } from './main.service';
   imports: [
     CommonModule, MainRoutingModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule,
      MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, HttpClientModule,
-     RouterModule, FormsModule, ReactiveFormsModule, 
+     RouterModule, FormsModule, ReactiveFormsModule, ParticlesModule,
   ],
   providers: [LandingService, MainService]
 })

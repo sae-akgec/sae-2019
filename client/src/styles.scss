@@ -160,20 +160,34 @@ font-family: 'GT';
 }
 
 .theme-button-lg {
-  display: block;
-  padding: 15px 45px;
-  border: 2px solid #05BCC9;
-  background: #fff;
-  border-radius: 30px;
-  font-size: 1.2em;
-  font-weight: 700;
-  color: #05BCC9;
-  transition: 0.3s ease-in-out;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
   &:hover {
-    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);
-    color: #fff;
-    border-image: linear-gradient(45deg, #9682C8 10%, #05BCC9);
-    cursor: pointer;
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
