@@ -1,0 +1,20 @@
+<div class="container" id="events">
+  <div class="row text-center justify-content-center top-section">
+    <div class="col-11 col-md-10 col-lg-8">
+      <hr>
+      <h2>The Thing Motiviates Us Is A Very Common Form of Motivation And That Is With Other Folk Counting On Me, It's
+        So Easy To Be Motivated</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="events">
+    <div class="col-md-6 col-lg-3 col-12" *ngFor="let event of events">
+      <a class="event-card" [ngClass]="event.color_class" routerLink="events/{{event.slug}}">
+        <div class="overlay"></div>
+        <div class="circle">
+            <img class="img-fluid circle-img" src="{{event.logo_url}}">
+        </div>
+        <p>{{event.name}}</p>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+div.container{
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.container .top-section{
+    padding-bottom: 50px;
+    color: #6d6792;
+}
+
+.top-section hr{
+  width: 50px;
+  text-align: center;
+  background-color: #da7e35;
+  margin-bottom: 40px;
+  border-radius: 3px;
+  height: 5px;
+}
+
+.event-card {
+  width: 220px;
+  height: 321px;
+  margin: 10px auto;
+  background: #fff;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.event-card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.event-card:hover .overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.event-card:hover .circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.event-card:hover .circle:after {
+  background: var(--bg-color-light);
+}
+
+.event-card:hover p {
+  color: var(--text-color-hover);
+}
+
+.event-card:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+    0 15px 24px var(--box-shadow-color);
+}
+
+.event-card p {
+  font-size: 17px;
+  color: #4C5656;
+  margin-top: 30px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.circle {
+  width: 131px;
+  height: 131px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.circle:after {
+  content: "";
+  width: 118px;
+  height: 118px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  transition: opacity 0.3s ease-out;
+}
+
+.circle-img {
+  width: 118px; 
+  height: 118px;
+  border-radius: 50%;
+  z-index: 50000;
+}
+
+.overlay {
+  width: 118px;
+  position: absolute; 
+  height: 118px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 70px;
+  left: 50px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}

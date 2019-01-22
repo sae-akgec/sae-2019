@@ -1,0 +1,21 @@
+<div class="container" id="blogs">
+  <div class="row text-center justify-content-center top-section">
+    <div class="col-11 col-md-10 col-lg-8">
+      <h1>Read Our Latest Blog Post</h1>
+    </div>
+  </div>
+  <section class="cards-wrapper" *ngIf="blogs">
+    <div class="card-grid-space" *ngFor="let blog of blogs">
+      <a class="card-blog" routerLink="/blogs/{{blog.slug}}" [ngStyle]="{'background-image': 'url('+ blog.image +')'}">
+        <div>
+          <h5>{{blog.title}}</h5>
+          <p>{{blog.short_desc}}</p>
+          <div class="date">{{blog.created_at}}</div>
+          <div class="tags">
+            <div class="tag">{{blog.category.title}}</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
