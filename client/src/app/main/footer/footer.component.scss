@@ -190,3 +190,26 @@ footer {
     font-size: 1em
   }
 }
+
+.icon {
+  display: block;
+}
+
+.logo-si{
+  width: 200px;
+  height: 200px;
+  background-color: #fff;;
+  border-radius: 50%;
+  margin: auto;
+}
+/* .logo-si:hover{
+  animation: bounce 1s 1;
+  box-shadow: 0px 0px 40px 0px #000;
+  transition: .3s;
+} */
+.logo-si img{
+  width: 100%;
+  margin: 2px auto;
+  vertical-align: top;
+  border-radius: 50%;
+}
