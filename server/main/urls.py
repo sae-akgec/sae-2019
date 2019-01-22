@@ -9,7 +9,7 @@ from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, U
                            UserLoginView, PasswordResetAPIView, PasswordResetConfirmView, UpdateProfileAPIView)
 
 from .views.event import EventView, EventTeamView, EventTimelineView
-from .views.workshop import WorkshopFaqsView, WorkshopOrganiserView, WorkshopPlanView, WorkshopProjectView, WorkshopView
+from .views.workshop import WorkshopFaqsView, WorkshopOrganiserView, WorkshopPlanView, WorkshopProjectView, WorkshopView, ContactUsAPIView
 from .views.register import WorkshopRegistrationView
 
 event_router = routers.DefaultRouter()
@@ -43,6 +43,7 @@ urlpatterns = [
    url(r'^docs/', include_docs_urls(title="api-doc", public=True, permission_classes=[])),
    url(r'^auth/login/', UserLoginView.as_view(), name='login'),
    url(r'^team/', TeamAPIView.as_view(), name='team'),
+   url(r'^contact/', ContactUsAPIView.as_view(), name='contact-us'),
    url(r'^auth/register/', UserRegistrationAPIView.as_view(), name='regsiter'),
    url(r'^auth/verify/(?P<verification_key>.+)/$', UserEmailVerificationAPIView.as_view(), name='email_verify'),
    url(r'^auth/password_reset/$', PasswordResetAPIView.as_view(), name='password_change'),
