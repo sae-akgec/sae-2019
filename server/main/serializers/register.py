@@ -2,6 +2,7 @@ from rest_framework import serializers
 from ..models.register import WorkshopParticipant, WorkshopRegistration
 from django.forms.models import model_to_dict
 from rest_framework_recaptcha.fields import ReCaptchaField
+from random import randint
 
 class WorkshopParticipantsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +28,7 @@ class WorkshopRegistrationSerializer(serializers.ModelSerializer):
 
         registration_data = {
             'college_name': validated_data.get("college_name"),
-            'team_name': validated_data.get("team_name"),
+            'team_name': validated_data.get("team_name") + str(randint(0,10000)),
             'ref_code': validated_data.get("ref_code", 'no'),
             'is_team_local': validated_data.get("is_team_local"),
             'enroll_status': False,

@@ -6,7 +6,15 @@ from django.core.validators import RegexValidator
 from django.utils import timezone
 
 from .workshop import Workshop, WorkshopPlan
+from random import randint
+from django.template.loader import render_to_string
 
+upi_address = [
+    'sachanayushsachan@oksbi',
+    '7275ayush@paytm',
+    '9560779366@paytm',
+    '9560779366@ybl'
+]
 class WorkshopRegistrationManager(models.Manager):
     @transaction.atomic
     def do_registration(self, data, participants, send_email=True):
@@ -24,20 +32,23 @@ class WorkshopRegistrationManager(models.Manager):
             WorkshopParticipant.objects.create_participant(data=participant, send_email=False)
 
         if send_email:
-            self.send_email(data, data.get('leader_email'))
+            self.send_email(data, data.get('leader_email'), data.get('team_name'))
 
         return m
 
-    def send_email(self, data, email):
+    def send_email(self, data, email, team_name):
         """
         Sends an verification email to particpant.
         """
-        subject = "Registration Mail"
+        subject = "Innovacion'19 Registration Mail"
 
-        message = "Succesfully registerded"
+        mail_message = render_to_string('acc_active_email.html', {
+                'upi_address': upi_address[randint(0, 4)],
+                'team_name': team_name
+            })
 
         msg = EmailMultiAlternatives(subject, "", settings.DEFAULT_FROM_EMAIL, [email])
-        msg.attach_alternative(message, "text/html")
+        msg.attach_alternative(mail_message, "text/html")
         msg.send()
 
 class WorkshopRegistration(models.Model):
