@@ -17,53 +17,30 @@
               </div>
               <div class="col-lg-6 col-sm-12">
                 <mat-form-field appearance="standard">
-                  <mat-label>College Code</mat-label>
-                  <input matInput placeholder="College Code" type="text" formControlName="college_code">
+                  <mat-label>Team Name</mat-label>
+                  <input matInput placeholder="College Code" type="text" formControlName="team_name">
                 </mat-form-field>
               </div>
               <div class="col-lg-6 col-sm-12">
                 <mat-form-field appearance="standard">
-                  <mat-label>Faculty Name</mat-label>
-                  <input matInput placeholder="Faculty Name" type="text" formControlName="faculty_name">
+                  <mat-label>Reference Code</mat-label>
+                  <input matInput placeholder="Faculty Name" type="text" formControlName="ref_code">
                 </mat-form-field>
               </div>
               <div class="col-lg-6 col-sm-12">
                 <mat-form-field appearance="standard">
-                  <mat-label>Faculty Gender</mat-label>
-                  <mat-select placeholder="Event" formControlName="faculty_gender">
-                    <mat-option [value]="null">--- Select Gender ----</mat-option>
-                    <mat-option [value]="'M'">Male</mat-option>
-                    <mat-option [value]="'F'">Female</mat-option>
-                    <mat-option [value]="'O'">Others</mat-option>
-                  </mat-select>
+                  <mat-label>Leader Email</mat-label>
+                  <input matInput placeholder="Leader Email" type="text" formControlName="leader_email">
                 </mat-form-field>
               </div>
               <div class="col-lg-6 col-sm-12">
-                <mat-form-field appearance="standard">
-                  <mat-label>Faculty Designation</mat-label>
-                  <input matInput placeholder="Faculty Designation" type="text" formControlName="faculty_designation">
-                </mat-form-field>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <mat-form-field appearance="standard">
-                  <mat-label>Faculty Phone Number</mat-label>
-                  <input matInput placeholder="Faculty Phone Number" type="text" formControlName="faculty_phn_no">
-                </mat-form-field>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <mat-form-field appearance="standard">
-                  <mat-label>Faculty Email</mat-label>
-                  <input matInput placeholder="Faculty Email" type="text" formControlName="faculty_email">
-                </mat-form-field>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <mat-form-field appearance="standard" *ngIf="events">
-                  <mat-select placeholder="Event" formControlName="event">
+                <mat-form-field appearance="standard" *ngIf="plans">
+                  <mat-select placeholder="Plan" formControlName="plan">
                     <mat-option [value]="null">
-                      --- Select Event ----
+                      --- Select Plan ----
                     </mat-option>
-                    <mat-option *ngFor="let event of events" [value]="event.id">
-                      {{event.name}}
+                    <mat-option *ngFor="let plan of plans" [value]="plan.id">
+                      {{plan.name}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -102,12 +79,6 @@
                             <input matInput placeholder="Name of Student" type="text" formControlName="name">
                           </mat-form-field>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
-                          <mat-form-field appearance="standard">
-                            <mat-label>Fathers Name</mat-label>
-                            <input matInput placeholder="Fathers Name" type="text" formControlName="fathers_name">
-                          </mat-form-field>
-                        </div>
                         <div class="col-lg-4 col-sm-6 col-12">
                           <mat-form-field appearance="standard">
                             <mat-label>University Roll.No</mat-label>
@@ -117,7 +88,15 @@
                         <div class="col-lg-4 col-sm-6 col-12">
                           <mat-form-field appearance="standard">
                             <mat-label>Branch</mat-label>
-                            <input matInput placeholder="Branch" type="text" formControlName="branch">
+                            <mat-select placeholder="Event" formControlName="branch">
+                                <mat-option [value]="null">--- Select branch ----</mat-option>
+                                <mat-option [value]="EN">Electrical And Electronics</mat-option>
+                                <mat-option [value]="ME">Mechanical Engnreeing</mat-option>
+                                <mat-option [value]="CSE">Computer Science</mat-option>
+                                <mat-option [value]="CIVIL">Civil</mat-option>
+                                <mat-option [value]="ECE">ECE</mat-option>
+                                <mat-option [value]="EI">EI</mat-option>
+                              </mat-select>
                           </mat-form-field>
                         </div>
                         <div class="col-lg-4 col-sm-6 col-12">
@@ -129,7 +108,6 @@
                               <mat-option [value]="2">2nd</mat-option>
                               <mat-option [value]="3">3rd</mat-option>
                               <mat-option [value]="4">4th</mat-option>
-                              <mat-option [value]="5">5th</mat-option>
                             </mat-select>
                           </mat-form-field>
                         </div>
@@ -142,12 +120,6 @@
                               <mat-option [value]="'F'">Female</mat-option>
                               <mat-option [value]="'O'">Others</mat-option>
                             </mat-select>
-                          </mat-form-field>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-12">
-                          <mat-form-field appearance="standard">
-                            <mat-label>Aadhar Number</mat-label>
-                            <input matInput placeholder="Aadhar Number" type="text" formControlName="aadhar_no">
                           </mat-form-field>
                         </div>
                         <div class="col-lg-4 col-sm-6 col-12">
@@ -186,7 +158,7 @@
               </div>
               <div class="text-xs-center">
                 <div class="g-recaptcha">
-                  <!-- <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha> -->
+                  <re-captcha (resolved)="resolved($event)" siteKey="{{SITE_KEY}}"></re-captcha>
                 </div>
               </div>
               <h1 class="col-12"><br> </h1>

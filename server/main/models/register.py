@@ -43,7 +43,7 @@ class WorkshopRegistrationManager(models.Manager):
 class WorkshopRegistration(models.Model):
     college_name = models.CharField(max_length=130, null=False)
     team_name = models.CharField(max_length=50, null=False)
-    ref_code = models.CharField(max_length=20, default="no", null=True)
+    ref_code = models.CharField(max_length=20, default="no", null=True, blank=True)
     enroll_date = models.DateField(default=timezone.now, editable=False, null=True)
     is_team_local = models.BooleanField(default=True)
     enroll_status = models.BooleanField(default=False)
