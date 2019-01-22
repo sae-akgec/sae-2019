@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParticlesModule } from 'angular-particle';
+// Recpatcha
+import { RecaptchaModule } from 'ng-recaptcha';
 
 import { MainComponent } from './main.component';
 
@@ -61,7 +63,7 @@ import { MainService } from './main.service';
   imports: [
     CommonModule, MainRoutingModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule,
      MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, HttpClientModule,
-     RouterModule, FormsModule, ReactiveFormsModule, ParticlesModule,
+     RouterModule, FormsModule, ReactiveFormsModule, ParticlesModule, RecaptchaModule,
   ],
   providers: [LandingService, MainService]
 })

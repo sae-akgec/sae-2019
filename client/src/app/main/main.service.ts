@@ -53,10 +53,10 @@ export class MainService {
     return this.http.get<any>(this.domain + '/api/blogs/latest', {headers: headers})
   }
   
-//   regsiter(body:any): Observable<any>{
-//     const headers = new HttpHeaders({
-//       'Content-Type': 'application/json; charset=utf-8'
-//     });
-//     return this.http.post(this.domain + '/api/registrations/', body, {headers: headers})
-//   }
+  regsiter(body:any): Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8'
+    });
+    return this.http.post(this.domain + '/api/workshop/register/', body, {headers: headers})
+  }
 }
