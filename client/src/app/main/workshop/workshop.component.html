@@ -1,36 +1,22 @@
 <div *ngIf="workshop" id="workshop">
   <!-- Header  goes here -->
-  <header id="header" [ngStyle]="{'background-image': 'url('+workshop.background_url+')'}">
-    <div class="text-center">
-      <h1 [ngStyle]="{'color': workshop.theme_color}">{{workshop.name}}</h1>
-      <h4>Registration</h4>
-      <p *ngIf="workshop.reg_status">{{workshop.reg_start_date}} to {{workshop.reg_end_date}}</p>
-      <p *ngIf="!workshop.reg_status">Registration are closed!!</p>
-      <div><a [routerLink]="['register']">
-          <button (mouseover)="hover = true" (mouseout)="hover = false" [ngStyle]="hover
-                      ?{
-                          'border': '1px solid ' + workshop.theme_color,
-                          'background':workshop.theme_color,
-                          'color':'#fff',
-                          'transition':'all .3s'
-                      }
-                      :{
-                          'border': '1px solid ' + workshop.theme_color,
-                          'background': 'transparent',
-                          'color': workshop.theme_color,
-                          'transition':'all .3s'
-                      }"
-            [disabled]="!workshop.reg_status">Enroll Now</button>
-        </a> </div>
+  <header>
+    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+    <div class="cont_modal container">
+        <div class=" row align-self-center">
+          <div class="col">
+            <div class="ellipses-inner">
+              <img src="{{workshop.logo_url}}">
+              <h2 class="greeting text-center">{{workshop.name}}</h2>
+              <p class="text-center">{{workshop.reg_start_date}} to {{workshop.reg_end_date}}</p>
+              <div class="register-button text-center"><a [routerLink]="['register']">
+                  <button [disabled]="!workshop.reg_status">Register Now</button>
+                </a> </div>
+            </div>
+          </div>
+        </div>
     </div>
   </header>
-
-  <!-- Logo goes here -->
-  <article id="logo">
-    <div>
-      <img src="{{workshop.logo_url}}" class="mx-auto d-block " [ngStyle]="{'border': '2px solid ' + workshop.theme_color}">
-    </div>
-  </article>
 
   <!-- Descriptions with date block goes here -->
   <article id="description">
@@ -128,8 +114,7 @@
   </article>
 
   <!-- Plans section Goes here -->
-  <article id="plans" [ngStyle]="{'background-image': 'linear-gradient(to bottom right,#fff,'+workshop.theme_color+'21)'}"
-    >
+  <article id="plans" [ngStyle]="{'background-image': 'linear-gradient(to bottom right,#fff,'+workshop.theme_color+'21)'}">
     <div *ngIf="workshop.plans">
       <h3 class="text-center">
         <span [ngStyle]="{
@@ -174,14 +159,15 @@
                       'background': 'transparent',
                       'color': workshop.theme_color,
                       'transition':'all .3s'
-                  }" [disabled]="!workshop.reg_status">Enroll
+                  }"
+            [disabled]="!workshop.reg_status">Enroll
             Now</button></a>
       </div>
     </div>
   </article>
 
   <!-- Faqs section Goes here -->
-  <article id="faqs" >
+  <article id="faqs">
     <div *ngIf="workshop.faqs">
       <h3 class="text-center">
         <span [ngStyle]="{
