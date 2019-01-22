@@ -39,12 +39,13 @@ class WorkshopRegistrationSerializer(serializers.ModelSerializer):
         plan = validated_data.get("plan")
         dict_plan = model_to_dict( plan )
         participants = validated_data.get("participants")
+        fee_amount =  dict_plan.get("price")
 
         if not participants or len(participants) == 0:
             raise serializers.ValidationError("No Paticpants provided.")
         if len(participants) != dict_plan['team_limit']:
             raise serializers.ValidationError("Verify Number of Paticpants")
 
-        WorkshopRegistration.objects.do_registration(registration_data, participants, True)
+        WorkshopRegistration.objects.do_registration(registration_data, participants, fee_amount, True)
         
         return validated_data

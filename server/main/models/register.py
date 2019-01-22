@@ -17,7 +17,7 @@ upi_address = [
 ]
 class WorkshopRegistrationManager(models.Manager):
     @transaction.atomic
-    def do_registration(self, data, participants, send_email=True):
+    def do_registration(self, data, participants, fee_amount, send_email=True):
         """
         Create a new registration and its associated ``WorkshopParticipant``.
         Also, send mail to faculty.
@@ -32,11 +32,11 @@ class WorkshopRegistrationManager(models.Manager):
             WorkshopParticipant.objects.create_participant(data=participant, send_email=False)
 
         if send_email:
-            self.send_email(data, data.get('leader_email'), data.get('team_name'))
+            self.send_email(data, data.get('leader_email'), data.get('team_name'), fee_amount)
 
         return m
 
-    def send_email(self, data, email, team_name):
+    def send_email(self, data, email, team_name, fee_amount):
         """
         Sends an verification email to particpant.
         """
@@ -44,7 +44,8 @@ class WorkshopRegistrationManager(models.Manager):
 
         mail_message = render_to_string('acc_active_email.html', {
                 'upi_address': upi_address[randint(0, 4)],
-                'team_name': team_name
+                'team_name': team_name,
+                'fee_amount': fee_amount
             })
 
         msg = EmailMultiAlternatives(subject, "", settings.DEFAULT_FROM_EMAIL, [email])
