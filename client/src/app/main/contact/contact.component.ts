@@ -18,10 +18,9 @@ export class ContactComponent implements OnInit {
       'position': 'absolute',
       'width': '100%',
       'height': '100vh',
-      'z-index': 100,
       'top': 0,
       'left': 0,
-      'background':'transparent'
+      'background': 'linear-gradient(to right, #2C5364, #203A43, #0F2027)'
     };
 
     this.myParams = {
