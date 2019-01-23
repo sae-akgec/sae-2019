@@ -6,8 +6,8 @@ class Workshop(models.Model):
     name = models.CharField(max_length=200, unique=True, null=False)
     venue = models.CharField(max_length=50, null=False)
     slug = models.CharField(max_length=20, unique=True, null=False)
-    logo_url = models.ImageField(null=True, upload_to = 'images/workshops/')
-    background_url = models.ImageField(null=True, upload_to = 'images/workshops/')
+    logo_url = models.CharField(max_length=200, null=False, default="https://")
+    background_url = models.CharField(max_length=200, null=False, default="https://")
     description = models.TextField(null=False)
     short_description = models.CharField(max_length=400, null=False)
     reg_start_date = models.DateField(null=True)
@@ -29,7 +29,7 @@ class WorkshopProject(models.Model):
     tech = models.CharField(max_length=200, unique=True, null=False)
     details = models.TextField(null=False)
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name='projects')
-    img = models.ImageField(null=True, upload_to = 'images/workshops/projects/')
+    img = models.CharField(max_length=200, null=False, default="https://")
     video_link = models.CharField(max_length=200, null=False, default="https://")
 
     def __str__(self):

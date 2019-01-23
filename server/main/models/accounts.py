@@ -166,7 +166,7 @@ class UserProfile(base_models.TimeStampedModel, Verification):
     verification_key = models.CharField(
         max_length=40
     )
-    image = models.ImageField(null=True, upload_to = 'images/members/')
+    image = models.CharField(max_length=200, null=False, default="https://")
     university_roll = models.CharField(max_length=15, null=True)
     std_no = models.CharField(max_length=15, null=True)
     branch = models.CharField(max_length=50, null=True)

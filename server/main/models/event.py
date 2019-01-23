@@ -14,8 +14,8 @@ class Event(models.Model):
     description = models.TextField(null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=60, default="Comming Soon..", null=True, blank=True)
-    logo_url = models.ImageField(null=True, blank=True, upload_to = 'images/events/')
-    background_url = models.ImageField(null=True, blank=True, upload_to = 'images/events/')
+    logo_url = models.CharField(max_length=200, null=False, default="https://")
+    background_url =models.CharField(max_length=200, null=False, default="https://")
     offical_link = models.CharField(max_length=200, null=True, blank=True, default="https://")
     color_class = models.CharField(max_length=10, null=False, choices=COLOR_CHOICES, default='color-yellow')
     video_link = models.CharField(max_length=200, null=True, blank=True, default="https://")
@@ -28,7 +28,7 @@ class EventTimeline(models.Model):
     venue = models.CharField(max_length=50, null=False)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='timeline')
     achievement = models.CharField(max_length=200, null=False)
-    image = models.ImageField(null=True, blank=True, upload_to = 'images/events/')
+    image = models.CharField(max_length=200, null=False, default="https://")
 
     def __str__(self):
         return str(self.event) + str(self.date)

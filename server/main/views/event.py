@@ -9,7 +9,6 @@ from ..serializers.event import EventSerializer, EventTeamSerializer, EventTimli
 class EventView(ModelViewSet):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
-    parser_classes = [MultiPartParser, FormParser, JSONParser]
     lookup_field = 'slug'
 
     def get_serializer_class(self):

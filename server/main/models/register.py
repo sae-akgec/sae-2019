@@ -62,10 +62,11 @@ class WorkshopRegistration(models.Model):
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE)
     plan = models.ForeignKey(WorkshopPlan, on_delete=models.CASCADE)
     leader_email = models.EmailField(null=False)
+    payment_by = models.CharField(max_length=50, null=True, blank=True, default="Not Yet")
 
     objects = WorkshopRegistrationManager()
     def __str__(self):
-        return str(self.team_name + " - " + self.workshop)
+        return str(self.team_name) + " - " + str(self.workshop)
 
 class WorkshopParticipantManager(models.Manager):
     @transaction.atomic
