@@ -8,7 +8,7 @@
             <div class="ellipses-inner">
               <img src="{{workshop.logo_url}}">
               <h2 class="greeting text-center">{{workshop.name}}</h2>
-              <p class="text-center">{{workshop.reg_start_date}} to {{workshop.reg_end_date}}</p>
+              <p class="text-center">{{workshop.start_date}} to {{workshop.end_date}}</p>
               <div class="register-button text-center"><a [routerLink]="['register']">
                   <button [disabled]="!workshop.reg_status">Register Now</button>
                 </a> </div>
@@ -132,7 +132,7 @@
             <div class="plan-details text-center">
               <h6 [ngStyle]="{'color': workshop.theme_color}">
                 <i class="fa fa-inr fa-2x"></i>
-                <span> {{plan.price / plan.team_limit}}</span>
+                <span> {{plan.price / plan.team_limit}}₹</span>
               </h6>
               <h5 class="text-muted">{{plan.title}}</h5>
               <hr [ngStyle]="{

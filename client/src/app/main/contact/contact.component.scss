@@ -1,190 +1,115 @@
-.cont_modal {
-    width:100%;
-    min-height: 100vh;
-    padding: 30px;
-    z-index: 90000;
-}
-.container__item {
-    margin: 0 auto 40px;
-}
-
-$tiber: #fff;
-$elephant: #fff;
-$white: #fff;
-
-.landing-page-container {
-    width: 100%;
-    min-height: 100%;
-    background-image: url('https://s29.postimg.org/vho8xb2pj/landing_bg.jpg');
+.main-container{
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
-    color: $tiber;
-}
-
-.content__wrapper {
-    max-width: 1200px;
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
-
-.ellipses-container {
-    width: 50rem;
-    height: 50rem;
-    border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    top: 1rem;
-
-    .ellipses-inner{
-        padding-top: 5rem;
-        padding-left: 3rem;
-        img{
-            display: block;
-            width: 200px;
-            height: 200px;
-            margin: 50px auto;
-            opacity: 1;
-        }
-
-        p{
-            position: relative;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            font-weight: 400;
-            opacity: 0.7;
-        }
-        button{
-            margin-top: 20px;
-            border: 2px solid #fff;
-            padding: 15px 50px;
-            background: transparent;
-            color: #fff;
-            font-size: 1.5rem;
-            border-radius: 40px;
-            moz-transition: all .4s ease-in-out;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-            z-index: 10000;
-            &:hover{
-                color: transparent;
-                background: #fff;
-                moz-transition: all .4s ease-in-out;
-                -o-transition: all .4s ease-in-out;
-                -webkit-transition: all .4s ease-in-out;
-                transition: all .4s ease-in-out;
-            }
-        }
-        h2{
-        position: relative;
-        margin: 0 auto;
-        margin-bottom: 40px;
-        text-transform: uppercase;
-        letter-spacing: 1rem;
-        font-size: 3rem;
-        font-weight: 400;
-        opacity: 0.7;
-
-        &:after{
-            content: '';
-            width: 0.3rem;
-            height: 0.3rem;
-            border-radius: 50%;
-            display: inline-block;
-            background-color: $elephant;
-            position: relative;
-            top: -0.65rem;
-            left: -5.05rem;
-            }
-       }
-    }
-
-}
-
-.ellipses {
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    border-style: solid;
-}
-
-.ellipses__outer--thin {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .register-page-row{
+    box-shadow: 0px 5px 20px -7px #000;
+    border-radius: 10px;
+    background: #fff;
+  }
+  mat-form-field{
     width: 100%;
-    height: 100%;
-    border-width: 1px;
-    border-color: rgba(9, 56, 62, 0.1);
-    animation: ellipsesOrbit 15s ease-in-out infinite;
-
-
-    &:after {
-      content: "";
-      background-image: url('http://www.campingquai.it/wp-content/uploads/2017/01/ellipses_dial.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      opacity: 0.15;
-    }
-}
-
-.ellipses__outer--thick {
-    width: 99.5%;
-    height: 99.5%;
-    border-color: $tiber transparent;
-    border-width: 2px;
-    transform: rotate(-45deg);
-    animation: ellipsesRotate 15s ease-in-out infinite;
-}
-
-.ellipses__orbit {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-width: 2px;
-    border-color: $tiber;
-    top: 5rem;
-    right: 6.75rem;
-
-    &:before {
-        content: '';
-        width: 0.7rem;
-        height: 0.7rem;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: $tiber;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-    }
-}
-
-@keyframes ellipsesRotate {
-    0% {
-        transform: rotate(-45deg);
-    }
-
-    100% {
-        transform: rotate(-405deg);
-    }
-}
-
-@keyframes ellipsesOrbit {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
+  }
+  .title-section {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .title-section h3{
+    display: inline-block;
+    font-size: 32px;
+    color: #070202;
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 1px solid #00e576;
+    border-bottom: 1px solid #00e576;
+    line-height: 70px;
+    position: relative;
+  }
+  .title-section h3::after{
+    content: "";
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    background: #00e576;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+  }
+  .title-section h3::before{
+    content: "";
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    background: #00e576;
+    top: -5px;
+    left: 0;
+    right: 0;
+  }
+  
+  .title-section h3 span{
+    color: #00e576;
+  }
+  
+  mat-vertical-stepper{
+    padding: 0px;
+  }
+  
+  .mat-horizontal-content-container {
+    padding: 0 10px 10px 10px;
+  }
+  
+  .mat-vertical-stepper-header{
+    padding:1px !important;
+  }
+  .mat-vertical-content-container{
+    margin-left: 13px !important;
+  }
+  
+  .text-xs-center {
+    width: 100%;
+  }
+  .g-recaptcha{
+    width: 310px;
+    margin: auto;
+  }
+  re-captcha div{
+    margin: auto;
+  }
+  
+  #verifyEmailAlert {
+    background-color: #fff;
+    margin: auto;
+    max-width: 330px;
+  }
+  
+  #verifyEmailAlert .verify-alert-icon {
+    padding: 20px;
+    color: #f0ad4e!important;
+    font-size: 70px;
+    transition: all 1s ease-in;
+    -webkit-text-stroke: 20px #fff;
+  }
+  
+  #verifyEmailAlert .verify-alert-message {
+    color: #4CAF50;
+    font-size: 16px;
+    -webkit-transition: all 1 ease-in 1;
+    -moz-transition: all 1 ease-in 1;
+    transition: all 1 ease-in 1;
+    padding-bottom: 30px;
+  }
+  

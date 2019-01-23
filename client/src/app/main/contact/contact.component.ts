@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule, FormArray } from "@angular/forms";
+import { MainService } from "../main.service";
 import { ASSETS } from 'src/app/shared/assets';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -8,98 +11,58 @@ import { ASSETS } from 'src/app/shared/assets';
 })
 export class ContactComponent implements OnInit {
 
-  myStyle: object = {};
-  myParams: object = {};
-  width: number = 100;
-  height: number = 100;
-  INNOVACION = ASSETS + "/17443.svg";
-  ngOnInit() {
-    this.myStyle = {
-      'position': 'absolute',
-      'width': '100%',
-      'height': '100vh',
-      'top': 0,
-      'left': 0,
-      'background': 'linear-gradient(to right, #2C5364, #203A43, #0F2027)'
-    };
+  LOADER_IMAGE = ASSETS + "/Loader.svg"
+  REGISTRATION_BG_IMG = ASSETS + "/event-list-bg.svg"
+  contactForm: FormGroup
+  form_progress = false;
+  form_success = false;
+  form_error = false;
+  form_success_message = "Message send successfully"
+  form_error_message = "Please check your information correctly and try again"
+  form_show = true;
 
-    this.myParams = {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#ffffff"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-            "nb_sides": 5
-          },
-          "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 6,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        
-      },
-      "retina_detect": true
-    }
+  constructor(private fb: FormBuilder, private _mainService: MainService, private activeRoute: ActivatedRoute) {
+    let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
+    this.contactForm = fb.group({
+      'full_name' : [null, Validators.compose([Validators.required, Validators.minLength(4)])],
+      'email':[null, Validators.compose([Validators.required, Validators.pattern (emailFormat)])],
+      'phone_number': [null, Validators.compose([Validators.required, Validators.minLength(10)])],
+      'subject': [null, Validators.compose([Validators.required])],
+      'description': [null, Validators.compose([Validators.required])],
+    })
   }
 
+  ngOnInit() {
+  }
+
+  submitForm() {
+    if (this.contactForm.valid) {
+      this.form_progress = true;
+      this.form_show = false;
+      this.form_error = false;
+      let values = Object.assign({}, this.contactForm.value);
+      console.log(values)
+      this._mainService.contactUs(values).subscribe(
+        (success) => {
+          this.form_progress = false;
+          this.form_success = true;
+          setTimeout(() => {
+            this.contactForm.reset();
+            this.form_success = false;
+            this.form_show = true;
+          }, 5000);
+
+        }, (err) => {
+          console.log(err);
+          this.form_error = true;
+          this.form_progress = false;
+          this.form_show = true;
+          this.form_error_message = "Please check your information correctly and try again";
+        }
+      )
+    } else {
+      this.form_error = true;
+      this.form_error_message = "Don't try to hack you idiot, Tum se na ho paya";
+    }
+  }
 }
-
-
-
