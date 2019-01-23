@@ -11,7 +11,7 @@ MySpecialAdmin = lambda model: type('SubClass'+model.__name__, (admin.ModelAdmin
 from .models.accounts import UserProfile
 from .models.workshop import Workshop, WorkshopFaqs, WorkshopPlan, WorkshopOrganiser, WorkshopProject
 from .models.event import Event, EventTeam, EventTimeline
-
+from .models.register import WorkshopRegistration, WorkshopParticipant
 
 admin.site.register(Workshop)
 admin.site.register(WorkshopProject)
@@ -21,6 +21,8 @@ admin.site.register(WorkshopOrganiser)
 admin.site.register(WorkshopPlan)
 admin.site.register(WorkshopFaqs)
 admin.site.register(EventTeam)
+admin.site.register(WorkshopRegistration)
+admin.site.register(WorkshopParticipant)
 
 
 @admin.register(UserProfile)

@@ -43,7 +43,7 @@ class WorkshopRegistrationManager(models.Manager):
         subject = "Innovacion'19 Registration Mail"
 
         mail_message = render_to_string('acc_active_email.html', {
-                'upi_address': upi_address[randint(0, 4)],
+                'upi_address': upi_address[randint(0, 3)],
                 'team_name': team_name,
                 'fee_amount': fee_amount
             })
