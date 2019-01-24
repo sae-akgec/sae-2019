@@ -29,14 +29,14 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   form_show = true;
   slug:any;
   workshop:any;
-  is_team_local: boolean = true;
+  is_team_local: boolean = false;
 
   constructor(private fb: FormBuilder, private _mainService: MainService, private activeRoute: ActivatedRoute) {
     let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
 
     let numberFormat = '^[0-9]*$';
     this.registerForm = fb.group({
-      'college_name': ['Ajay Kumar Garg Engineering College', Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(3)])],
+      'college_name': [null, Validators.compose([Validators.required, Validators.maxLength(130), Validators.minLength(3)])],
       'team_name': [null, Validators.compose([Validators.required, Validators.maxLength(30), Validators.minLength(3)])],
       'ref_code': [null],
       'is_team_local': [true, Validators.compose([Validators.required])],

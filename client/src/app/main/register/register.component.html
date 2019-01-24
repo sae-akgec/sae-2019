@@ -4,6 +4,9 @@
       <div class="title-section">
         <h3>Regis<span>tr</span>ation</h3>
       </div>
+      <div>
+        <p>Registartion are closed for Akgec Students</p>
+      </div>
       <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_show">
         <mat-horizontal-stepper #stepper linear labelPosition="bottom">
           <mat-step [stepControl]="registerForm">
@@ -13,7 +16,6 @@
                 <mat-form-field appearance="standard">
                   <mat-label>Are You From Akgec</mat-label>
                   <mat-select formControlName="is_team_local">
-                    <mat-option [value]="true">Yes</mat-option>
                     <mat-option [value]="false">No</mat-option>
                   </mat-select>
                 </mat-form-field>
