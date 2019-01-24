@@ -16,13 +16,13 @@ from .models.register import WorkshopRegistration, WorkshopParticipant
 admin.site.register(Workshop)
 admin.site.register(WorkshopProject)
 admin.site.register(Event)
-admin.site.register(EventTimeline)
+admin.site.register(EventTimeline, MySpecialAdmin(EventTimeline))
 admin.site.register(WorkshopOrganiser)
-admin.site.register(WorkshopPlan)
+admin.site.register(WorkshopPlan, MySpecialAdmin(WorkshopPlan))
 admin.site.register(WorkshopFaqs)
-admin.site.register(EventTeam)
-admin.site.register(WorkshopRegistration)
-admin.site.register(WorkshopParticipant)
+admin.site.register(EventTeam, MySpecialAdmin(EventTeam))
+admin.site.register(WorkshopRegistration, MySpecialAdmin(WorkshopRegistration))
+admin.site.register(WorkshopParticipant, MySpecialAdmin(WorkshopParticipant))
 
 
 @admin.register(UserProfile)
