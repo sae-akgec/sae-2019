@@ -49,3 +49,14 @@ class WorkshopRegistrationSerializer(serializers.ModelSerializer):
         WorkshopRegistration.objects.do_registration(registration_data, participants, fee_amount, True)
         
         return validated_data
+
+class WorkshopParticipantRegistartionSerializer(serializers.ModelSerializer):
+    college_name = serializers.CharField(source='registration.college_name', read_only=True)
+    ref_code = serializers.CharField(source='registration.ref_code', read_only=True)
+    team_name = serializers.CharField(source='registration.team_name', read_only=True)
+    enroll_date = serializers.CharField(source='registration.enroll_date', read_only=True)
+    max_members = serializers.IntegerField(source='registration.plan.price', read_only=True)
+
+    class Meta:
+        model = WorkshopParticipant
+        exclude = ["registration"]
