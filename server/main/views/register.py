@@ -4,8 +4,8 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthentic
 from ..base.permissions import IsOwnerOrAdmin, IsSuperUser, IsOwnerOrStaff
 from django_filters.rest_framework import DjangoFilterBackend
 
-from ..models.register import WorkshopRegistration, WorkshopParticipant
-from ..serializers.register import WorkshopRegistrationSerializer, WorkshopParticipantSerializer, WorkshopParticipantRegistartionSerializer
+from ..models.register import WorkshopRegistration, WorkshopParticipant, AacarRegistration
+from ..serializers.register import WorkshopRegistrationSerializer, WorkshopParticipantSerializer, WorkshopParticipantRegistartionSerializer, AacarRegistrationSerializer
 
 class WorkshopRegistrationView(ModelViewSet):
     queryset = WorkshopRegistration.objects.all()
@@ -34,5 +34,17 @@ class WorkshopParticipantView(ModelViewSet):
             return WorkshopParticipantRegistartionSerializer
         return super(WorkshopParticipantView, self).get_serializer_class()
 
+class AacarRegistrationView(ModelViewSet):
+    queryset = AacarRegistration.objects.all()
+    serializer_class = AacarRegistrationSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('enroll_status', 'gender', 'enroll_date', 'branch')
 
-        
+    def get_permissions(self):
+        # Your logic should be all here
+        if self.action in ('list', 'update', 'partial_update', 'destroy', 'retrieve'):
+            self.permission_classes = [IsSuperUser, IsAdminUser, ]
+        else:
+            self.permission_classes = [AllowAny, ]
+
+        return super(AacarRegistrationView, self).get_permissions()

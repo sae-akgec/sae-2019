@@ -10,6 +10,7 @@ import { WorkshopComponent } from './workshop/workshop.component';
 import { EventComponent } from './event/event.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
+import { AacarComponent } from './aacar/aacar.component';
 
 const routes: Routes = [
     {path:'', component:MainComponent, children:[
@@ -21,7 +22,7 @@ const routes: Routes = [
       {path: 'team', component:TeamComponent},
       {path: 'workshops/:id', component:WorkshopComponent},
       {path: 'events/:id', component:EventComponent},
-      {path:'workshops/:id/register', component:RegisterComponent},
+      {path:'workshops/:id/register', component:AacarComponent},
       {path:'contactus', component:ContactComponent}
     ]}
 ];

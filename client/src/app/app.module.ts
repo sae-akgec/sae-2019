@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 
 import { MainModule } from "./main/main.module";
 import { SharedModule } from "./shared/shared.module";
@@ -17,8 +16,6 @@ import { SharedModule } from "./shared/shared.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // NbThemeModule.forRoot({ name: 'corporate' }),
-    // NbLayoutModule,
     MainModule, 
     SharedModule
   ],

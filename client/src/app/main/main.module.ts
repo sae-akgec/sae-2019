@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { EventComponent } from './event/event.component';
 import { TeamComponent } from './team/team.component';
 import { WorkshopComponent } from './workshop/workshop.component';
+import { AacarComponent } from "./aacar/aacar.component";
 
 import { LandingComponent } from './landing/landing.component';
 import { LandingHeaderComponent } from './landing/landing-header/landing-header.component';
@@ -59,7 +60,9 @@ import { MainService } from './main.service';
     LandingWorkshopsComponent,
     LandingBlogsComponent,
     LandingContactComponent,
-    LandingAboutComponent],
+    LandingAboutComponent, 
+    AacarComponent
+  ],
   imports: [
     CommonModule, MainRoutingModule, MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule,
      MatSelectModule, MatOptionModule, MatFormFieldModule, MatStepperModule, MatCardModule, HttpClientModule,

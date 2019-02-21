@@ -60,6 +60,13 @@ export class MainService {
     return this.http.post(this.domain + '/api/workshop/register/', body, {headers: headers})
   }
 
+  aacar(body:any): Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8'
+    });
+    return this.http.post(this.domain + '/api/workshop/aacar/', body, {headers: headers})
+  }
+
   contactUs(body:any): Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8'

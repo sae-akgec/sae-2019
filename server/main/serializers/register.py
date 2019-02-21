@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.register import WorkshopParticipant, WorkshopRegistration
+from ..models.register import WorkshopParticipant, WorkshopRegistration, AacarRegistration
 from django.forms.models import model_to_dict
 from rest_framework_recaptcha.fields import ReCaptchaField
 from random import randint
@@ -15,7 +15,7 @@ class WorkshopParticipantSerializer(serializers.ModelSerializer):
         exclude = ["registration"]
 
 class WorkshopRegistrationSerializer(serializers.ModelSerializer):
-    participants = WorkshopParticipantSerializer(many=True)
+    participants = WorkshopParticipantSerializer(many=True, write_only=True)
     recaptcha = ReCaptchaField(error_messages={
             "invalid-input-response": "reCAPTCHA token is invalid.",
             "idiot": "Don't try to hack (tum se na ho paayga",
@@ -60,3 +60,30 @@ class WorkshopParticipantRegistartionSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkshopParticipant
         exclude = ["registration"]
+
+class AacarRegistrationSerializer(serializers.ModelSerializer):
+    recaptcha = ReCaptchaField(error_messages={
+            "invalid-input-response": "reCAPTCHA token is invalid.",
+            "idiot": "Don't try to hack (tum se na ho paayga",
+        })
+    class Meta:
+        model = AacarRegistration
+        fields = '__all__'
+    
+    def create(self, validated_data):
+
+        registration_data = {
+            'name': validated_data.get("name"),
+            'university_roll': validated_data.get("university_roll"),
+            'branch': validated_data.get("branch"),
+            'year': validated_data.get("year"),
+            'gender': validated_data.get("gender"),
+            'phn_no': validated_data.get("phn_no"),
+            'email': validated_data.get("email"),
+            'payment_by': "Not Yet", 
+            'amount': 0,
+            'enroll_status': False
+            }
+        AacarRegistration.objects.do_registration(registration_data, True)
+        
+        return validated_data

@@ -10,7 +10,7 @@ from .views.accounts import (UserEmailVerificationAPIView, UserProfileAPIView, U
 
 from .views.event import EventView, EventTeamView, EventTimelineView
 from .views.workshop import WorkshopFaqsView, WorkshopOrganiserView, WorkshopPlanView, WorkshopProjectView, WorkshopView, ContactUsAPIView
-from .views.register import WorkshopRegistrationView, WorkshopParticipantView
+from .views.register import WorkshopRegistrationView, WorkshopParticipantView, AacarRegistrationView
 
 event_router = routers.DefaultRouter()
 event_router.register(r'', EventView)
@@ -42,6 +42,9 @@ workshop_registration_router.register(r'', WorkshopRegistrationView)
 workshop_participant_router = routers.DefaultRouter()
 workshop_participant_router.register(r'', WorkshopParticipantView)
 
+aacar_router = routers.DefaultRouter()
+aacar_router.register(r'', AacarRegistrationView)
+
 urlpatterns = [
    url(r'^docs/', include_docs_urls(title="api-doc", public=True, permission_classes=[])),
    url(r'^auth/login/', UserLoginView.as_view(), name='login'),
@@ -63,4 +66,5 @@ urlpatterns = [
    url(r'^workshop/faqs/', include(workshop_faqs_router.urls), name='workshop_faqs'),
    url(r'^workshop/register/', include(workshop_registration_router.urls), name='workshop_registration'),
    url(r'^workshop/participants/', include(workshop_participant_router.urls), name='workshop_participant'),
+   url(r'^workshop/aacar/', include(aacar_router.urls), name='acar_participant'),
 ]
