@@ -54,16 +54,26 @@
             </div>
             <div class="col-sm-6 col-12">
               <div class="form-group">
-                <input class="form-control" formControlName="branch" id="name" type="text"
-                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Branch'"
-                  placeholder='Enter your Branch'>
+                <select class="form-control" formControlName="branch" >
+                  <option [value]="null">----Select Branch ---</option>
+                  <option [value]="'civil'">Civil Engineering</option>
+                  <option [value]="'cse'">Computer Science </option>
+                  <option [value]="'ece'">Electronics and Communication</option>
+                  <option [value]="'eee'">Electrical and Electronics</option>
+                  <option [value]="'ite'">Information Technology</option>
+                  <option [value]="'mechanical'">Mechanical Engineering</option>
+                  <option [value]="'eie'">Electronics and Instrumentation</option>
+                </select>
               </div>
             </div>
             <div class="col-sm-6 col-12">
               <div class="form-group">
-                <input class="form-control" formControlName="domain" id="name" type="text"
-                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your domain'"
-                  placeholder='Enter your domain'>
+                  <select class="form-control" formControlName="domain" >
+                    <option [value]="null">----Select Domain ---</option>
+                    <option [value]="'Innovation'">Innovation</option>
+                    <option [value]="'Mechanical'">Mechanical</option>
+                    <option [value]="'Designer'">Designer</option>
+                  </select>
               </div>
             </div>
             <div class="col-12">
