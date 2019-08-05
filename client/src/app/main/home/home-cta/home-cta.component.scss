@@ -1,0 +1,65 @@
+/************** cta part css ****************/
+@import "variables";
+@import "mixins";
+@import "button";
+@import "common";
+
+.cta_part{
+    background-image: url(/assets/cta_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    h2{
+        font-size: 45px;
+        color: $color-white;
+        margin-bottom: 30px;
+        
+        @media #{$tab}{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        @media #{$small_mobile}{
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        @media #{$medium_device}{
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+    }
+    p{
+        color: $color-white;
+        font-size: 18px;
+        margin-bottom: 50px;
+        @media #{$tab}{
+            margin-bottom: 20px;
+        }
+        @media #{$small_mobile}{
+            margin-bottom: 15px;
+        }
+        @media #{$medium_device}{
+            margin-bottom: 30px;
+        }
+    }
+    
+    .banner_btn_1{
+        color: $color-primary;
+        border: 0px solid transparent;
+        margin-right: 28px;
+        &:hover{
+            background-color: $color-secondary !important;
+            color: $color-white;
+        }
+    } 
+    .banner_btn_2{
+        color: $color-white;
+        border: 1px solid $color-white;
+        background-color: transparent;
+        
+        &:hover{
+            background-color: $color-secondary !important;
+            color: $color-white;
+            border: 1px solid transparent;
+        }
+    }
+}

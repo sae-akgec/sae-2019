@@ -1,0 +1,115 @@
+/**************** banner part css start ****************/
+@import "variables";
+@import "mixins";
+@import "button";
+@import "common";
+
+.banner_part{
+  position: relative;
+  overflow: hidden;
+  background-image: url(/assets/banner_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .banner_text{
+      display: table;
+      width: 100%;
+      height: 1020px;
+      .banner_text_iner{
+          display: table-cell;
+          vertical-align: middle;
+
+          p {
+              font-size: 1.5rem;
+              font-weight:300;
+          }
+      }
+      @media #{$tab}{
+         height: 650px;
+      }
+      @media #{$medium_device}{
+          height: 650px;
+      }
+      h5{
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
+          color: #556172;
+          margin-bottom: 14px;
+      }
+      h1{
+          font-size: 55px;
+          text-transform: capitalize;
+          font-weight: 700;
+          margin-bottom: 55px;
+          line-height: 1.18;
+          color: $color-white;
+          @media #{$small_mobile}{
+              font-size: 25px;
+              margin-bottom: 15px;
+              line-height: 1.3;
+          }
+          @media #{$large_mobile}{
+              font-size: 30px;
+              margin-bottom: 15px;
+              line-height: 1.3;
+          }
+          @media #{$tab_device}{
+              font-size: 40px;
+              margin-bottom: 15px;
+              line-height: 1.3;
+          }
+          @media #{$medium_device}{
+              font-size: 40px;
+              margin-bottom: 15px;
+              line-height: 1.4;
+          }
+          span{
+              color: $color-primary;
+          }
+      }
+      p{
+          font-size: 15px;
+          line-height: 1.8;
+          font-family: $color-secondary; 
+          color: $color-white;
+          margin-bottom: 57px;
+          padding-right: 140px;
+          @media #{$tab}{
+              padding-right: 0;
+              margin-bottom: 10px;
+           }
+           @media #{$medium_device}{
+              padding-right: 0;
+           }
+      }
+      .banner_btn_1{
+          color: $color-primary;
+          border: 0px solid transparent;
+          margin-right: 28px;
+          &:hover{
+              background-color: $color-secondary !important;
+              color: $color-white;
+          }
+      } 
+      .banner_btn_2{
+          color: $color-white;
+          border: 1px solid $color-white;
+          background-color: transparent;
+          
+          &:hover{
+              background-color: $color-secondary !important;
+              color: $color-white;
+              border: 1px solid transparent;
+          }
+      }
+  }
+
+  .banner_img{
+      img{
+          border-radius: 100%;
+      }
+  }
+}
+
+/**************** hero part css end ****************/

@@ -1,115 +1,222 @@
-.main-container{
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 10%;
-    padding-bottom: 10%;
+@import "variables";
+@import "mixins";
+@import "button";
+@import "common";
+
+.breadcrumb_bg {
+	@include background("/assets/breadcrumb.png");
+}
+
+.breadcrumb {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+
+	.breadcrumb_iner {
+		height: 475px;
+		width: 100%;
+		display: table;
+
+		.breadcrumb_iner_item {
+			display: table-cell;
+			vertical-align: middle;
+
+			h2 {
+				color: $color-white;
+				font-size: 100px;
+				font-weight: 500;
+				margin-bottom: 10px;
+				text-transform: capitalize;
+				@media #{$small_mobile} {
+					font-size: 35px;
+				}
+
+				@media #{$large_mobile} {
+					font-size: 35px;
+				}
+
+				@media #{$tab_device} {
+					font-size: 40px;
+				}
+
+				@media #{$medium_device} {
+					font-size: 50px;
+				}
+			}
+
+			p {
+				font-size: 15px;
+				color: $color-white;
+			}
+
+			span {
+				margin: 0px 5px;
+				font-size: 12px;
+			}
+
+		}
+	}
+
+}
+
+.contact-info{
+    margin-bottom: 25px;
+  
+    &__icon{
+      margin-right: 20px;
+  
+      i,span{
+        color: #8f9195;
+        font-size: 27px;
+      }
+    }
+  
+    .media-body{
+  
+      h3{
+        font-size: 16px;
+        margin-bottom: 0;
+        font-size: 16px;
+        color: #2a2a2a;
+        a{
+          &:hover{
+            color: $color-primary;
+          }
+        }
+      }
+  
+      p{
+        color: #8a8a8a;
+      }
+    }
   }
-  .register-page-row{
-    box-shadow: 0px 5px 20px -7px #000;
-    border-radius: 10px;
-    background: #fff;
-  }
-  mat-form-field{
-    width: 100%;
-  }
-  .title-section {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
+  
+  /*=================== contact banner end ====================*/
+  
+  
+  /*=================== contact form start ====================*/
+  .contact-title{
+    font-size: 27px;
+    font-weight: 600;
     margin-bottom: 20px;
-    text-align: center;
-  }
-  .title-section h3{
-    display: inline-block;
-    font-size: 32px;
-    color: #070202;
-    font-weight: 500;
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 5px 0;
-    text-align: center;
-    text-transform: uppercase;
-    border-top: 1px solid #00e576;
-    border-bottom: 1px solid #00e576;
-    line-height: 70px;
-    position: relative;
-  }
-  .title-section h3::after{
-    content: "";
-    height: 9px;
-    width: 9px;
-    position: absolute;
-    display: block;
-    margin: 0 auto;
-    background: #00e576;
-    bottom: -5px;
-    left: 0;
-    right: 0;
-  }
-  .title-section h3::before{
-    content: "";
-    height: 9px;
-    width: 9px;
-    position: absolute;
-    display: block;
-    margin: 0 auto;
-    background: #00e576;
-    top: -5px;
-    left: 0;
-    right: 0;
   }
   
-  .title-section h3 span{
-    color: #00e576;
+  .form-contact{
+  
+    label{
+      font-size: 14px;
+    }
+    .form-group{
+      margin-bottom: 30px;
+      .button-contactForm{
+        padding: 5px 5px 5px 20px;
+      }
+      .btn_1{
+        margin-bottom: -30px;
+        border: 1px solid $color-primary;
+        border-radius: 0;
+        color: $color-primary;
+        background: $color-white;
+        display: flex;
+        align-items: center;
+        @media #{$tab}{
+          margin-bottom: 20px;
+        }
+        i{
+          color: $color-primary;
+          width: 50px;
+          height: 50px;
+          display: inline-block;
+          line-height: 50px;
+          margin-left: 5px;
+          background-size: 200% auto;
+          @include transform_time(0.5s);
+        }
+        &:hover{
+          border: 1px solid $color-primary;
+          background: $color-primary !important;
+          color: $color-white;
+          i{
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  
+    .form-control{
+      border: 1px solid #f0e9ff;
+      border-radius: 5px;
+      height: 48px;
+      padding-left: 18px;
+      font-size: 13px;
+      background: transparent;
+  
+      &:focus{
+        border: 1px solid $color-primary;
+        outline: 0;
+        box-shadow: none;
+      }
+  
+      &::placeholder{
+        font-weight: 300;
+        color: #999999;
+      }
+    }
+  
+    textarea{
+      border-radius: 12px;
+      height: 100% !important;
+    }
+  
+    // button{
+    //   border: 0;
+    // }
   }
   
-  mat-vertical-stepper{
-    padding: 0px;
+  @media #{$small_mobile}{
+    .contact-section{
+      .btn_1 {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+      }
+    }
   }
+  @media #{$large_mobile}{
+    .contact-section{
+      .btn_1 {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+      }
+    }
+  }
+  @media #{$tab_device}{
+    .contact-section{
+      .btn_1 {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+      }
+    }
+  }
+  @media #{$medium_device}{
+    .contact-section{
+      .btn_1 {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+      }
+    }
+  }
+  /*=================== contact form end ====================*/
   
-  .mat-horizontal-content-container {
-    padding: 0 10px 10px 10px;
-  }
+  /* Contact Success and error Area css
+  ============================================================================================ */
   
-  .mat-vertical-stepper-header{
-    padding:1px !important;
-  }
-  .mat-vertical-content-container{
-    margin-left: 13px !important;
-  }
   
-  .text-xs-center {
-    width: 100%;
-  }
-  .g-recaptcha{
-    width: 310px;
-    margin: auto;
-  }
-  re-captcha div{
-    margin: auto;
-  }
-  
-  #verifyEmailAlert {
-    background-color: #fff;
-    margin: auto;
-    max-width: 330px;
-  }
-  
-  #verifyEmailAlert .verify-alert-icon {
-    padding: 20px;
-    color: #f0ad4e!important;
-    font-size: 70px;
-    transition: all 1s ease-in;
-    -webkit-text-stroke: 20px #fff;
-  }
-  
-  #verifyEmailAlert .verify-alert-message {
-    color: #4CAF50;
-    font-size: 16px;
-    -webkit-transition: all 1 ease-in 1;
-    -moz-transition: all 1 ease-in 1;
-    transition: all 1 ease-in 1;
-    padding-bottom: 30px;
-  }
-  
+  @media #{$tab}{
+    .contact-section{
+      .contact_form{
+        .btn_1{
+          margin-bottom: 60px !important;
+        }
+      }
+    }
+} 

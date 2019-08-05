@@ -1,64 +1,118 @@
-<div class="fluid-container main-container" [ngStyle]="{'background-image':'url(' + REGISTRATION_BG_IMG + ')'}">
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
   <div class="container">
-    <div class="row align-items-center register-page-row">
-      <div class="title-section">
-        <h3>CONTACT US</h3>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb_iner text-center">
+          <div class="breadcrumb_iner_item">
+            <h2>contact</h2>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_show">
-        <form class="row" [formGroup]="contactForm" (ngSubmit)="submitForm()">
-          <div class="col-lg-12 col-sm-12">
-            <mat-form-field appearance="standard">
-              <mat-label>Full Name</mat-label>
-              <input matInput placeholder="Full Name" type="text" formControlName="full_name">
-            </mat-form-field>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb start-->
+
+<!-- ================ contact section start ================= -->
+<section class="contact-section section_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="contact-title">Get in Touch</h2>
+      </div>
+      <div class="col-lg-8">
+        <form class="form-contact contact_form" [formGroup]="contactForm" (ngSubmit)="submitContact()" id="contactForm"
+          novalidate="novalidate">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <textarea class="form-control w-100" formControlName="description" id="message" cols="30" rows="9"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                  placeholder='Enter Message'></textarea>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="name" id="name" type="text" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="phone" id="name" type="text"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number'"
+                  placeholder='Enter your phone number'>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="email" id="email" type="email"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                  placeholder='Enter email address'>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <input class="form-control" formControlName="subject" id="subject" type="text"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+                  placeholder='Enter Subject'>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <mat-form-field appearance="standard">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Email" type="text" formControlName="email">
-            </mat-form-field>
-          </div>
-          <div class="col-lg-6 col-sm-12">
-            <mat-form-field appearance="standard">
-              <mat-label>Phone Number</mat-label>
-              <input matInput placeholder="Phone Number" type="text" formControlName="phone_number">
-            </mat-form-field>
-          </div>
-          <div class="col-12">
-            <mat-form-field appearance="standard">
-              <mat-label>Subject</mat-label>
-              <input matInput placeholder="Subject" type="text" formControlName="subject">
-            </mat-form-field>
-          </div>
-          <div class="col-12">
-            <mat-form-field appearance="standard">
-              <mat-label>Description</mat-label>
-              <textarea matInput placeholder="Description" formControlName="description"></textarea>
-            </mat-form-field>
-          </div>
-          <div class="col-12 text-center">
-            <button type="submit" [disabled]="!contactForm.valid" class="btn btn-outline-secondary">Submit</button>
-            <br>
-            <br>
+          <div class="form-group mt-3">
+            <button type="submit" class="button btn button-contactForm btn_1" [disabled]="!contactForm.valid && submissionButton">Send
+              Message <i class="fas fa-angle-double-right"></i></button>
           </div>
         </form>
       </div>
-      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_progress">
-        <div class="text-center">
-          <img src="{{LOADER_IMAGE}}" />
-          <h3> Please Wait</h3>
-          <div><br><br></div>
+      <div class="col-lg-4">
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-home"></i></span>
+          <div class="media-body">
+            <h3>Address</h3>
+            <p>  27th KM Milestone, Delhi - Meerut Expy,<br> Ghaziabad, Uttar Pradesh 201009, India</p>
+          </div>
+        </div>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+          <div class="media-body">
+            <h3>+91 9560779366</h3>
+            <p>Mon to fri 9am to 6pm</p>
+          </div>
+        </div>
+        <div class="media contact-info">
+          <span class="contact-info__icon"><i class="ti-email"></i></span>
+          <div class="media-body">
+            <h3></h3>
+            <p>Send us your query anytime!</p>
+          </div>
         </div>
       </div>
-      <div class="col-lg-10 col-sm-12 mx-auto" *ngIf="form_success">
-        <div id="verifyEmailAlert">
-          <div class="verify-alert-icon" id="verifyEmailAlertIcon">
-            <i class="fa fa-check fa-2x"></i>
-          </div>
-          <div class="verify-alert-message" id="verifyEmailAlertMsg">
-            <p>{{form_success_message}}</p>
-          </div>
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary invisible" data-toggle="modal" id="contactButton" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Form Submission</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your request has been recorded successfully!!!!!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

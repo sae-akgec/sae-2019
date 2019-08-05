@@ -1,8 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule, FormArray } from "@angular/forms";
-import { MainService } from "../main.service";
-import { ASSETS } from 'src/app/shared/assets';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule } from "@angular/forms";
+import { MainService } from '../main.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,58 +9,38 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  LOADER_IMAGE = ASSETS + "/Loader.svg"
-  REGISTRATION_BG_IMG = ASSETS + "/event-list-bg.svg"
-  contactForm: FormGroup
-  form_progress = false;
-  form_success = false;
-  form_error = false;
-  form_success_message = "Message send successfully"
-  form_error_message = "Please check your information correctly and try again"
-  form_show = true;
+  contactForm: FormGroup;
+  button:any;
+  submissionButton = true;
 
-  constructor(private fb: FormBuilder, private _mainService: MainService, private activeRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private _mainService:MainService) {
     let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
     this.contactForm = fb.group({
-      'full_name' : [null, Validators.compose([Validators.required, Validators.minLength(4)])],
-      'email':[null, Validators.compose([Validators.required, Validators.pattern (emailFormat)])],
-      'phone_number': [null, Validators.compose([Validators.required, Validators.minLength(10)])],
-      'subject': [null, Validators.compose([Validators.required])],
-      'description': [null, Validators.compose([Validators.required])],
-    })
+      'name': [null, Validators.compose([Validators.required, Validators.maxLength(100), Validators.minLength(3)])],
+      'phone': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10)])],
+      'email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])],
+      'subject': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
+      'description': [null, Validators.compose([Validators.required])]
+    });
   }
 
   ngOnInit() {
+    this.button = document.getElementById("contactButton");
   }
 
-  submitForm() {
-    if (this.contactForm.valid) {
-      this.form_progress = true;
-      this.form_show = false;
-      this.form_error = false;
-      let values = Object.assign({}, this.contactForm.value);
-      console.log(values)
-      this._mainService.contactUs(values).subscribe(
-        (success) => {
-          this.form_progress = false;
-          this.form_success = true;
-          setTimeout(() => {
-            this.contactForm.reset();
-            this.form_success = false;
-            this.form_show = true;
-          }, 5000);
-
-        }, (err) => {
+  submitContact(){
+    if(this.contactForm.valid){
+      this.submissionButton = false;
+      this._mainService.createContact(this.contactForm.value).subscribe(
+        (msg) =>{
+          this.contactForm.reset();
+          this.button.click();
+          this.submissionButton = true;
+        }, (err) =>{
+          this.submissionButton = true;
           console.log(err);
-          this.form_error = true;
-          this.form_progress = false;
-          this.form_show = true;
-          this.form_error_message = "Please check your information correctly and try again";
-        }
-      )
-    } else {
-      this.form_error = true;
-      this.form_error_message = "Don't try to hack you idiot, Tum se na ho paya";
+        })
     }
   }
+
 }

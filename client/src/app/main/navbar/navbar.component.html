@@ -1,16 +1,33 @@
-<i id="burger" class="material-icons" (click)="navOpen()">menu</i>
-<aside id="navAside">
-    <div class="outer-close toggle-overlay">
-        <a class="close" (click)="navOpen()"><span></span></a>
+<nav class="navbar navbar-expand-md navbar-light fixed-top" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" routerLink="">SAE-AKGEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink fragment="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink fragment="feature">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink fragment="pricing">Workshops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/blogs">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <nav>
-        <ul>
-            <li><a routerLink="/" (click)="navOpen()">Home</a></li>
-            <li><a routerLink="/team" (click)="navOpen()">Team</a></li>
-            <li><a routerLink="/workshops/innovacion" (click)="navOpen()">Innovacion</a></li>
-            <li><a routerLink="/workshops/aacar" (click)="navOpen()">Acar</a></li>
-            <li><a routerLink="/blogs" (click)="navOpen()">Blogs</a></li>
-            <li><a routerLink="/conatactus" (click)="navOpen()">Contact Us</a></li>
-        </ul>
-    </nav>
-</aside>
+
+</nav>

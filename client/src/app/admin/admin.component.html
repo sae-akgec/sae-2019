@@ -1,0 +1,68 @@
+<!-- component html goes here
+<header class="header black-bg">
+    <div class="sidebar-toggle-box" (click)="hideAsideMenu(sidebar)">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <div class="row justify-content-between">
+        <a routerLink="../" class="logo"><b>Shopdot</b></a>
+        <div class="top-menu">
+            <ul class="nav top-menu">
+                <li><a class="logout" (click)="onLogout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<aside>
+    <div class="nav-collapse" tabindex="5000" id="sidebar" #sidebar>
+        <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered">
+                <a>
+                    <img class="img-cricle">
+                </a>
+            </p>
+            <h5 class="centered">Deepanshu Tyagi</h5>
+            <li class="mt">
+                <a routerLink="./" [ngClass]="{'active': status === 'dashboard'}" (click)="status='dashboard'">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a routerLink="./orders" [ngClass]="{'active': status === 'orders'}" (click)="status='orders'">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a routerLink="./orders" [ngClass]="{'active': status === 'orders'}" (click)="status='orders'">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Customers</span>
+                </a>
+            </li>
+            <li class="sub-menu parent-li">
+                <div (click)="expandSubMenu(blogMenu)">
+                    <a [ngClass]="{'active': status === 'blog'}" (click)="status='blog'">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Blog</span>
+                    </a>
+                </div>
+                <ul class="sub" #blogMenu>
+                    <li>
+                        <a [ngClass]="{'active': status2 === 'add'}" (click)="status2='add'" routerLink="./blog/new">Add
+                            Blog</a>
+                    </li>
+                    <li>
+                        <a [ngClass]="{'active': status2 === 'list'}" (click)="status2='list'"
+                            routerLink="./blog/listing">List Blogs</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>
+<article class="container-fluid" id="main-container">
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</article> -->

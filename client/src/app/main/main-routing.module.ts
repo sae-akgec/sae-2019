@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
-import { LandingComponent } from './landing/landing.component';
-import { BlogsComponent } from "./blogs/blogs.component";
-import { BlogListComponent } from './blogs/blog-list/blog-list.component';
-import { BlogDetailComponent } from './blogs/blog-detail/blog-detail.component';
-import { TeamComponent } from "./team/team.component";
-import { WorkshopComponent } from './workshop/workshop.component';
-import { EventComponent } from './event/event.component';
-import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { FaqsComponent } from './faqs/faqs.component';
 import { ContactComponent } from './contact/contact.component';
-import { AacarComponent } from './aacar/aacar.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
+import { BlogsComponent } from '../blogs/blogs.component';
+import { BlogsListComponent } from '../blogs/blogs-list/blogs-list.component';
+import { BlogsDetailComponent } from '../blogs/blogs-detail/blogs-detail.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
-    {path:'', component:MainComponent, children:[
-      {path:'', component:LandingComponent},
-      { path: 'blogs', component: BlogsComponent, children:[
-        {path: '', component:BlogListComponent},
-        {path: ':id', component:BlogDetailComponent}]
-      },
-      {path: 'team', component:TeamComponent},
-      {path: 'workshops/:id', component:WorkshopComponent},
-      {path: 'events/:id', component:EventComponent},
-      {path:'workshops/:id/register', component:AacarComponent},
-      {path:'contactus', component:ContactComponent}
+    {path:"", component:MainComponent, children:[
+        {path:"", component:HomeComponent},
+        {path:"registration", component:AboutComponent},
+        {path:"faqs", component:FaqsComponent},
+        {path:"contact", component:ContactComponent},
+        {path:"privacy", component: PrivacyComponent},
+        {path:"terms", component:TermsComponent},
+        {path:"team", component:BookingComponent},
+        {path: 'blogs', component:BlogsComponent, children: [
+          {path: '', component:BlogsListComponent},
+          {path: ":id", component:BlogsDetailComponent}
+        ]}
     ]}
 ];
 
