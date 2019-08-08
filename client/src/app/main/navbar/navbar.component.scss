@@ -1,0 +1,44 @@
+@import "variables";
+
+/**************menu part start*****************/
+
+.navbar-color{
+	background: $color-primary
+}
+
+nav {
+
+	.navbar-brand {
+		color: $color-white;
+		font-weight: bold;
+		font-size: 1.7rem;
+	}
+
+
+	.main-menu-item {
+		ul {
+			li .nav-link {
+				color: $color-white;
+				font-size: 16px;
+				padding: 15px 23px;
+				text-transform: capitalize;
+				line-height: 12px;
+				font-weight: 600;
+
+				&:hover {
+					color: $color-secondary-light;
+				}
+
+				@media #{$medium_device} {
+					padding: 35px 10px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767.98px) { 
+	nav{
+		background: $color-primary-dark
+	}
+ }

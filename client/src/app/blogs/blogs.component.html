@@ -1,0 +1,82 @@
+<!-- START TITLE SECTION -->
+<section class="section blog-title-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-contnet">
+          <br>
+          <br>
+          <br>
+          <h2>Blog</h2>
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Blog</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- START BLOG CONTAINER SECTION -->
+<section class="section blog-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-8">
+        <router-outlet></router-outlet>
+      </div><!-- END OF BLOG CONTENT -->
+      <div class="col-md-3 col-sm-4 sidebar">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="widget">
+              <div class="search">
+                <div class="input-group">
+                  <input type="text" class="form-control search-control" placeholder="Search for...">
+                </div><!-- /input-group -->
+              </div>
+            </div><!-- END OF WIDRGT -->
+            <div class="widget">
+              <h3 class="headline">CATEGORIES</h3>
+              <ul *ngIf="categories">
+                <li *ngFor="let cat of categories"><a routerLink="/blogs" [queryParams]="{category: cat._id}"><b>{{cat.title}}</b> <span>{{cat.count}}</span></a></li>
+              </ul>
+            </div><!-- END OF WIDRGT -->
+            <div class="widget">
+              <h3 class="headline">Recent Posts</h3>
+              <div class="recent-item">
+                <div class="recent-post" *ngFor="let post of posts">
+                  <img src="{{post.img_url}}" class="img-responsive"
+                    width="255" height="120" alt="">
+                  <a routerLink="/blogs/{{post.slug}}">
+                    <div class="recent-hover">
+                      <h5>{{post.title}}</h5>
+                      <p><i class="pe-7s-clock"></i>{{post.date}} <i class="pe-7s-user"></i> {{post.author_name}} </p>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div><!-- END OF WIDRGT -->
+            <div class="widget">
+              <h3 class="headline">ARCHIVES</h3>
+              <ul>
+                <li><a routerLink="/blogs" [queryParams]="{month: 9, year: 2019}"><b>September 2019</b> <span>00</span></a></li>
+                <li><a routerLink="/blogs" [queryParams]="{month: 8, year: 2019}"><b>AUGUST 2019</b> <span>00</span></a></li>
+                <li><a routerLink="/blogs" [queryParams]="{month: 7, year: 2019}"><b>JULY 2019</b> <span>02</span></a></li>
+                <li><a routerLink="/blogs" [queryParams]="{month: 6, year: 2019}"><b>JUNE 2019</b> <span>00</span></a></li>
+              </ul>
+            </div><!-- END OF WIDRGT -->
+            <div class="widget flicker">
+              <h3 class="headline">Instagram FEED</h3>
+              <div class="widget-items">
+                <a href="#"><img src="https://revolthemes.net/demo/klasik/html/images/blog/blog1.jpg"
+                    class="img-responsive" width="80" height="80" alt=""></a>
+
+              </div><!-- END OF /. WIDGET ITEM -->
+            </div><!-- END OF /. WIDGET -->
+          </div>
+        </div><!-- END OF SODEBAR -->
+      </div><!-- END OF /.COUMN -->
+    </div><!-- END OF /. ROW -->
+  </div><!-- END /. CONTAINER -->
+</section><!-- END OF /. BLOG CONTAINRE -->
