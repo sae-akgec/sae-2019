@@ -12,10 +12,23 @@
                     <a class="nav-link" routerLink fragment="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink fragment="feature">Events</a>
+                        <div class="dropdown">
+                    <a class="nav-link dropbtn" routerLink fragment="feature">Events</a>
+                    <div class="dropdown-content">
+                            <a routerLink="/supra">SUPRA</a>
+                            <a routerLink="/efficycle">EFFICYCLE</a>
+                            <a routerLink="/efficar">EFFICAR</a>
+                          </div>
+                        </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink fragment="pricing">Workshops</a>
+                        <div class="dropdown">
+                    <a class="nav-link  dropbtn" routerLink fragment="pricing">Workshops</a>
+                    <div class="dropdown-content">
+                            <a href="#">INNOVACION</a>
+                            <a href="#">ACAAR</a>
+                         </div>
+                        </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/team">Team</a>
