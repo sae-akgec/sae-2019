@@ -24,9 +24,10 @@ import { HomeFeaturesComponent } from './home/home-features/home-features.compon
 import { HomeMobileComponent } from './home/home-mobile/home-mobile.component';
 import { HomeCtaComponent } from './home/home-cta/home-cta.component';
 import { MainService } from './main.service';
+import { HomeTeamComponent } from './home/home-team/home-team.component';
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeMobileComponent, HomeCtaComponent],
+  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeMobileComponent, HomeCtaComponent, HomeTeamComponent],
   imports: [
     CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule,
   ],

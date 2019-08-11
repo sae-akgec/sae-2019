@@ -1,0 +1,44 @@
+$color_1: black;
+
+.portfolio {
+		z-index: 0;
+		align-content: center;
+	}
+	.portfolio-item {
+		margin: 0 0 30px;
+		right: 0;}
+		.portfolio-link {
+			display: block;
+			position: relative;
+			max-width: 225px;
+			margin: 0 auto;}
+			.portfolio-hover {
+                background: gray;
+                position: absolute;
+                width: 225px;
+                height: 100%;
+                opacity: 0;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                -moz-transition: all ease 0.5s;
+              }
+              .portfolio-hover:hover {
+                opacity: 0.8 ;
+              }
+				
+				.portfolio-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: $color_1;}
+					i {
+						margin-top: -12px;
+					}
+				
+			
+	
+
