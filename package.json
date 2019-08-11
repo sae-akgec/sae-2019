@@ -1,0 +1,29 @@
+{
+  "name": "shopdot",
+  "version": "0.0.1",
+  "description": "Shopdot temporary website",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm run install:client && npm run install:server",
+    "install:client": "(cd ./client && npm install)",
+    "install:server": "(cd ./server && npm install)",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "(cd ./client && npm run build:prod)",
+    "build:server": "(cd ./server && npm run build)",
+    "start": "npm run start:prod",
+    "start:prod": "(cd ./server && npm run start:prod)",
+    "start:dev": "npm run start:client & npm run start:server",
+    "start:client": "(cd ./client && npm run start)",
+    "start:server": "(cd ./server && npm run start:watch)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepanshut041/shopdot-temp.git"
+  },
+  "author": "Deepanshu Tyagi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deepanshut041/shopdot-temp/issues"
+  },
+  "homepage": "https://github.com/deepanshut041/shopdot-temp#readme"
+}

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="blog-item" *ngFor="let post of posts">
+        <div class="thumb">
+          <a routerLink="./{{post.slug}}"><img src="{{post.img_url}}" class="img-responsive"
+              width="825" height="383" alt=""></a>
+          <div class="blog-meta">
+            <h2>17</h2>
+            <span>August</span>
+            <p><b>Posted by</b> {{post.author_name}} , <b>In</b> {{post.category_name}}, <b>Comments</b> {{post.comment_count}}</p>
+          </div>
+          <div class="blog-contnet">
+            <h3>{{post.title}}</h3>
+            <p>{{post.short_description}}</p>
+            <a routerLink="./{{post.slug}}" class="pori-btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- END OF /. BLOG ITME -->
+  <div class="row">
+    <div class="col-md-12">
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="active"><a href="#">1</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div><!-- END OF/. PAGINATION -->
