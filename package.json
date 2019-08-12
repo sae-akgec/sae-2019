@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/deepanshut041/shopdot-temp/issues"
   },
-  "homepage": "https://github.com/deepanshut041/shopdot-temp#readme"
+  "homepage": "https://github.com/deepanshut041/shopdot-temp#readme",
+  "dependencies": {
+    "ngx-hm-carousel": "^1.7.2",
+    "ngx-owl-carousel-o": "^2.0.1"
+  }
 }

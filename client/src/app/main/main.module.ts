@@ -29,6 +29,7 @@ import { SupraComponent } from './supra/supra.component';
 import { EfficycleComponent } from './efficycle/efficycle.component';
 import { EfficarComponent } from './efficar/efficar.component';
 
+
 @NgModule({
   declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeMobileComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent],
   imports: [
