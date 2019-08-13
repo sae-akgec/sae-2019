@@ -4,7 +4,8 @@
 @import "common";
 
 .breadcrumb_bg {
-	@include background("/assets/breadcrumb.png");
+	@include background("/assets/effi.jpg");
+	background-size:cover;
 }
 
 .breadcrumb {
@@ -13,7 +14,7 @@
 	text-align: center;
 
 	.breadcrumb_iner {
-		height: 475px;
+		height: 200px;
 		width: 100%;
 		display: table;
 
@@ -58,6 +59,96 @@
 	}
 
 }
+.feature_part_text {
+	@media #{$small_mobile} {
+	  padding-left: 0;
+	}
+
+	@media #{$large_mobile} {
+	  padding-left: 0;
+	}
+	 
+	@media #{$tab_device} {
+	  padding-left: 0;
+	}
+
+	@media #{$medium_device} {
+	  padding-left: 0;
+	}
+
+	h2 {
+	  font-size: 45px;
+	  font-weight: 500;
+	  line-height: 1.1;
+	  margin-bottom: 21px;
+	  position: relative;
+	  text-transform: capitalize;
+	  @media #{$small_mobile} {
+		font-size: 25px;
+		margin-bottom: 10px;
+		line-height: 35px;
+		margin-top: 15px;
+	  }
+
+	  @media #{$large_mobile} {
+		font-size: 25px;
+		margin-bottom: 10px;
+		line-height: 35px;
+		margin-top: 20px;
+	  }
+
+	  @media #{$tab_device} {
+		font-size: 25px;
+		margin-bottom: 10px;
+		line-height: 35px;
+		margin-top: 20px;
+	  }
+
+	  @media #{$medium_device} {
+		font-size: 28px;
+		margin-bottom: 20px;
+		line-height: 40px;
+	  }
+	}
+	p{
+  margin-bottom: 46px;
+  font-weight: bold;    
+	
+	}
+	.feature_part_text_iner{
+	  border-radius: 50px;
+	  border-top-right-radius: 0;
+	  border: 1px solid #eeeeee;
+		   text-align: center;
+	  padding: 34px 27px 31px;
+	  @include transform_time(.5s);
+	  @media #{$tab}{
+		padding: 20px 15px 15px;
+		margin-bottom: 15px;
+	  }
+	  @media #{$medium_device}{
+	  
+	  }
+	  &:hover{
+		border: 1px solid $color-primary;
+	  }
+	  h4{
+		font-size: 40px;
+		font-weight: 700;
+		font-family: $color-primary;
+	  }
+	  p{
+		margin-bottom: 0;
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.667;
+	  }
+	}
+
+  }
+  
+
+
 
 .contact-info{
     margin-bottom: 25px;
@@ -90,3 +181,16 @@
       }
     }
   }
+  .zoom {
+	
+	width: 250px;
+	transition: transform .2s;
+	padding: 25px;
+	height: 200px;
+	margin: 0 auto;
+  }
+  
+  .zoom:hover {
+	-ms-transform: scale(1.5); /* IE 9 */
+	-webkit-transform: scale(1.5); /* Safari 3-8 */
+	transform: scale(1.6); }
