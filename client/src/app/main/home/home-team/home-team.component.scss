@@ -1,15 +1,20 @@
 $color_1: black;
 
+.scale {
+	width: 150px;
+	height: 150px;
+}
 .portfolio {
 		z-index: 0;
 		align-content: center;
+		padding-top: 50px
 	}
 	.portfolio-item {
-		margin: 0 0 30px;
+		margin: 0 0 20px;
 		right: 0;
-		width: 20%;
 		
 	}
+	    
 		.portfolio-link {
 			display: block;
 			position: relative;
@@ -18,7 +23,7 @@ $color_1: black;
 			.portfolio-hover {
                 background: gray;
                 position: absolute;
-                width: 225px;
+                width: 150px;
                 height: 100%;
                 opacity: 0;
                 transition: all ease 0.5s;
@@ -28,7 +33,7 @@ $color_1: black;
               .portfolio-hover:hover {
                 opacity: 0.8 ;
               }
-				
+								
 				.portfolio-hover-content {
 					position: absolute;
 					width: 100%;
@@ -41,6 +46,7 @@ $color_1: black;
 					i {
 						margin-top: -12px;
 					}
+					
 				
 			
 	
