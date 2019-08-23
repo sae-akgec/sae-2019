@@ -10,9 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
-
 import { BlogService } from "./blogs/blog.service";
-
 import { BlogsComponent } from './blogs/blogs.component';
 import { BlogsListComponent } from './blogs/blogs-list/blogs-list.component';
 import { BlogsDetailComponent } from './blogs/blogs-detail/blogs-detail.component';

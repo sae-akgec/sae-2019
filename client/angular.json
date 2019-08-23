@@ -36,7 +36,7 @@
                 "./src/stylings"
               ]
             },
-            "scripts": [],
+            "scripts": ["node_modules/particles.js/particles.js"],  
             "es5BrowserSupport": true
           },
           "configurations": {

@@ -21,7 +21,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { BookingComponent } from './booking/booking.component';
 import { HomeFeaturesComponent } from './home/home-features/home-features.component';
-import { HomeMobileComponent } from './home/home-mobile/home-mobile.component';
+
 import { HomeCtaComponent } from './home/home-cta/home-cta.component';
 import { MainService } from './main.service';
 import { HomeTeamComponent } from './home/home-team/home-team.component';
@@ -30,8 +30,10 @@ import { EfficycleComponent } from './efficycle/efficycle.component';
 import { EfficarComponent } from './efficar/efficar.component';
 
 
+
+
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeMobileComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent],
+  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent],
   imports: [
     CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule,
   ],

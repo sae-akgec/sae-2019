@@ -3,11 +3,14 @@
 @import "mixins";
 @import "button";
 @import "common";
-
+#particles-js {
+    height: 100vh;
+    position: relative;    
+  }
 .banner_part{
   position: relative;
   overflow: hidden;
-  background-image: url(/assets/banner_bg.png);
+  opacity: 0.9;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,6 +25,7 @@
           p {
               font-size: 1.5rem;
               font-weight:300;
+              color: black;
           }
       }
       @media #{$tab}{
@@ -43,7 +47,7 @@
           font-weight: 700;
           margin-bottom: 55px;
           line-height: 1.18;
-          color: $color-white;
+          color: $color-black;
           @media #{$small_mobile}{
               font-size: 25px;
               margin-bottom: 15px;
