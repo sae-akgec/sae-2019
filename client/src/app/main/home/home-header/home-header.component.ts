@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParticlesConfig } from './particles-config';
 
-declare let particlesJS: any; // Required to be properly interpreted by TypeScript.
 @Component({
   selector: 'main-home-header',
   templateUrl: './home-header.component.html',
@@ -17,16 +15,11 @@ export class HomeHeaderComponent implements OnInit {
    ];
    transform: number;
    selectedIndex = 0;
-   public ngOnInit(): void {
-    this.invokeParticles();
-  }
-
-  public invokeParticles(): void {
-    particlesJS('particles-js', ParticlesConfig, function() {});
-  }
 
   constructor() { }
 
+  ngOnInit() {
+  }
 
   selected(x) {
     this.downSelected(x);

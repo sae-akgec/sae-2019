@@ -7,7 +7,13 @@
 	right: 0;}
 .breadcrumb_bg {
 	@include background("/assets/main.jpg");
-	padding: 145px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10vw;
+  padding-bottom: 12vw;
+  -webkit-transform-origin: 50% 85%;
+  transform-origin: 50% 85%
 }
 
 .breadcrumb {
@@ -16,7 +22,7 @@
 	text-align: center;
 
 	.breadcrumb_iner {
-		height: 475px;
+		height: 400px;
 		width: 100%;
 		display: table;
 
@@ -32,7 +38,7 @@
 				text-transform: capitalize;
 				color: white;
 				@media #{$small_mobile} {
-					font-size: 35px;
+					font-size: 60px;
 				}
 
 				@media #{$large_mobile} {
@@ -40,7 +46,7 @@
 				}
 
 				@media #{$tab_device} {
-					font-size: 40px;
+					font-size: 100px;
 				}
 
 				@media #{$medium_device} {
