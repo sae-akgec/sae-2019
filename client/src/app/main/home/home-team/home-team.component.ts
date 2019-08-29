@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-team',
   templateUrl: './home-team.component.html',
-  styleUrls: ['./home-team.component.scss','./imagehover.css',
-               ]
+  styleUrls: ['./imagehover.scss']
 })
 export class HomeTeamComponent implements OnInit {
 
