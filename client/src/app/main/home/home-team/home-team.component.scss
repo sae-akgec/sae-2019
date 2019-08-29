@@ -1,0 +1,120 @@
+$color_1: black;
+.scale {
+	width: 150px;
+	height: 150px;
+	border-radius: 20px;
+}
+.portfolio {
+		z-index: 0;
+		align-content: center;
+		padding-top: 50px
+	}
+	.portfolio-item {
+		margin: 0 0 20px;
+		right: 0;
+		
+	}
+	
+	[class^='imghvr-'], [class*=' imghvr-'] {
+		position: relative;
+		display: inline-block;
+		margin: 0;
+		max-width: 100%;
+		background-color: #ffffff;
+		color: #fff;
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+	
+	[class^='imghvr-'] > img, [class*=' imghvr-'] > img {
+		vertical-align: top;
+		max-width: 100%;
+	}
+	
+	[class^='imghvr-'] figcaption, [class*=' imghvr-'] figcaption {
+		background-color: rgba(0, 0, 0, 0.836);
+		
+		padding: 30px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		color: #ffffff;
+	}
+	
+	[class^='imghvr-'] figcaption h1, [class^='imghvr-'] figcaption h2, [class^='imghvr-'] figcaption h3, [class^='imghvr-'] figcaption h4, [class^='imghvr-'] figcaption h5, [class^='imghvr-'] figcaption h6, [class*=' imghvr-'] figcaption h1, [class*=' imghvr-'] figcaption h2, [class*=' imghvr-'] figcaption h3, [class*=' imghvr-'] figcaption h4, [class*=' imghvr-'] figcaption h5, [class*=' imghvr-'] figcaption h6 {
+		color:white;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	[class^='imghvr-'] a, [class*=' imghvr-'] a {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	
+	[class^='imghvr-'], [class*=' imghvr-'], [class^='imghvr-']:before,
+	[class^='imghvr-']:after, [class*=' imghvr-']:before, [class*=' imghvr-']:after,
+	[class^='imghvr-'] *, [class*=' imghvr-'] *, [class^='imghvr-'] *:before,
+	[class^='imghvr-'] *:after, [class*=' imghvr-'] *:before, [class*=' imghvr-'] *:after {
+		box-sizing: border-box;
+		transition: all .35s ease;
+	}
+	
+	/* imghvr-fade-*
+	   ----------------------------- */
+	[class^='imghvr-fade'] figcaption, [class*=' imghvr-fade'] figcaption {
+		opacity: 0;
+	}
+	
+	[class^='imghvr-fade']:hover > img, [class*=' imghvr-fade']:hover > img {
+		opacity: 0;
+	}
+	
+	[class^='imghvr-fade']:hover figcaption, [class*=' imghvr-fade']:hover figcaption {
+		opacity: 1;
+	}
+	
+	[class^='imghvr-fade']:hover > img, [class^='imghvr-fade']:hover figcaption, [class*=' imghvr-fade']:hover > img, [class*=' imghvr-fade']:hover figcaption {
+		-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+	}
+	
+	
+	/* imghvr-zoom-out-flip-vert
+	   ----------------------------- */
+	.imghvr-zoom-out-flip-vert {
+		-webkit-perspective: 50em;
+				perspective: 50em;
+	}
+	
+	.imghvr-zoom-out-flip-vert figcaption {
+		opacity: 0;
+		-webkit-transform: rotateY(90deg) translate(50%, 0) scale(0.5);
+				transform: rotateY(90deg) translate(50%, 0) scale(0.5);
+	}
+	
+	.imghvr-zoom-out-flip-vert:hover > img, .imghvr-zoom-out-flip-vert.hover > img {
+		-webkit-transform: rotateY(-100deg) translateX(50%) scale(0.5);
+				transform: rotateY(-100deg) translateX(50%) scale(0.5);
+		opacity: 0;
+		transition-delay: 0;
+	}
+	
+	.imghvr-zoom-out-flip-vert:hover figcaption, .imghvr-zoom-out-flip-vert.hover figcaption {
+		-webkit-transform: rotateY(0) translate(0, 0) scale(1);
+				transform: rotateY(0) translate(0, 0) scale(1);
+		opacity: 1;
+		transition-delay: 0.35s;
+	}
+	
+	
