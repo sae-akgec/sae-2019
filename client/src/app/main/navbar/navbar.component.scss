@@ -3,7 +3,7 @@
 /**************menu part start*****************/
 
 .navbar-color{
-	background: rgba(0, 0, 0, 0.726)
+	background: hsla(207, 61%, 29%, 0.932);
 }
 
 nav {
@@ -39,7 +39,7 @@ nav {
 
 @media (max-width: 767.98px) { 
 	nav{
-		background: rgba(30, 79, 119, 0.952);
+		background: rgba(30, 79, 119, 0.938);
 	}
  }
  .dropbtn {
@@ -47,6 +47,7 @@ nav {
 	padding: 16px;
 	font-size: 16px;
 	border: none;
+	
   }
   
   /* The container <div> - needed to position the dropdown content */
@@ -62,7 +63,7 @@ nav {
 	background-color: white;
 	min-width: 160px;
 	border-radius: 15px;
-	border: 1px solid black;
+	
 	z-index: 1;
   }
   

@@ -13,14 +13,14 @@
     display: inline-block;
     margin: 0;
     max-width: 100%;
-    background-color: #2266a5;
+    background-color: #ffffff;
     color: #fff;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 [class^='imghvr-'] > img, [class*=' imghvr-'] > img {
@@ -29,7 +29,8 @@
 }
 
 [class^='imghvr-'] figcaption, [class*=' imghvr-'] figcaption {
-    background-color: #a5b2bedc;
+    background-color: rgba(0, 0, 0, 0.836);
+    
     padding: 30px;
     position: absolute;
     top: 0;

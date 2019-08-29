@@ -4,8 +4,18 @@
 @import "common";
 
 .breadcrumb_bg {
-	@include background("/assets/effi.jpg");
-	background-size:cover;
+	@include background("/assets/members/18.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 10vw;
+	padding-bottom: 12vw;
+	-webkit-transform-origin: 50% 85%;
+	transform-origin: 50% 85%;
+    
+	background-position: center;
+	
+	
+
 }
 
 .breadcrumb {
@@ -26,8 +36,10 @@
 				color: $color-white;
 				font-size: 100px;
 				font-weight: 500;
-				margin-bottom: 10px;
+				text-align: center;
 				text-transform: capitalize;
+				vertical-align: middle;
+
 				@media #{$small_mobile} {
 					font-size: 35px;
 				}
@@ -48,6 +60,7 @@
 			p {
 				font-size: 15px;
 				color: $color-white;
+				
 			}
 
 			span {
@@ -112,7 +125,8 @@
 	}
 	p{
   margin-bottom: 46px;
-  font-weight: bold;    
+  font-weight: bold;  
+  text-align: justify;  
 	
 	}
 	.feature_part_text_iner{
