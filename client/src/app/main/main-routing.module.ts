@@ -10,7 +10,11 @@ import { TermsComponent } from './terms/terms.component';
 import { BlogsComponent } from '../blogs/blogs.component';
 import { BlogsListComponent } from '../blogs/blogs-list/blogs-list.component';
 import { BlogsDetailComponent } from '../blogs/blogs-detail/blogs-detail.component';
-import { BookingComponent } from './booking/booking.component';
+import { SupraComponent } from './supra/supra.component';
+import { EfficarComponent } from './efficar/efficar.component';
+import { EfficycleComponent } from './efficycle/efficycle.component';
+import { HomeTutorialComponent } from './home/home-tutorial/home-tutorial.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
     {path:"", component:MainComponent, children:[
@@ -18,9 +22,12 @@ const routes: Routes = [
         {path:"registration", component:AboutComponent},
         {path:"faqs", component:FaqsComponent},
         {path:"contact", component:ContactComponent},
+        {path:"efficar",component:EfficarComponent},
+        {path:"efficycle",component:EfficycleComponent},
+        {path:"supra",component :SupraComponent},
         {path:"privacy", component: PrivacyComponent},
         {path:"terms", component:TermsComponent},
-        {path:"team", component:BookingComponent},
+      
         {path: 'blogs', component:BlogsComponent, children: [
           {path: '', component:BlogsListComponent},
           {path: ":id", component:BlogsDetailComponent}

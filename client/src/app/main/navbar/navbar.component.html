@@ -1,27 +1,45 @@
+
 <nav class="navbar navbar-expand-md navbar-light fixed-top" id="navbar">
     <div class="container">
         <a class="navbar-brand" routerLink="">SAE-AKGEC</a>
+        <nav class="navbar navbar-dark navbar-expand-md">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+              
+                 <span class="navbar-toggler-icon" ></span>
+                </button>
+            </nav>
+    
 
         <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav animate slideIn ">
                 <li class="nav-item">
                     <a class="nav-link" routerLink fragment="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink fragment="feature">Events</a>
+                        <div class="dropdown">
+                    <a class="nav-link " routerLink fragment="feature">Events</a>
+                    <div class="dropdown-content animate slideIn">
+                            <a routerLink="/supra">SUPRA</a>
+                            <a routerLink="/efficycle">EFFICYCLE</a>
+                            <a routerLink="/efficar">E-BIKE</a>
+                          </div>
+                        </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink fragment="pricing">Workshops</a>
+                        <div class="dropdown">
+                    <a class="nav-link  dropbtn" routerLink fragment="workshop">Workshops</a>
+                    <div class="dropdown-content animate slideIn">
+                            <a href="#">INNOVACION</a>
+                            <a href="#">ACAAR</a>
+                         </div>
+                        </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/team">Team</a>
+                    <a class="nav-link" routerLink fragment="team">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/blogs">Blog</a>
+                    <a class="nav-link" routerLink="/blogs">Alumni</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/contact">Contact</a>

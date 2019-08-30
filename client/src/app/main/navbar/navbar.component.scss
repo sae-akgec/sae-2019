@@ -3,7 +3,7 @@
 /**************menu part start*****************/
 
 .navbar-color{
-	background: $color-primary
+	background: hsla(207, 61%, 29%, 0.932);
 }
 
 nav {
@@ -39,6 +39,93 @@ nav {
 
 @media (max-width: 767.98px) { 
 	nav{
-		background: $color-primary-dark
+		background: rgba(30, 79, 119, 0.938);
 	}
  }
+ .dropbtn {
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160px;
+	border-radius: 15px;
+	
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color:black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-weight: bold;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;
+	border-radius: 10px;
+}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  @media (min-width: 992px) {
+	.animate {
+	  animation-duration: 0.3s;
+	  -webkit-animation-duration: 0.3s;
+	  animation-fill-mode: both;
+	  -webkit-animation-fill-mode: both;
+	}
+  }
+  
+  @keyframes slideIn {
+	0% {
+	  transform: translateY(1rem);
+	  opacity: 0;
+	}
+	100% {
+	  transform:translateY(0rem);
+	  opacity: 1;
+	}
+	0% {
+	  transform: translateY(1rem);
+	  opacity: 0;
+	}
+  }
+  
+  @-webkit-keyframes slideIn {
+	0% {
+	  -webkit-transform: transform;
+	  -webkit-opacity: 0;
+	}
+	100% {
+	  -webkit-transform: translateY(0);
+	  -webkit-opacity: 1;
+	}
+	0% {
+	  -webkit-transform: translateY(1rem);
+	  -webkit-opacity: 0;
+	}
+  }
+  
+  .slideIn {
+	-webkit-animation-name: slideIn;
+	animation-name: slideIn;
+  }
+
+  

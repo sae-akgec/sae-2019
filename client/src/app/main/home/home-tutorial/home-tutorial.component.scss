@@ -105,3 +105,28 @@
         }
     }
 }
+.zoom {
+	 transition: transform .2s;
+     padding: 20px;
+     margin: 0 auto;
+    }
+     .zoom:hover {
+      transform: scale(1.1);
+     }
+     
+     .zoom2 {
+         border-radius: 30px;
+         transition: transform .3s;
+          position: relative;
+          height: 200px;
+          width: 200px;
+          margin: 0 70px 40px;
+         }
+      
+      .zoom2:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1); }
+.text-inner {
+    padding: 50px
+}

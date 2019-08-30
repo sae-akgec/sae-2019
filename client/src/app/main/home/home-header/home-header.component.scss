@@ -7,21 +7,28 @@
 .banner_part{
   position: relative;
   overflow: hidden;
-  background-image: url(/assets/banner_bg.png);
+  opacity: 1;
+  background-image: url(/assets/king.jpg);
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  max-height: 100vh;
+  padding-bottom: 12vw;
+  -webkit-transform-origin: 50% 85%;
+  transform-origin: 50% 85%;
   .banner_text{
       display: table;
       width: 100%;
-      height: 1020px;
+      height: 800px;
       .banner_text_iner{
           display: table-cell;
           vertical-align: middle;
 
+
           p {
               font-size: 1.5rem;
               font-weight:300;
+              color: white;
           }
       }
       @media #{$tab}{
@@ -43,7 +50,7 @@
           font-weight: 700;
           margin-bottom: 55px;
           line-height: 1.18;
-          color: $color-white;
+          color:rgb(230, 230, 230);
           @media #{$small_mobile}{
               font-size: 25px;
               margin-bottom: 15px;
@@ -84,9 +91,25 @@
            }
       }
       .banner_btn_1{
-          color: $color-primary;
+         
           border: 0px solid transparent;
           margin-right: 28px;
+          background-image: -webkit-gradient(linear,left top,right top,from(#090930) ,to(#e9234d));
+          background-image: linear-gradient(to right,#090930 ,#e9234d);
+          padding: .4rem 2rem .3rem;
+          font-size: 1.2rem;
+          border: 1.5px solid #e9234d;
+          color: #fff;
+          border-radius: 20px;
+          -webkit-animation-name: pulse;
+          animation-name: pulse;
+          -webkit-animation-duration: .8s;
+          animation-duration: .8s;
+          -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+
           &:hover{
               background-color: $color-secondary !important;
               color: $color-white;
@@ -96,6 +119,23 @@
           color: $color-white;
           border: 1px solid $color-white;
           background-color: transparent;
+          border: 0px solid transparent;
+          margin-right: 28px;
+          background-image: -webkit-gradient(linear,left top,right top,from(#090930) ,to(#e9234d));
+          background-image: linear-gradient(to right,#090930 ,#e9234d);
+          padding: .4rem 2rem .3rem;
+          font-size: 1.2rem;
+          border: 1.5px solid #e9234d;
+          color: #fff;
+          border-radius: 20px;
+          -webkit-animation-name: pulse;
+          animation-name: pulse;
+          -webkit-animation-duration: .8s;
+          animation-duration: .8s;
+          -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
           
           &:hover{
               background-color: $color-secondary !important;
@@ -110,6 +150,43 @@
           border-radius: 100%;
       }
   }
+}
+@keyframes fadeInUp {
+    from { 
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+.fadeIn {
+opacity: 0;
+animation: fadeInUp 1s ease-in-out 0s forwards;
+  &.first {
+    animation-delay: 1s;
+  }
+  &.second {
+    animation-delay: 3s;
+  }
+  &.third {
+    animation-delay: 5s;
+  }
+  &.fourth {
+    animation-delay: 7s;
+  }
+  &.fifth {
+    animation-delay: 9s;
+  }
+  &.sixth {
+    animation-delay: 11s;
+  }
+ 
+
 }
 
 /**************** hero part css end ****************/
