@@ -25,10 +25,6 @@
   "bugs": {
     "url": "https://github.com/deepanshut041/shopdot-temp/issues"
   },
-  "homepage": "https://github.com/deepanshut041/shopdot-temp#readme",
-  "dependencies": {
-    "imagehover.css": "^2.0.0",
-    "ngx-hm-carousel": "^1.7.2",
-    "ngx-owl-carousel-o": "^2.0.1"
-  }
+  "homepage": "https://github.com/deepanshut041/shopdot-temp#readme"
+ 
 }
