@@ -1,0 +1,42 @@
+<ngx-hm-carousel [(ngModel)]="currentIndex" [show-num]="4" [autoplay-speed]="speed" [infinite]="infinite"
+    [drag-many]="true" [aniTime]="200" [data]="avatars" class="carousel c-accent">
+
+    <section ngx-hm-carousel-container class="content">
+        <article class="item cursor-pointer" ngx-hm-carousel-item *ngFor="let innocaion of innovacions; let i = index"
+            [ngClass]="{'visible': currentIndex===i}">
+            <div class="img" (click)="click(i)" [style.backgroundImage]="{{innocaion.images}}">
+                {{innocaion.images}}
+            </div>
+        </article>
+        <ng-template #infiniteContainer></ng-template>
+    </section>
+
+    <!-- only using in infinite mode or autoplay mode, that will render with-->
+    <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer" [ngClass]="{'visible': currentIndex===i}">
+            <div class="img" (click)="click(i)" [style.backgroundImage]="'url('+avatar.url+')'">
+                {{i}}
+            </div>
+        </article>
+    </ng-template>
+
+    <ng-template #carouselPrev>
+        <div class="click-area">
+            <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+    </ng-template>
+    <ng-template #carouselNext>
+        <div class="click-area">
+            <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+    </ng-template>
+
+    <ng-template #carouselDot let-model>
+        <div class="ball bg-accent" [class.visible]="model.index === model.currentIndex"></div>
+    </ng-template>
+
+    <ng-template #carouselProgress let-progress>
+        <div class="progress"></div>
+    </ng-template>
+
+</ngx-hm-carousel>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -28,14 +28,16 @@ import { HomeTeamComponent } from './home/home-team/home-team.component';
 import { SupraComponent } from './supra/supra.component';
 import { EfficycleComponent } from './efficycle/efficycle.component';
 import { EfficarComponent } from './efficar/efficar.component';
+import { InnovacionComponent } from './innovacion/innovacion.component';
+import { AacarComponent } from './aacar/aacar.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent],
+  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent, InnovacionComponent, AacarComponent],
   imports: [
-    CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule,
+    CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, NgxHmCarouselModule
   ],
   providers: [MainService]
 })
