@@ -1,32 +1,41 @@
-$transition_time:.2s;
+.aniT {
+  transition: all 1s linear;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out !important;
+}
 
 .carousel {
-  color:white;
   .content {
     display: flex;
-
     .item {
       width: 100%;
-      padding: .5em;
       display: block;
-      opacity: 0.5;
-
-      transition: opacity 0.295s linear $transition_time;
-
-      &.visible {
-        opacity: 1;
-      }
 
       .img {
         width: 100%;
-        height: 400px;
         display: block;
         background-size: cover;
         background-position: center;
+        height: 0;
+        padding-bottom: 50%;
       }
     }
+  }
 
+  .item {
+    width: 100%;
+    display: block;
 
+    .img {
+      width: 100%;
+      display: block;
+      background-size: cover;
+      background-position: center;
+      height: 0;
+      padding-bottom: 50%;
+    }
   }
 
   .ball {
@@ -40,6 +49,15 @@ $transition_time:.2s;
     &.visible {
       opacity: 1;
     }
+  }
+
+  .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #ff5252;
   }
 
   .click-area {
