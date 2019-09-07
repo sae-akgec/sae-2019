@@ -54,7 +54,7 @@ export class InnovacionComponent implements OnInit {
     },
     {
       id: '5',
-      images: '/assets/carousel/11.jpeg'
+      images: '/assets/carousel/10.jpeg'
     }
   ];
   videos: Videos[] = [

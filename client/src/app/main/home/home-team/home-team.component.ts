@@ -307,15 +307,24 @@ export class HomeTeamComponent implements OnInit {
       linkedInlink: ''
     },
 
-    // {
-    //   id: '35',
-    //   image: 'assets/compressjpeg/pp.jpg',
-    //   name: 'Alok Mishra',
-    //   branch: 'Mechanical',
-    //   facebooklink: 'https://www.facebook.com/alok.mishra.9484',
-    //   githublink: '',
-    //   linkedInlink: 'https://www.linkedin.com/in/alok-mishra-851260135'
-    // },
+    {
+      id: '35',
+      image: 'assets/compressjpeg/modes.jpeg',
+      name: 'Mohd. Modesseer',
+      branch: 'Mechanical',
+      facebooklink: 'https://www.facebook.com/mohd.modesseer',
+      githublink: '',
+      linkedInlink: ''
+    },
+    {
+      id: '36',
+      image: 'assets/compressjpeg/mahima.jpeg',
+      name: 'Mahima',
+      branch: 'Mechanical',
+      facebooklink: '',
+      githublink: '',
+      linkedInlink: ''
+    },
   ]
   constructor() { }
 
