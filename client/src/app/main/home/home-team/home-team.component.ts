@@ -287,15 +287,7 @@ export class HomeTeamComponent implements OnInit {
       githublink: '',
       linkedInlink: ''
     },
-    {
-      id: '31',
-      image: 'assets/compressjpeg/21.jpg',
-      name: 'Gautam Sahyogi',
-      branch: 'Mechanical',
-      facebooklink: 'https://www.facebook.com/gautam.sahyogi.5',
-      githublink: '',
-      linkedInlink: 'https://www.linkedin.com/in/gautam-sahyogi-528bb3176'
-    },
+
     {
       id: '32',
       image: 'assets/compressjpeg/13.jpg',
@@ -314,15 +306,7 @@ export class HomeTeamComponent implements OnInit {
       githublink: '',
       linkedInlink: ''
     },
-    {
-      id: '34',
-      image: 'assets/compressjpeg/17.jpg',
-      name: 'Gaurang',
-      branch: 'Mechanical',
-      facebooklink: 'https://www.facebook.com/gaurang.agrawal.77920',
-      githublink: '',
-      linkedInlink: 'https://www.linkedin.com/in/gaurang-agrawal-525799165'
-    },
+
     // {
     //   id: '35',
     //   image: 'assets/compressjpeg/pp.jpg',
