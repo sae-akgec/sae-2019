@@ -2,62 +2,35 @@
 @import "mixins";
 @import "button";
 @import "common";
-.breadcrumb_bg {
-	@include background("/assets/innovacion.jpg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 10vw;
-  padding-bottom: 12vw;
-  -webkit-transform-origin: 50% 85%;
-  transform-origin: 50% 85%;
-  max-height: 100vh;
-}
-
-.breadcrumb {
-	position: relative;
-	z-index: 1;
-	text-align: center;
-
-	.breadcrumb_iner {
-		height: 400px;
-		width: 100%;
+.breadcrumb_iner {
+    width: 100%;
 		display: table;
 
 		.breadcrumb_iner_item {
-			display: table-cell;
-			
-
-			h2 {
-				color: $color-white;
-				font-size: 100px;
+      display: table-cell;
+      padding-top: 100px;
+    
+    	h2 {
+        color: rgb(253, 250, 250);
+        font-size: 50px;
 				font-weight: 500;
 				margin-bottom: 10px;
 				text-transform: capitalize;
-				color: white;
-				@media #{$small_mobile} {
-          font-size: 60px;
+        @media #{$small_mobile} {
+          font-size: 30px;
           padding-top:120px;
-          
-				}
-
-				@media #{$large_mobile} {
+          }
+       	@media #{$large_mobile} {
           font-size: 35px;
-          
-         
-				}
-
-				@media #{$tab_device} {
+        	}
+        @media #{$tab_device} {
 					font-size: 100px;
 				}
-
-				@media #{$medium_device} {
-          font-size: 50px;
-         
-				}
+       @media #{$medium_device} {
+          font-size: 30px;
+          	}
 			}
-
-			p {
+       	p {
 				font-size: 15px;
 				color: $color-white;
 			}
@@ -66,132 +39,53 @@
 				margin: 0px 5px;
 				font-size: 12px;
 			}
-			
-
-		}
 	}
-
-}
-
-
-.single_feature{
-  margin: 0 11px;
-  @media #{$tab} {
-    margin: 0;
- }
-
- @media #{$medium_device} {
-  margin: 0;
- }
-  &:nth-child(2){
-    margin-top: 60px;  
-    @media #{$tab} {
-      margin-top: 30px;
-   }
-
-   @media #{$medium_device} {
-    margin-top: 30px;
-   }
-  }
-}
-.single_feature_part {
-  padding: 40px 25px 31px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0px 3px 81px 0px rgba(216, 216, 216, 0.45);
-  background-color: $color-white;
-  @include transform_time(.6s);
-  @media #{$tab} {
-     padding: 25px 15px;
-     margin-top: 25px;
-  }
-
-  @media #{$medium_device} {
-     margin-top: 25px;
-  }
-  
-  
-  img {
-     margin-bottom: 21px;
-     height: 65px;
-     @media #{$tab} {
-        margin-bottom: 21px;
-     }
-
-     @media #{$medium_device} {
-
-     }
-     i{
-        color: $color-primary-dark;
-        font-size: 24px;
-        @include transform_time(.6s);
-     }
-  }
-  h4 {
-     font-weight: 600;
-     font-size: 20px;
-     margin-bottom: 22px;
-     @media #{$small_mobile} {
-        margin-bottom: 15px;
-     }
-
-     @media #{$large_mobile} {
-        margin-bottom: 15px;
-     }
-
-     @media #{$tab_device} {
-        margin-bottom: 15px;
-     }
-
-     @media #{$medium_device} {
-
-     }
-  }
-
-  p {
-     
-     line-height: 1.8;
-     font-size: 15px;
-  }
-}
-
-.single_feature_padding{
-padding-top: 140px;
-@media #{$small_mobile}{
-  padding-top: 70px;
-}
-@media #{$large_mobile}{
-  padding-top: 70px;
-}
-@media #{$tab_device}{
-  padding-top: 70px;
-}
-@media #{$medium_device}{
-  padding-top: 70px;
-}
-}
-.aniT {
-  transition: all 1s linear;
-}
-
-.transition {
-  transition: all 0.3s ease-in-out !important;
-}
-
+	}
 .carousel {
+  @media #{$small_mobile} {
+   width: 100%;
+   height: 500px;
+    }
+   @media #{$large_mobile} {
+    width: 100%;
+   height: 500px;
+    }
+  @media #{$tab_device} {
+    width: 100%;
+   height: 500px;
+  }
+ @media #{$medium_device} {
+  width: 100%;
+  height: 500px;
+      }
+   
+ 
+  
   .content {
     display: flex;
+  @media #{$small_mobile}{
+        padding-top: 70px;
+      }
+      @media #{$large_mobile}{
+        padding-top: 70px;
+      }
+      @media #{$tab_device}{
+        padding-top: 70px;
+      }
+      @media #{$medium_device}{
+        padding-top: 70px;
+      }
+      
     .item {
       width: 100%;
+    
       display: block;
-
-      .img {
+     .img {
         width: 100%;
         display: block;
         background-size: cover;
         background-position: center;
-        height: 0;
-        padding-bottom: 50%;
+       padding-bottom: 50%;
       }
     }
   }
@@ -205,8 +99,7 @@ padding-top: 140px;
       display: block;
       background-size: cover;
       background-position: center;
-      height: 0;
-      padding-bottom: 50%;
+     padding-bottom: 50%;
     }
   }
 
@@ -221,6 +114,10 @@ padding-top: 140px;
     &.visible {
       opacity: 1;
     }
+  }
+  .images{
+    width: 200px;
+    height: 200px;
   }
 
   .progress {
@@ -278,3 +175,18 @@ animation: fadeInUp 1s ease-in-out 0s forwards;
 
 
 }
+.backdrop{
+
+  background-color:rgba(0,0,0,0.6);
+  
+  position:fixed;
+  
+  top:0;
+  
+  left:0;
+  
+  width:100%;
+  
+  height:100vh;
+  
+  }
