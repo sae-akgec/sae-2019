@@ -9,32 +9,32 @@ export class EfficycleComponent implements OnInit {
   efficycles: Efficycle[] = [
     {
       id: '0',
-      images: '/assets/images/14.jpg'
+      images: '/assets/images/14.jpeg'
 
     },
     {
       id: '1',
-      images: '/assets/images/15.jpg'
+      images: '/assets/images/15.jpeg'
 
     },
     {
       id: '2',
-      images: '/assets/images/16.jpg'
+      images: '/assets/images/19.jpeg'
 
     },
     {
       id: '3',
-      images: '/assets/images/17.jpg'
+      images: '/assets/images/17.jpeg'
 
     },
     {
       id: '4',
-      images: '/assets/images/18.jpg'
+      images: '/assets/images/18.jpeg'
 
     },
     {
       id: '5',
-      images: '/assets/images/19.jpg'
+      images: '/assets/images/19.jpeg'
 
     }
   ]
@@ -45,3 +45,11 @@ export class EfficycleComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+

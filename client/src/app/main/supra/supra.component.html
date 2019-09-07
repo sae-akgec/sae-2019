@@ -18,35 +18,47 @@
 
         <div class="feature_part_text">
           <img src="assets/1.jpg" style="width: 200px;margin: 0 60px 60px">
-          <p>SAEINDIA, the Indian chapter of the Society of Automotive Engineers has been organizing the event for
+          <p> SAEINDIA, the Indian chapter of the Society of Automotive Engineers has been organizing the event for
             its sixth consecutive year, which sees students from engineering colleges across the country battle it
             out against each other in their quest to apply their technical knowledge on the ground by
             conceptualizing and developing a formula racing car.
             SUPRA SAEINDIA comprise of a series of Static and Dynamic events spread over five days, concluding with
             a final Endurance run and a valedictory function.
+
           </p>
         </div>
-
 
       </div>
 
       <div class="col-lg-6">
-        <div class="feature_part_text">
-          <div class="row">
-
-            <div class=" col-sm-6 portfolio-item ">
-              <ul *ngFor="let supra of supras">
-                <li>
-                  <img src="{{supra.images}}" class="img-responsive zoom" alt="">
-                </li>
-              </ul>
+        <section class="portfolio">
+          <div class="container">
+            <div class="row">
+              <div class=" col-6 col-sm-6  portfolio-item" *ngFor="let supra of supras">
+                <div class="demo">
+                  <figure><img data-toggle="modal" data-target="#bootstrapModel" style="border-radius:20px"
+                      src="{{supra.images}}" alt="example-image">
+                  </figure>
+                </div>
+              </div>
             </div>
-
           </div>
-        </div>
+        </section>
       </div>
     </div>
-    <img src="assets/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-    <img src="assets/animate_icon/Shape-14.png" alt="" class="feature_icon_2">
-    <img src="assets/animate_icon/Shape.png" alt="" class="feature_icon_3">
-    <img src="assets/animate_icon/shape-3.png" alt="" class="feature_icon_4">
+
+  </div>
+</section>
+
+<div id="bootstrapModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>     
+       <div class="modal-body" *ngFor="let supra of supras">
+        <img style="border-radius:20px" src="{{supra.images}}" alt="example-image">
+      </div>
+    </div>
+  </div>
+</div>

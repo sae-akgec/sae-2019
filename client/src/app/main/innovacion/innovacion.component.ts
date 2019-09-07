@@ -21,12 +21,12 @@ export class InnovacionComponent implements OnInit {
     },
     {
       id: '2',
-      images: '/assets/carousel/1.jpg'
+      images: '/assets/carousel/2.jpg'
 
     },
     {
       id: '3',
-      images: '/assets/carousel/2.jpg'
+      images: '/assets/carousel/3.jpeg'
 
     },
 

@@ -29,7 +29,7 @@ export class EfficarComponent implements OnInit {
     },
     {
       id: '4',
-      images: '/assets/images/13.jpg'
+      images: '/assets/images/13.jpeg'
 
     },
     {

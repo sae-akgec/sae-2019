@@ -18,7 +18,7 @@
 				text-transform: capitalize;
         @media #{$small_mobile} {
           font-size: 30px;
-          padding-top:120px;
+          padding-top:70px;
           }
        	@media #{$large_mobile} {
           font-size: 35px;
@@ -63,18 +63,7 @@
   
   .content {
     display: flex;
-  @media #{$small_mobile}{
-        padding-top: 70px;
-      }
-      @media #{$large_mobile}{
-        padding-top: 70px;
-      }
-      @media #{$tab_device}{
-        padding-top: 70px;
-      }
-      @media #{$medium_device}{
-        padding-top: 70px;
-      }
+    
       
     .item {
       width: 100%;

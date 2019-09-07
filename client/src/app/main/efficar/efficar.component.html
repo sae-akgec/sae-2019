@@ -15,40 +15,52 @@
   <div class="container">
     <div class="row align-items-center justify-content-between">
       <div class="col-lg-6 ">
-        <div class="col-lg-6">
-          <div class="feature_part_text">
-            <img src="assets/icon/icon2.png">
-            <p>Imagine To Innovate Asia E-bike Challenge is
-              an eco-friendly venture based upon Engineering design and manufacturing
-              of electric bike completely by the students. The main aim of the event is
-              to generate the interest of the student in the field of eco-bikes, and to
-              bring a new revolution in the field of biking which can be commercialized
-              as a usable product for the future generation. Beside the comprehensive
-              knowledge of manufacturing and fabricating a single seated DC motor driven
-              vehicle to manoeuvre on all types of terrains.This helps to face real-world
-              engineering design projects and other related challenges.
-            </p>
-          </div>
 
+        <div class="feature_part_text">
+          <img src="assets/icon/icon2.png">
+          <p>Imagine To Innovate Asia E-bike Challenge is
+            an eco-friendly venture based upon Engineering design and manufacturing
+            of electric bike completely by the students. The main aim of the event is
+            to generate the interest of the student in the field of eco-bikes, and to
+            bring a new revolution in the field of biking which can be commercialized
+            as a usable product for the future generation. Beside the comprehensive
+            knowledge of manufacturing and fabricating a single seated DC motor driven
+            vehicle to manoeuvre on all types of terrains.This helps to face real-world
+            engineering design projects and other related challenges.
+          </p>
         </div>
+
       </div>
 
       <div class="col-lg-6">
-        <div class="feature_part_text">
-          <div class="row">
-            <div class="col-sm-6 portfolio-item ">
-              <ul *ngFor="let ebike of ebikes">
-                <li>
-                  <img src="{{ebike.images}}" class="img-responsive zoom" alt="">
-                </li>
-              </ul>
+        <section class="portfolio">
+          <div class="container">
+            <div class="row">
+              <div class=" col-6 col-sm-6  portfolio-item" *ngFor="let ebike of ebikes">
+                <div class="demo">
+                  <figure><img data-toggle="modal" data-target="#bootstrapModel" style="border-radius:20px"
+                      src="{{ebike.images}}" alt="example-image">
+                  </figure>
+                </div>
+              </div>
             </div>
-
           </div>
-        </div>
+        </section>
       </div>
     </div>
-    <img src="assets/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-    <img src="assets/animate_icon/Shape-14.png" alt="" class="feature_icon_2">
+
   </div>
 </section>
+
+<div id="bootstrapModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>     
+       <div class="modal-body" *ngFor="let ebike of ebikes">
+        <img style="border-radius:20px" src="{{ebike.images}}" alt="example-image">
+      </div>
+    </div>
+  </div>
+</div>
