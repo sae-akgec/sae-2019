@@ -17,6 +17,7 @@ export class SupraComponent implements OnInit {
       images: '/assets/images/2.jpg'
 
     },
+
     {
       id: '2',
       images: '/assets/images/3.jpg'
