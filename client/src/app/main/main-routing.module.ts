@@ -15,24 +15,31 @@ import { EfficarComponent } from './efficar/efficar.component';
 import { EfficycleComponent } from './efficycle/efficycle.component';
 import { HomeTutorialComponent } from './home/home-tutorial/home-tutorial.component';
 import { FooterComponent } from './footer/footer.component';
+import { InnovacionComponent } from './innovacion/innovacion.component';
+import { AacarComponent } from './aacar/aacar.component';
 
 const routes: Routes = [
-    {path:"", component:MainComponent, children:[
-        {path:"", component:HomeComponent},
-        {path:"registration", component:AboutComponent},
-        {path:"faqs", component:FaqsComponent},
-        {path:"contact", component:ContactComponent},
-        {path:"efficar",component:EfficarComponent},
-        {path:"efficycle",component:EfficycleComponent},
-        {path:"supra",component :SupraComponent},
-        {path:"privacy", component: PrivacyComponent},
-        {path:"terms", component:TermsComponent},
-      
-        {path: 'blogs', component:BlogsComponent, children: [
-          {path: '', component:BlogsListComponent},
-          {path: ":id", component:BlogsDetailComponent}
-        ]}
-    ]}
+  {
+    path: "", component: MainComponent, children: [
+      { path: "", component: HomeComponent },
+      { path: "registration", component: AboutComponent },
+      { path: "faqs", component: FaqsComponent },
+      { path: "contact", component: ContactComponent },
+      { path: "efficar", component: EfficarComponent },
+      { path: "efficycle", component: EfficycleComponent },
+      { path: "supra", component: SupraComponent },
+      { path: "privacy", component: PrivacyComponent },
+      { path: "terms", component: TermsComponent },
+      { path: "innovacion", component: InnovacionComponent },
+      { path: "aacar", component: AacarComponent },
+      {
+        path: 'blogs', component: BlogsComponent, children: [
+          { path: '', component: BlogsListComponent },
+          { path: ":id", component: BlogsDetailComponent }
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({

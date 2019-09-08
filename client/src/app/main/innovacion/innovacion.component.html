@@ -1,0 +1,119 @@
+<ngx-hm-carousel #carousel [(ngModel)]="index" (ngModelChange)="indexChanged($event)" [autoplay-speed]="speed"
+    [autoplay]="autoplay" [autoplay-direction]="direction" [infinite]="infinite" [between-delay]="2000"
+    [mourse-enable]="true" [data]="avatars" [aniTime]="300" class="carousel c-accent">
+
+    <section ngx-hm-carousel-container class="content">
+        <article class="item cursor-pointer" ngx-hm-carousel-item *ngFor="let avatar of avatars">
+            <div class="img" [style.backgroundImage]="'url('+avatar.url+')'">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb_iner text-center">
+                                <div class="breadcrumb_iner_item">
+                                    <h2 class="fadeIn">INNOVACION</h2>
+                                    <h5 style="color: whitesmoke" class="fadeIn">Think . Create . Innovate</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+        <ng-template #infiniteContainer></ng-template>
+
+    </section>
+
+    <ng-template #carouselContent let-avatar let-i="index">
+        <article class="item cursor-pointer">
+            <div class="img" [style.backgroundImage]="'url('+avatar.url+')'">
+            </div>
+
+        </article>
+    </ng-template>
+
+    <ng-template #carouselPrev>
+        <div class="click-area">
+            <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+    </ng-template>
+    <ng-template #carouselNext>
+        <div class="click-area">
+            <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+    </ng-template>
+    <ng-template #carouselDot let-model>
+        <div class="ball bg-accent" [class.visible]="model.index === model.currentIndex"></div>
+    </ng-template>
+
+</ngx-hm-carousel>
+<div class="container" style="padding-top: 20px">
+    <div class="row align-items-center justify-content-between">
+        <div class="col-md-6 col-lg-6">
+            <div class="about_us_text">
+                <h2>Innovacion 2019</h2>
+                <p>The workshop challenges young minds to learn, compete and provides a platform to be an
+                    innovator. The workshop is about making students aware of the possibilities that exist with
+                    micro-controllers and Sensors. We want to encourage the students to think, create
+                    and be the change maker. The workshop is organized in the month of FEB. 
+
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 floating">
+            <div class="learning_img ">
+                <img src="assets/43.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<section class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12 my-4">
+                <h1 style="font-weight: bold">Gallery</h1>
+            </div>
+            <div class=" col-6 col-sm-6 col-md-4 col-lg-2 portfolio-item" *ngFor="let photo of photos">
+                <div class="demo">
+                    <figure><img data-toggle="modal" data-target="#bootstrapModel" style="border-radius:20px"
+                            src="{{photo.images}}" alt="example-image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12 my-4">
+                <h1 style="font-weight: bold">Videos</h1>
+            </div>
+            <div class=" col-6 col-sm-6 col-md-4 col-lg-2  portfolio-item" *ngFor="let video of videos">
+                <div class="demo">
+                    <figure><a href="{{video.links}}" target="blank"><img style="border-radius:20px"
+                                src="./assets/carousel/tempo.png" alt="example-image"></a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- open a modal window by clicking button-->
+
+
+<div id="bootstrapModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 </div>     
+             <div class="modal-body" *ngFor="let photo of photos">
+                <img style="border-radius:20px" src="{{photo.images}}" alt="example-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+     
+   
