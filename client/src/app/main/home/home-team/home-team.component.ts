@@ -119,8 +119,8 @@ export class HomeTeamComponent implements OnInit {
     {
       id: '12',
       image: 'assets/compressjpeg/96.jpeg',
-      name: 'Satyam',
-      branch: 'Gupta',
+      name: 'Satyam Gupta',
+      branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/profile.php?id=100007432145509',
       githublink: '',
       linkedInlink: ''
