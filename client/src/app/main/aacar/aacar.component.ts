@@ -33,27 +33,27 @@ export class AacarComponent implements OnInit {
   photos: Photos[] = [
     {
       id: '0',
-      images: '/assets/aacar/4.jpeg'
+      images: '/assets/aacar/4.jpg'
     },
     {
       id: '1',
-      images: '/assets/aacar/5.jpeg'
+      images: '/assets/aacar/5.jpg'
     },
     {
       id: '2',
-      images: '/assets/aacar/6.jpeg'
+      images: '/assets/aacar/6.jpg'
     },
     {
       id: '3',
-      images: '/assets/aacar/7.jpeg'
+      images: '/assets/aacar/7.jpg'
     },
     {
       id: '4',
-      images: '/assets/aacar/8.jpeg'
+      images: '/assets/aacar/8.jpg'
     },
     {
       id: '5',
-      images: '/assets/aacar/9.jpeg'
+      images: '/assets/aacar/9.jpg'
     }
   ];
 
@@ -72,7 +72,7 @@ export class AacarComponent implements OnInit {
     // const num = Math.floor(Math.random() * 1000);
     return {
       url: `/assets/aacar/${num}.jpg`,
-      id: `${num}.jpeg`
+      id: `${num}.jpg`
     };
   });
 
