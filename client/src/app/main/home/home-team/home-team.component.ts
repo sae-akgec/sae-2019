@@ -91,7 +91,7 @@ export class HomeTeamComponent implements OnInit {
     // },
     {
       id: '9',
-      image: 'assets/compressjpeg/18.jpeg',
+      image: 'assets/compressjpeg/18.jpg',
       name: 'Avneesh Kumar',
       branch: 'Innovation',
       facebooklink: 'https://www.facebook.com/haq.se.single007',
@@ -118,7 +118,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '12',
-      image: 'assets/compressjpeg/96.jpeg',
+      image: 'assets/compressjpeg/96.jpg',
       name: 'Satyam Gupta',
       branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/profile.php?id=100007432145509',
@@ -173,7 +173,7 @@ export class HomeTeamComponent implements OnInit {
     {
       id: '18',
       image: 'assets/compressjpeg/4.jpg',
-      name: 'Snajay Prasad Upadhaya',
+      name: 'Sanjay Prasad Upadhaya',
       branch: 'Mechanical',
       facebooklink: '',
       githublink: '',
@@ -271,7 +271,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '29',
-      image: 'assets/compressjpeg/jitendra.jpeg',
+      image: 'assets/compressjpeg/jitendra.jpg',
       name: 'Jitendra Kumar',
       branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/profile.php?id=100016228027473',
@@ -299,7 +299,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '33',
-      image: 'assets/compressjpeg/divyanshu.jpeg',
+      image: 'assets/compressjpeg/divyanshu.jpg',
       name: 'Divyanshu Verma',
       branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/Divyanshu.verma.k',
@@ -309,7 +309,7 @@ export class HomeTeamComponent implements OnInit {
 
     {
       id: '35',
-      image: 'assets/compressjpeg/modes.jpeg',
+      image: 'assets/compressjpeg/modes.jpg',
       name: 'Mohd. Modesseer',
       branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/mohd.modesseer',
@@ -318,7 +318,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '36',
-      image: 'assets/compressjpeg/mahima.jpeg',
+      image: 'assets/compressjpeg/mahima.jpg',
       name: 'Mahima',
       branch: 'Mechanical',
       facebooklink: '',

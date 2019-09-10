@@ -26,7 +26,7 @@ export class InnovacionComponent implements OnInit {
     },
     {
       id: '3',
-      images: '/assets/carousel/3.jpeg'
+      images: '/assets/carousel/3.jpg'
 
     },
 
@@ -34,27 +34,27 @@ export class InnovacionComponent implements OnInit {
   photos: Photos[] = [
     {
       id: '0',
-      images: '/assets/carousel/5.jpeg'
+      images: '/assets/carousel/5.jpg'
     },
     {
       id: '1',
-      images: '/assets/carousel/6.jpeg'
+      images: '/assets/carousel/6.jpg'
     },
     {
       id: '2',
-      images: '/assets/carousel/7.jpeg'
+      images: '/assets/carousel/7.jpg'
     },
     {
       id: '3',
-      images: '/assets/carousel/8.jpeg'
+      images: '/assets/carousel/8.jpg'
     },
     {
       id: '4',
-      images: '/assets/carousel/9.jpeg'
+      images: '/assets/carousel/9.jpg'
     },
     {
       id: '5',
-      images: '/assets/carousel/10.jpeg'
+      images: '/assets/carousel/10.jpg'
     }
   ];
   videos: Videos[] = [
