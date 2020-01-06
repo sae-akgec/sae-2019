@@ -51,7 +51,7 @@
                           'is-invalid': Email.invalid && Email.touched,
                           'is-valid': Email.valid}" id="fnText" >
                           <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                       <!-- <small id="fnHelp" *ngIf="Email.errors?.minlength && Email.pattern" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small> -->
+                       <small id="fnHelp" *ngIf="Email.errors?.minlength && Email.pattern" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
                         </div>
                       </div>
               </div>
