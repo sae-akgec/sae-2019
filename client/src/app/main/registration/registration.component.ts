@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
     this.button = document.getElementById("submitbutton");
     this.nestedForm = this._fb.group({
       TeamName:[null,[Validators.required, Validators.minLength(2)]],
-      Email:[null,this.validate],
+      Email:[null,[Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       SelectWorkshop:[null,Validators.required],
       //
       members:this._fb.array([this.addmembersgroup()])
