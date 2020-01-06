@@ -24,9 +24,9 @@ import { BlogsDetailComponent } from './blogs/blogs-detail/blogs-detail.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, 
+    AppRoutingModule, FormsModule, ReactiveFormsModule,
     MainModule, AuthModule, AdminModule,
-    BrowserAnimationsModule, HttpClientModule, 
+    BrowserAnimationsModule, HttpClientModule,
     SharedModule
   ],
   providers: [BlogService],

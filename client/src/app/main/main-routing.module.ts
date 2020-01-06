@@ -17,11 +17,13 @@ import { HomeTutorialComponent } from './home/home-tutorial/home-tutorial.compon
 import { FooterComponent } from './footer/footer.component';
 import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
+import {RegistrationComponent} from './registration/registration.component'
 
 const routes: Routes = [
   {
     path: "", component: MainComponent, children: [
       { path: "", component: HomeComponent },
+      { path: "inno20-registration",component: RegistrationComponent},
       { path: "registration", component: AboutComponent },
       { path: "faqs", component: FaqsComponent },
       { path: "contact", component: ContactComponent },

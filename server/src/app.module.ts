@@ -9,6 +9,8 @@ import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
+import { RegistrationModule} from './registration/registration.module'
+import { RegistrationController } from './registration/registration.controller';
 
 @Module({
   imports: [
@@ -18,9 +20,10 @@ import { RegisterModule } from './register/regsiter.module';
     AuthModule,
     BlogModule,
     ContactModule,
-    RegisterModule
+    RegisterModule,
+    RegistrationModule
   ],
-  controllers: [AppController],
+  controllers: [AppController, RegistrationController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
