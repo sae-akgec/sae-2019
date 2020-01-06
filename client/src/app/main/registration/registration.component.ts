@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
     this.button = document.getElementById("submitbutton");
     this.nestedForm = this._fb.group({
       TeamName:[null,[Validators.required, Validators.minLength(2)]],
-      Email:[null,this.validate],
+      Email:[null,[Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       SelectWorkshop:[null,Validators.required],
       //
       members:this._fb.array([this.addmembersgroup()])
@@ -43,7 +43,7 @@ export class RegistrationComponent implements OnInit {
   addmembersgroup(){
     return this._fb.group({
       Name:[null,[Validators.required, Validators.minLength(2)]], 
-      Email:[null,this.validate],
+      Email:[null,[Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       Branch:[null,Validators.required],
       CollegeName:[null,Validators.required],
       PhoneNumber:[null,[Validators.required,Validators.pattern('^[0-9]{10}')]],
@@ -52,20 +52,20 @@ export class RegistrationComponent implements OnInit {
 
   }
   
-  validate(control: AbstractControl) {
-    const elementValue = control.value;
+  // validate(control: AbstractControl) {
+  //   const elementValue = control.value;
 
-    if (elementValue === null || elementValue === undefined || elementValue === '') {
-      return {'cus_required' : 'Field is required'};
-    }
+  //   if (elementValue === null || elementValue === undefined || elementValue === '') {
+  //     return {'cus_required' : 'Field is required'};
+  //   }
 
-    const reg = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$');
-    if (!reg.test(elementValue)) {
-      return {'cus_pattern' : 'Value should be 5 digit number.'};
-    }
+  //   const reg = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$');
+  //   if (!reg.test(elementValue)) {
+  //     return {'cus_pattern' : 'Value should be 5 digit number.'};
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
   get TeamName(){
     return this.nestedForm.get('TeamName');
   }
