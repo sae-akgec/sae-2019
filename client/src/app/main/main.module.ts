@@ -30,12 +30,13 @@ import { EfficycleComponent } from './efficycle/efficycle.component';
 import { EfficarComponent } from './efficar/efficar.component';
 import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent, InnovacionComponent, AacarComponent],
+  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent, InnovacionComponent, AacarComponent, RegistrationComponent],
   imports: [
     CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, NgxHmCarouselModule
   ],

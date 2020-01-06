@@ -9,6 +9,7 @@ import { CustomerModule } from './customer/customer.module';
 import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
+import {RegistrationModule} from './registration/registration.module'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -32,7 +33,7 @@ async function bootstrap() {
     .build();
 
   const catDocument = SwaggerModule.createDocument(app, options, {
-    include: [AuthModule, UserModule, CustomerModule, BlogModule, ContactModule, RegisterModule],
+    include: [AuthModule, UserModule, CustomerModule, BlogModule, ContactModule, RegisterModule,RegistrationModule],
   });
   SwaggerModule.setup('api/docs', app, catDocument);
 
