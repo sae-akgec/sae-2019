@@ -1,7 +1,7 @@
 import { Document } from 'mongoose';
 
 export interface Registration extends Document {
-    readonlyTeamName : string;
+    readonly TeamName : string;
     readonly members : string;
     readonly Name: string;
     readonly Email: string;
