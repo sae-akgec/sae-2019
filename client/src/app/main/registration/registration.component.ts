@@ -13,7 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   states: Array<String> = ['AR', 'AL', 'CA', 'DC'];
   fruits: Array<String> = ['Mango', 'Grapes', 'Strawberry', 'Oranges'];
-  teamMembers: ['1','2','3','4','5']
+  teamMembers: Array<String> = ['1','2','3','4','5']
   workshops: Array<String> = ['Innovacion-2020' , 'Aacar-6.0' ]
   branches:Array<String> = ['Computer Science and Engineering',
                             'Information Tecnology and Engineering',
@@ -59,21 +59,6 @@ export class RegistrationComponent implements OnInit {
     })
 
   }
-  
-  // validate(control: AbstractControl) {
-  //   const elementValue = control.value;
-
-  //   if (elementValue === null || elementValue === undefined || elementValue === '') {
-  //     return {'cus_required' : 'Field is required'};
-  //   }
-
-  //   const reg = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$');
-  //   if (!reg.test(elementValue)) {
-  //     return {'cus_pattern' : 'Value should be 5 digit number.'};
-  //   }
-
-  //   return null;
-  // }
   get TeamName(){
     return this.nestedForm.get('TeamName');
   }

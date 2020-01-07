@@ -46,12 +46,8 @@
                 <div class="col-6">
                         <div class="form-group">
                           <label for="fnText">Team Leader Email</label>
-                          <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email"
-                          [ngClass]="{'form-control': true,
-                          'is-invalid': Email.invalid && Email.touched,
-                          'is-valid': Email.valid}" id="fnText" >
-                          <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                       <small id="fnHelp" *ngIf="Email.errors?.minlength && Email.pattern" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
+                          <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email" id="fnText">
+
                         </div>
                       </div>
               </div>
@@ -101,10 +97,7 @@
                     <div class="col-6">
                           <div class="form-group">
                             <label for="Email">Email</label>
-                            <input type="text" class="form-control" id="Email" placeholder="Enter Email"  formControlName="Email" value="temporary" [ngClass]="{'form-control': true,
-                            'is-invalid': group.controls.Email.invalid && group.controls.Email.touched,
-                            'is-valid': group.controls.Email.valid}">
-                            <small id="fnHelp" *ngIf="group.controls.Email.errors?.required && group.controls.Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                            <input type="text" class="form-control" id="Email" placeholder="Enter Email"  formControlName="Email" value="temporary" >
                           </div>
                             
                     </div>
