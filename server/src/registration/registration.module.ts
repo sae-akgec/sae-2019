@@ -6,7 +6,7 @@ import { RegistrationService } from './registrattion.service';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Registration', schema: RegisterationSchema }])
+    MongooseModule.forFeature([{ name: 'InnovacionRegisteration', schema: RegisterationSchema }])
   ],
   providers: [RegistrationService],
   controllers: [RegistrationController],
