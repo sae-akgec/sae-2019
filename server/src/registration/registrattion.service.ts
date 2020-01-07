@@ -7,7 +7,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 
 @Injectable()
 export class RegistrationService {
-    constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>) { }
+    constructor(@InjectModel ('Registration ') private readonly registrationModel : Model<Registration>) { }
     //fetching up all the registration
     
     async getAllRegistration() : Promise<Registration[]> {
