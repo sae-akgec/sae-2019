@@ -23,18 +23,30 @@ export class RegistrationComponent implements OnInit {
                             'Electronics and Instrumentation Engineerings',
                             ]
   colleges:Array<String> = ['Ajay Kumar Garg Engineering College' ]        
-
+  
+  members:FormArray;
   nestedForm:FormGroup;
   submission=true;
   button:any;
   email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   phone_pattern = /^[0-9]{10}/                          
-  constructor(private _fb: FormBuilder, private _mainService:MainService) { }
-
+  constructor(private _fb: FormBuilder, private _mainService:MainService) {
+    this.nestedForm = this._fb.group({
+      'TeamName' : [null,Validators.required],
+      'SelectWorkshop': [null,Validators.required],
+      'leaderEmail':[null,Validators.required],
+      'members':this._fb.array([this.addmembersgroup()])
+    })
+    this.members = this.nestedForm.get('members') as FormArray
+   }
+  
   ngOnInit() {
     this.button = document.getElementById("submitbutton");
     this.nestedForm = this._fb.group({
       TeamName:[null,[Validators.required, Validators.minLength(2)]],
+      leaderEmail:[null, Validators.compose([
+        Validators.required, Validators.pattern (this.email_pattern)
+      ])],
       Email:[null, Validators.compose([
         Validators.required, Validators.pattern (this.email_pattern)
       ])],
@@ -46,16 +58,16 @@ export class RegistrationComponent implements OnInit {
   }
   addmembersgroup(){
     return this._fb.group({
-      Name:[null,[Validators.required, Validators.minLength(2)]], 
-      Email:[null, Validators.compose([
+     'Name':[null,[Validators.required, Validators.minLength(2)]], 
+     'Email':[null, Validators.compose([
         Validators.required, Validators.pattern (this.email_pattern)
       ])],
-      Branch:[null,Validators.required],
-      CollegeName:[null,Validators.required],
-      PhoneNumber:[null, Validators.compose([
+     'Branch':[null,Validators.required],
+     'CollegeName':[null,Validators.required],
+      'PhoneNumber':[null, Validators.compose([
         Validators.required, Validators.pattern (this.phone_pattern)
       ])],
-      StudentNumber:[null,Validators.required]  
+      'StudentNumber':[null,Validators.required]  
     })
 
   }
