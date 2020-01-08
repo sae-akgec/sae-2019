@@ -10,7 +10,6 @@ import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
 import { RegistrationModule} from './registration/registration.module'
-import { RegistrationController } from './registration/registration.controller';
 
 @Module({
   imports: [
@@ -23,7 +22,7 @@ import { RegistrationController } from './registration/registration.controller';
     RegisterModule,
     RegistrationModule
   ],
-  controllers: [AppController, RegistrationController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
