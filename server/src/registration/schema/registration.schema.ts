@@ -2,6 +2,7 @@ import * as mongoose from 'mongoose';
 
 export const RegisterationSchema = new mongoose.Schema({
     TeamName: {type: String , required: true},
+    leaderEmail:{type:String,required:true},
     members : {type : String , required : true},
     Name: { type: String, required: true },
     Email: { type: String, required: true },

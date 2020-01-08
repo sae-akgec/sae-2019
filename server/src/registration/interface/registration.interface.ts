@@ -3,6 +3,7 @@ import { Document } from 'mongoose';
 export interface Registration extends Document {
     readonly TeamName : string;
     readonly SelectWorkshop : string; 
+    readonly leaderEmail: string;
     readonly Email: string;
     readonly members : string;
     readonly Name: string;

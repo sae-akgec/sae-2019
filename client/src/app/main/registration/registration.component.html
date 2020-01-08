@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group col-6">
                         <label for="state">Members</label>
-                        <select id="inputMember" class="form-control">
+                        <select id="inputMember" class="form-control" formControlName="members">
                           <option selected>0</option>
                           <option *ngFor="let members of teamMembers" [value]="members">{{members}}</option>
                         </select>
@@ -46,7 +46,7 @@
                 <div class="col-6">
                         <div class="form-group">
                           <label for="fnText">Team Leader Email</label>
-                          <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email" id="fnText">
+                          <input type="text" class="form-control" id="fnText" formControlName="leaderEmail" placeholder="Enter Team Email" id="fnText">
 
                         </div>
                       </div>

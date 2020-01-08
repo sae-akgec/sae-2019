@@ -14,6 +14,12 @@ export class CreateRegisterationDTO {
     @Length(3, 50)
     readonly SelectWorkshop: string;
 
+
+    @IsString()
+    @ApiModelProperty({ description:"Team Id of Team. Required in POST", required: true})
+    readonly leaderEmail: string;
+
+
     @IsString()
     @ApiModelProperty({ description:"Team Id of Team. Required in POST", required: true})
     readonly Email: string;
@@ -52,7 +58,7 @@ export class CreateRegisterationDTO {
 
     @IsString()
     @ApiModelProperty({ description:"college name of member. Required in POST", required: true})
-    readonly CollegeName: string;
+    readonly CollegeName : string;
 
     
 
