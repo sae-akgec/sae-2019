@@ -7,7 +7,7 @@ import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
 @Controller('api/teamregistration')
 @ApiUseTags('Registration Endpoints') ///Register to Registration
 export class RegistrationController {
-    constructor(private registerationService:  RegistrationService) { }
+    constructor(private registerationService: RegistrationService) { }
 
     // add a register
     @Post()
