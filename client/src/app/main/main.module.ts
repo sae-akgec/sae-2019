@@ -16,7 +16,7 @@ import { ReachComponent } from './reach/reach.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
-
+import { UsersModule } from './users/users.module'
 // Material imports
 import { MatCardModule } from '@angular/material/card';
 import { BookingComponent } from './booking/booking.component';
@@ -30,15 +30,15 @@ import { EfficycleComponent } from './efficycle/efficycle.component';
 import { EfficarComponent } from './efficar/efficar.component';
 import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { UsersComponent } from './users/users.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent, InnovacionComponent, AacarComponent, RegistrationComponent],
+  declarations: [HomeComponent, NavbarComponent, FooterComponent, HomeHeaderComponent, HomeTutorialComponent, HomeAboutComponent, FaqsComponent, PrivacyComponent, TermsComponent, AboutComponent, ReachComponent, ContactComponent, MainComponent, BookingComponent, HomeFeaturesComponent, HomeCtaComponent, HomeTeamComponent, SupraComponent, EfficycleComponent, EfficarComponent, InnovacionComponent, AacarComponent, UsersComponent],
   imports: [
-    CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, NgxHmCarouselModule
+    CommonModule, MainRoutingModule, MatCardModule, FormsModule, ReactiveFormsModule, NgxHmCarouselModule,UsersModule
   ],
   providers: [MainService]
 })
