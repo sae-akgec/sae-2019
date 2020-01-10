@@ -10,8 +10,7 @@ import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
 import { RegistrationModule} from './registration/registration.module'
-import { WorkshopsController } from './workshops/workshops.controller';
-
+import { WorkshopsModule} from './workshops/workshops.module'
 @Module({
   imports: [
     MongooseModule.forRoot(process.env.MONGODB_URL || "mongodb://localhost/shopdot", { useNewUrlParser: true }),
@@ -21,9 +20,10 @@ import { WorkshopsController } from './workshops/workshops.controller';
     BlogModule,
     ContactModule,
     RegisterModule,
-    RegistrationModule
+    RegistrationModule,
+    WorkshopsModule
   ],
-  controllers: [AppController, WorkshopsController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
