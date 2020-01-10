@@ -25,28 +25,40 @@
                  <small id="fnHelp" *ngIf="TeamName.errors?.minlength && TeamName.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
                   </div>
                 </div>
-                <div class="form-group col-6">
-                        <label for="state">Members</label>
-                        <select id="inputMember" class="form-control" formControlName="members">
-                          <option selected>0</option>
-                          <option *ngFor="let members of teamMembers" [value]="members">{{members}}</option>
-                        </select>
-                      </div>
                 <div class="col-6">
-                     <div class="form-group">
-                            <label for="workshops">SelectWorkshop</label>
-                            <select id="inputState" class="form-control" formControlName="SelectWorkshop">
-                              <option selected [ngValue]="null">Choose workshop</option>
-                              <option *ngFor="let workshop of workshops" [value]="workshop" >{{workshop}}</option>
-                            </select>
-                          </div>
-                     <div>
+                  <div class="form-group">
+                    <label for="workshops">SelectWorkshop</label>
+                    <select id="inputState" class="form-control" formControlName="SelectWorkshop">
+                      <option selected [ngValue]="null">Choose workshop</option>
+                      <option *ngFor="let workshop of  currentWorkshops" [ngValue]="workshop.id" >{{workshop.name}}</option>
+                    </select>
+                    <small id="fnHelp" *ngIf="SelectWorkshop.errors?.required && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Select workshop</small>
+                    <small id="fnHelp" *ngIf="SelectWorkshop.errors?.minlength && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Please select a workshop</small>
+                  </div>
+                  <div>
                   </div>
                 </div>
+                <div class="form-group col-6">
+                    <select class="form-control"  formControlName="plan" *ngIf="teamMembers" onkeyup="this.setAttribute('value', this.value);"
+                        [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
+                        <option [ngValue]="null" selected>---select---</option>
+                        <option *ngFor="let member of teamMembers" [ngValue]="teamMembers.id">{{teamMembers.price / teamMembers.team_limit}} {{teamMembers.name}}</option>
+                    </select>
+                    <label class="label" [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'color': '#FF5252'}:{}">Select Plan</label>
+                    <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
+                </div>
+                        <!-- <div class="form-group col-6">
+                         
+                                <label for="state">Select plan</label>
+                                <select id="inputMember" class="form-control">
+                                  <option selected>0</option>
+                                  <option *ngFor="let members of teamMembers" [value]="members">{{members}}</option>
+                                </select>
+                              </div> -->
                 <div class="col-6">
-                        <div class="form-group">
-                          <label for="fnText">Team Leader Email</label>
-                          <input type="text" class="form-control" id="fnText" formControlName="leaderEmail" placeholder="Enter Team Email" id="fnText">
+                  <div class="form-group">
+                    <label for="fnText">Team Leader Email</label>
+                          <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email" id="fnText">
 
                         </div>
                       </div>
@@ -62,14 +74,15 @@
       
       
               <!-- Member Form Portion-->
-              <div class="row" formArrayName="members" >
-                <div class="col-12" *ngFor="let group of membersArray.controls; let i = index;" [formGroupName]="i ">
+              <div class="row" formArrayName="team_array" >
+                <div class="col-12" *ngFor="let group of teamarrayArray.controls; let i = index;" [formGroupName]="i ">
                   <div class="row">
+                 
                     <div class="col-12">
                         <div class="col-12 control-buttons">
                       <div class="row">
                                 <div class="col-6">
-                             <a style="cursor: pointer;" (click)=" addMembers()"><small>Add Member</small><img src="/assets/icon/add.svg" alt="" ></a>
+                             <a style="cursor: pointer;" (click)="addMembers()"><small>Add Member</small><img src="/assets/icon/add.svg" alt="" ></a>
                                  </div>
                                  <div class="col-6">
                               <a style="cursor: pointer;" (click)="removeMembers(i)" ><small>Remove Member</small><img src="/assets/icon/remove.svg" alt="" width="24" height="24"></a>

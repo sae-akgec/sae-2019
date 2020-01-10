@@ -17,7 +17,7 @@ import { HomeTutorialComponent } from './home/home-tutorial/home-tutorial.compon
 import { FooterComponent } from './footer/footer.component';
 import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
-import {RegistrationComponent} from './registration/registration.component'
+import {RegistrationComponent} from '../main/users/registration/registration.component'
 
 const routes: Routes = [
   {
