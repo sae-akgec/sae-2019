@@ -30,7 +30,7 @@
                     <label for="workshops">SelectWorkshop</label>
                     <select id="inputState" class="form-control" formControlName="SelectWorkshop">
                       <option selected [ngValue]="null">Choose workshop</option>
-                      <option *ngFor="let workshop of currentWorkshops" [ngValue]="workshop.id" >{{workshop.planId}}</option>
+                      <option *ngFor="let workshop of currentWorkshops" [ngValue]="workshop.id" >{{workshop.name}}</option>
                     </select>
                     <small id="fnHelp" *ngIf="SelectWorkshop.errors?.required && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Select workshop</small>
                     <small id="fnHelp" *ngIf="SelectWorkshop.errors?.minlength && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Please select a workshop</small>
