@@ -1,6 +1,7 @@
-import { Controller, Get, HttpStatus, Param, NotFoundException, Res, UseGuards} from '@nestjs/common';
+import { Controller, Get, HttpStatus, Param,Post,Body, NotFoundException, Res, UseGuards} from '@nestjs/common';
 import {WorkshopsService} from './workshops.service';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import {CreateWorkshopDTO} from './dto/workshops.dto'
 
 
 @ApiUseTags('Workshop Endpoint')
@@ -21,5 +22,13 @@ export class WorkshopsController {
     if (!plan) throw new NotFoundException('Plan does not exist!');
 
     return res.status(HttpStatus.OK).json(plan);
+  }
+  @Post()
+  async addWorkshop(@Res() res, @Body() CreateworkshopDTO: CreateWorkshopDTO) {
+      const workshop = await this.workshopService.addWorkshop(CreateworkshopDTO);
+      return res.status(HttpStatus.OK).json({
+          message: "Workshop has been created successfully",
+          workshop
+      })
   }
 }
