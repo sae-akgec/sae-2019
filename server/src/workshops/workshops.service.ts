@@ -13,9 +13,9 @@ export class WorkshopsService {
     const workshops = await this.workshopModel.find().exec();
     return workshops;
   }
-  // Get a single user
-  async findById(planID): Promise<Workshops> {
-    const workshop = await this.workshopModel.findById(planID).exec();
+  // Get a single plan
+  async findById(plan_title): Promise<Workshops> {
+    const workshop = await this.workshopModel.findById(plan_title).exec();
     return workshop;
   }
 }
