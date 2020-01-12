@@ -33,7 +33,8 @@ async function bootstrap() {
     .build();
 
   const catDocument = SwaggerModule.createDocument(app, options, {
-    include: [AuthModule, UserModule, CustomerModule, BlogModule, ContactModule, RegisterModule,RegistrationModule],
+    include: [AuthModule, UserModule, CustomerModule, BlogModule,
+       ContactModule, RegisterModule,RegistrationModule],
   });
   SwaggerModule.setup('api/docs', app, catDocument);
 

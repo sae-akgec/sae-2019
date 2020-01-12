@@ -70,12 +70,11 @@ export class RegistrationComponent implements OnInit {
                 return (true)
             }
         })
-
     });
     this.nestedForm.controls['plan'].valueChanges.subscribe((value) => {
         this.clearFormArray(this.team_array)
         let plans = this.teamMembers.filter(plan => {
-            if (plan['planId'] == value) {
+            if (plan['id'] == value) {
                 this.memberLimit = plan['team_limit']
                 return (true)
             }

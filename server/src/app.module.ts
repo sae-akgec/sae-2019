@@ -13,7 +13,7 @@ import { RegistrationModule} from './registration/registration.module'
 import { WorkshopsModule} from './workshops/workshops.module'
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGODB_URL || "mongodb://localhost/shopdot", { useNewUrlParser: true }),
+    MongooseModule.forRoot(process.env.MONGODB_URL || "mongodb://localhost/shopdot"),
     CustomerModule,
     UserModule,
     AuthModule,
