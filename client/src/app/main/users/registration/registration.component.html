@@ -42,7 +42,7 @@
                     <select class="form-control"  formControlName="plan" *ngIf="teamMembers" onkeyup="this.setAttribute('value', this.value);"
                         [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
                         <option [ngValue]="null" selected>---select---</option>
-                        <option *ngFor="let member of teamMembers" [ngValue]="teamMembers.id">{{teamMembers.planPrice / teamMembers.team_limit}} {{teamMembers.plan_title}}</option>
+                        <option *ngFor="let member of teamMembers" [ngValue]="member.id">{{member.planPrice / member.team_limit}} {{member.plan_title}}</option>
                     </select>
                     <label class="label" [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'color': '#FF5252'}:{}">Select Plan</label>
                     <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
