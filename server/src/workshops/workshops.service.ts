@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Workshops } from './interface/workshops.interface';
-
+import {CreateWorkshopDTO} from './dto/workshops.dto'
 
 @Injectable()
 export class WorkshopsService {
@@ -18,4 +18,8 @@ export class WorkshopsService {
     const workshop = await this.workshopModel.findById(plan_title).exec();
     return workshop;
   }
+  async addWorkshop(createworkshopDTO:CreateWorkshopDTO): Promise<Workshops> {
+    const newWorkshop = await this.workshopModel(createworkshopDTO);
+    return newWorkshop.save()
+}
 }
