@@ -20,6 +20,7 @@ export class teamController {
         let studentId: string[];
         await this.registerService.validateInput(teamName, memberNumber, studentNumber);
         studentId = await this.registerService.addStudent(name, studentNumber, year, branch, phoneNumber, email, memberNumber);
-        await this.registerService.addTeam(teamName, memberNumber, studentId);
+        const id = await this.registerService.addTeam(teamName, memberNumber, studentId);
+        console.log('Successfully registered and team id is '+id);
     }
 }
