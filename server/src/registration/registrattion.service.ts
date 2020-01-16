@@ -26,7 +26,7 @@ export class RegistrationService {
      // posting a single registration
       async addRegistration(createRegisterationDTO:CreateRegisterationDTO): Promise<Registration> {
         const newRegistration = await this.registrationModel(createRegisterationDTO);
-        return newRegistration.save()
+        return newRegistration.save();
     }
 
     //Editing registration details
