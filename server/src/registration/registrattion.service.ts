@@ -10,7 +10,10 @@ import { async } from 'rxjs/internal/scheduler/async';
 export class RegistrationService {
 
     constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>,private readonly mailerService: MailerService) { }
+
     
+
+ 
 
     //fetching up all the registration 
     async getAllRegistration() : Promise<Registration[]> {
@@ -26,6 +29,7 @@ export class RegistrationService {
      // posting a single registration
       async addRegistration(createRegisterationDTO:CreateRegisterationDTO): Promise<Registration> {
         const newRegistration = await this.registrationModel(createRegisterationDTO);
+        this.sendMail(createRegisterationDTO.TeamName , createRegisterationDTO.Email)
         return newRegistration.save();
     }
 
@@ -41,25 +45,19 @@ export class RegistrationService {
         const deleteRegistration = await this.registrationModel.findByIdAndRemove(registrationID);
         return deleteRegistration;
     }
-    
-    //Code for sending mail   
-    public example2(): void {
+    public sendMail(TeamName , Email) {
         this
           .mailerService
           .sendMail({
-            to: '{{Email}}',
-            from: 'rishabh2401jain@gmail.com',
-            subject: 'Testing Nest Mailermodule with template ✔',
-            template: 'welcome', // The `.pug` or `.hbs` extension is appended automatically.
-            text: 'welcome', // plaintext body
+            to: Email, // list of receivers
+            from: 'rishabh2401jain@gmail.com', // sender address
+            subject: 'You are successfully registered team' + TeamName, // Subject line
+            text: 'Confirm your seat by completing the payment process ', // plaintext body
             html: '<b>welcome</b>', // HTML body content
-            // context: {  // Data to be sent to template engine.
-            //   code: 'cf1a3f828287',
-            //   username: 'john doe',
-            // },
           })
           .then(() => {})
           .catch(() => {});
       }
+    
 
 }
