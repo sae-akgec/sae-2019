@@ -4,19 +4,23 @@
 @import "common";
 
 .breadcrumb_bg {
-	@include background("/assets/alumni.png");
+	@include background("/assets/4.svg");
+	
 }
 
 .breadcrumb {
 	position: relative;
 	z-index: 1;
 	text-align: center;
+	background-color: white;
 
 	.breadcrumb_iner {
-		height: 475px;
+		height: 300px;
 		width: 100%;
 		display: table;
-
+		@media  #{$small_mobile} {
+			height: 200px;
+		}
 		.breadcrumb_iner_item {
 			display: table-cell;
 			vertical-align: middle;

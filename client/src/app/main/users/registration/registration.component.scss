@@ -1,12 +1,48 @@
-.control-buttons {
-  text-align: center;    
-}
-@media(min-width:786px){
-  .control-buttons {
-    text-align: center;    
+.box{
+  background-color: #a9a9a933;
+  padding: 100px;
+  .text {
+    font-size: 30px;
+  } 
+  @media(max-width: 576px){
+    .text {
+      font-size: 28px;
+      display: none;
+    }
+    .button2{
+      display: block;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  @media(min-width:786px) {
+    .button2{
+      display: none;
+    }
+    img{
+      display: none;
+    }
   }
 }
 
-.control-buttons img {
-  cursor: pointer;
+@media(max-width:576px){
+  .box {
+    padding-top: 25%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+label {
+  color: #00008b9e;
+  font-weight: 600;
+}
+h2 {
+  color: #777777;
+  font-weight: 700;
+}
+
+h4{
+  color: #777777; 
+  font-weight: 700;
 }

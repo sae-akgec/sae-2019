@@ -109,7 +109,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '11',
-      image: 'assets/compressjpeg/7.jpg',
+      image: 'https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/7.JPG',
       name: 'Ananya Baranwal',
       branch: 'Innovation',
       facebooklink: 'https://www.facebook.com/profile.php?id=100010772202173',
@@ -190,7 +190,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '20',
-      image: 'assets/compressjpeg/9.jpg',
+      image: 'https://scontent.fdel7-1.fna.fbcdn.net/v/t1.0-1/p960x960/67547694_2330592887008916_3707697227704041472_o.jpg?_nc_cat=106&_nc_ohc=XfaT_MxOuXkAX-bo7-c&_nc_ht=scontent.fdel7-1.fna&_nc_tp=1002&oh=56b6a9fccd24ef1cb6c2d6e9e2005118&oe=5E9EA806',
       name: 'Rishabh Katiyar',
       branch: 'Mechanical',
       facebooklink: 'https://www.facebook.com/risha.katiyar7',
@@ -226,7 +226,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '24',
-      image: 'assets/compressjpeg/6.jpg',
+      image: 'https://scontent.fdel7-1.fna.fbcdn.net/v/t1.0-9/p960x960/74667866_1463259210479249_8077564058947026944_o.jpg?_nc_cat=109&_nc_ohc=KClQekIlkagAX-owrfS&_nc_ht=scontent.fdel7-1.fna&_nc_tp=1002&oh=ad852b5ab378347c84efd183e9c19bf9&oe=5E9C1E35',
       name: 'Abhishek Singh',
       branch: 'Innovation',
       facebooklink: 'https://m.facebook.com/bittuabhi9918?ref=bookmarks',

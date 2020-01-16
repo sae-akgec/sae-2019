@@ -1,13 +1,21 @@
 $color_1: black;
+h1{
+	color: rgba(255, 255, 255, 0.829);
+}
 .scale {
 	width: 150px;
 	height: 150px;
 	border-radius: 20px;
 }
 .portfolio {
+		background: url('/assets/5.svg');
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: bottom;
+
 		z-index: 0;
 		align-content: center;
-		padding-top: 50px
+		padding-top: 100px
 	}
 	.portfolio-item {
 		margin: 0 0 20px;
@@ -20,7 +28,7 @@ $color_1: black;
 		display: inline-block;
 		margin: 0;
 		max-width: 100%;
-		background-color: #ffffff;
+		background-color: #ffffff00;;
 		color: #fff;
 		overflow: hidden;
 		-webkit-backface-visibility: hidden;
@@ -36,7 +44,7 @@ $color_1: black;
 	}
 	
 	[class^='imghvr-'] figcaption, [class*=' imghvr-'] figcaption {
-		background-color: rgba(0, 0, 0, 0.836);
+		background-color: rgba(0, 0, 0, 0.18);
 		
 		padding: 30px;
 		position: absolute;

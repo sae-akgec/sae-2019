@@ -17,12 +17,13 @@ import { HomeTutorialComponent } from './home/home-tutorial/home-tutorial.compon
 import { FooterComponent } from './footer/footer.component';
 import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
-import {RegistrationComponent} from '../main/users/registration/registration.component'
+import {RegistrationComponent} from '../main/users/registration/registration.component';
+import {HomeTeamComponent} from './home/home-team/home-team.component'
 
 const routes: Routes = [
   {
     path: "", component: MainComponent, children: [
-      { path: "", component: HomeComponent },
+      { path: "", component: InnovacionComponent},
       { path: "inno20-registration",component: RegistrationComponent},
       { path: "registration", component: AboutComponent },
       { path: "faqs", component: FaqsComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
       { path: "terms", component: TermsComponent },
       { path: "innovacion", component: InnovacionComponent },
       { path: "aacar", component: AacarComponent },
+      {path:"team" , component:HomeTeamComponent},
       {
         path: 'blogs', component: BlogsComponent, children: [
           { path: '', component: BlogsListComponent },
