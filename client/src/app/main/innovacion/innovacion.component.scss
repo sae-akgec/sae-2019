@@ -2,6 +2,205 @@
 @import "mixins";
 @import "button";
 @import "common";
+.breadcrumb_bg {
+	@include background("/assets/19265.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10vw;
+  padding-bottom: 50vw;
+  -webkit-transform-origin: 50% 85%;
+  transform-origin: 50% 85%;
+  max-height: 100vh;
+  @media #{$small_mobile} {
+    @include background("/assets/19265.jpg");
+    padding-top: 75vw;
+    padding-bottom: 95vh;
+    transform-origin: 50% 85%;
+    max-height: 100vh;
+    }
+   @media #{$large_mobile} {
+  	@include background("/assets/19265.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10vw;
+  padding-bottom: 50vw;
+  -webkit-transform-origin: 50% 85%;
+  transform-origin: 50% 85%;
+  max-height: 100vh;
+    }
+  .gear{
+    height: 6vh;
+    position: absolute;
+    top: 10vh;
+    left: 15vw;
+    -webkit-animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+    animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+    
+    @media #{$tab_device} {
+      float:none;
+      position: absolute;
+      top: 7vh;
+    left: 5vh;      } }
+  .plus{
+    height: 6vh;
+    position: absolute;
+    top: 70vh;
+    left: 84vw;
+    -webkit-animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+    animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+    @media #{$tab_device} {
+      float:none;
+      position: absolute;
+      top: 32vh;
+    left: 70vh;      }}
+  .minus {
+    margin-top: 3rem;
+    margin-left: 14rem;
+    top: 12vh;
+    left: 50vh;
+    height: 1.5rem;
+    width: 4rem;
+    position: absolute;
+    -webkit-animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate horz1;
+    animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate horz1;
+  
+    @media #{$tab_device} {
+      float:none;
+      position: absolute;
+      top: 3vh;
+    left: 20vh;      }}
+  .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+ .innnovacion{
+  padding: 0 7rem;
+  position: absolute;
+  top: 1vh;
+  left: 0;
+  z-index: 2;
+  animation: zoomIn 1s ease-in-out ;
+  @media #{$small_mobile} {
+    padding: 0 1rem;
+    position: absolute;
+    top: 2vh;
+    left: 0;
+    z-index: 2;
+    animation: zoomIn 1s ease-in-out;  
+  
+    }
+   @media #{$large_mobile} {
+    padding: 0 1rem;
+    position: absolute;
+    top: 2vh;
+    left: 0;
+    z-index: 2;
+    animation:zoomIn 1s ease-in-out;
+    }
+ }
+ .cross {
+  height: 5vh;
+  position: absolute;
+  top: 75vh;
+  left: 11vw;
+  -webkit-animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+  animation: 3s cubic-bezier(.455,.03,.515,.955) infinite alternate rotate;
+  @media #{$tab_device} {
+    float:none;
+    position: absolute;
+    top: 30vh;
+  left: 5vh;      } }
+ .animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.regbtn{
+  position: absolute;
+  top: 66vh;
+  left: 66vh;
+  background-color: #151414f6;
+  padding-left: 3.25rem!important;
+  padding-right: 3.25rem!important;
+  color: #fff!important;
+  font-size: 1.3rem!important;
+  box-shadow: 0 2px 5px 0 rgba(250,197,8,.445), 0 2px 10px 0 rgba(250,197,8,.445);
+  animation: wobble 2s ease-in-out infinite;
+
+  @media #{$small_mobile} {
+    float:none;
+    position: absolute;
+    top: 58vh;
+  left: 13vh;
+    }
+    @media #{$large_mobile} {
+      float:none;
+      position: absolute;
+      top: 58vh;
+    left: 18vh;       }
+    @media #{$tab_device} {
+      float:none;
+      position: absolute;
+      top: 29vh;
+    left: 31vh;      }
+   @media #{$medium_device} {
+    float:none;
+    position: absolute;
+    top: 58vh;
+  left: 18vh;          }
+}
+.loginbtn {
+  background-color: #5d5d5d59;
+  padding-left: 2rem!important;
+  padding-right: 2rem!important;
+  font-size: 1.3rem!important;
+  box-shadow: 0 2px 5px 0 rgba(170,170,169,.329), 0 2px 10px 0 rgba(170,170,169,.329);
+  float: left;
+  @media #{$small_mobile} {
+   float:none;
+    }
+}
+
+}
+.inovacion{
+  width: 80%;
+  height: auto;
+  animation: up 2s ease-in-out infinite;
+}
+@keyframes up{
+  0%{
+      transform: translateY(0px);
+  }
+  50%{
+      transform: translateY(25px);
+  }
+  100%{
+      transform: translateY(0px);
+  }
+}
+@keyframes down{
+  0%{
+      transform: translateY(0px);
+  }
+  50%{
+      transform: translateY(25px);
+  }
+  100%{
+      transform: translateY(0px);
+  }
+}
+.para {
+  text-align: justify;
+  padding-left: 10%;
+  padding-right: 10%;
+  @media(max-width:576px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 .breadcrumb_iner {
     width: 100%;
 		display: table;
@@ -32,7 +231,7 @@
 			}
        	p {
 				font-size: 15px;
-				color: $color-white;
+        color: $color-white;
 			}
 
 			span {
@@ -41,43 +240,7 @@
 			}
 	}
 	}
-.carousel {
-  @media #{$small_mobile} {
-   width: 100%;
-   height: 500px;
-    }
-   @media #{$large_mobile} {
-    width: 100%;
-   height: 500px;
-    }
-  @media #{$tab_device} {
-    width: 100%;
-   height: 500px;
-  }
- @media #{$medium_device} {
-  width: 100%;
-  height: 500px;
-      }
-   
- 
-  
-  .content {
-    display: flex;
- 
-      
-    .item {
-      width: 100%;
-    
-      display: block;
-     .img {
-        width: 100%;
-        display: block;
-        background-size: cover;
-        background-position: center;
-       padding-bottom: 50%;
-      }
-    }
-  }
+
 
   .item {
     width: 100%;
@@ -92,18 +255,7 @@
     }
   }
 
-  .ball {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid;
-    opacity: 0.5;
-
-    &.visible {
-      opacity: 1;
-    }
-  }
+ 
   .images{
     width: 200px;
     height: 200px;
@@ -127,7 +279,7 @@
       font-size: 3em;
     }
   }
-}
+
 @keyframes fadeInUp {
   from { 
     opacity: 0;
@@ -165,18 +317,40 @@ animation: fadeInUp 1s ease-in-out 0s forwards;
 
 
 }
-.backdrop{
-
-  background-color:rgba(0,0,0,0.6);
-  
-  position:fixed;
-  
-  top:0;
-  
-  left:0;
-  
-  width:100%;
-  
-  height:100vh;
-  
+.organiser {
+  background: url('/assets/6.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: unset;
+}
+.pad{
+  padding:7%;
+  @media #{$small_mobile} {
+  padding: 5%;
+      }
+      @media #{$large_mobile} {
+        padding: 5%;        }
+      @media #{$tab_device} {
+        padding: 5%;      }
+     @media #{$medium_device} {
+      padding: 5%;          }
+}
+h3 {
+font-size: 20px;
+font-weight:normal;
+@media #{$small_mobile} {
+font-size: 13px;
+font-weight: 100;
   }
+  @media #{$large_mobile} {
+    font-size: 13px;
+font-weight: 100;       }
+  @media #{$tab_device} {
+    font-size: 13px;
+    font-weight: 100;     }
+ @media #{$medium_device} {
+  font-size: 13px;
+  font-weight: 100;          }
+
+}
+

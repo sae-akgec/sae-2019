@@ -3,13 +3,14 @@
 /**************menu part start*****************/
 
 .navbar-color{
-	background: hsla(207, 61%, 29%, 0.932);
+	background: rgb(247, 247, 247);
 }
+
 
 nav {
 
 	.navbar-brand {
-		color: $color-white;
+		color: #1c4d8f;
 		font-weight: bold;
 		font-size: 1.7rem;
 	}
@@ -18,7 +19,7 @@ nav {
 	.main-menu-item {
 		ul {
 			li .nav-link {
-				color: $color-white;
+				color:#393d45;
 				font-size: 16px;
 				padding: 15px 23px;
 				text-transform: capitalize;
@@ -39,7 +40,7 @@ nav {
 
 @media (max-width: 767.98px) { 
 	nav{
-		background: rgba(30, 79, 119, 0.938);
+		background: rgb(247, 247, 247)
 	}
  }
  .dropbtn {

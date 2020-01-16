@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators,FormControl } from '@angular/forms';
 import { group } from '@angular/animations';
 import { UsersService } from '../users.service'
@@ -8,12 +8,15 @@ import { UsersService } from '../users.service'
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent implements OnInit {
-
-  states: Array<String> = ['AR', 'AL', 'CA', 'DC'];
-  fruits: Array<String> = ['Mango', 'Grapes', 'Strawberry', 'Oranges'];
-  teamMembers:any[] = []
-  currentWorkshops: any[] = []
+export class RegistrationComponent implements OnInit , AfterViewInit{
+  
+  team_array:FormArray;
+  nestedForm:FormGroup;
+  plans = [];
+  teamMembers:any[] = [];
+   currentWorkshops:Array<String>= [
+    'Innovacion'
+  ]
   branches:Array<String> = ['Computer Science and Engineering',
                             'Information Tecnology and Engineering',
                             'Electronics and Communication Engineering',
@@ -23,17 +26,18 @@ export class RegistrationComponent implements OnInit {
                             ]
   colleges:Array<String> = ['Ajay Kumar Garg Engineering College' ] 
   memberLimit:number;       
-  team_array:FormArray;
-  nestedForm:FormGroup;
   submission=true;
   button:any;
+  modal:any;
   email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   phone_pattern = /^[0-9]{10}/                          
   constructor(private _fb: FormBuilder, private userService:UsersService) {
     this.nestedForm = this._fb.group({
       'TeamName' : [null,Validators.required],
       'SelectWorkshop': [null,Validators.required],
-      'leaderEmail':[null,Validators.required],
+       Email:[null, Validators.compose([
+        Validators.required, Validators.pattern (this.email_pattern)
+      ])],
       'plan': [null,Validators.required],
       'team_array':this._fb.array([this.addmembersgroup()])
     })
@@ -41,49 +45,53 @@ export class RegistrationComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.clearFormArray(this.team_array)
-        this.userService.getCurrentWorkshops().subscribe((workshops) => {
-            this.currentWorkshops = workshops['workshops']
-            console.log(workshops)
-        }, (err) => {
-            console.log(err)
-        })
+    this.plans = [
+      {planPrice: "2500",  teamMember: "5"},
+      {planPrice: "2200",  teamMember: "4"},
+      {planPrice: "2200",  teamMember: "2"},
+      {planPrice: "2000",  teamMember: "1"}  
+    ];
+    console.log(this.plans)
     this.button = document.getElementById("submitbutton");
-    this.nestedForm = this._fb.group({
-      TeamName:[null,[Validators.required, Validators.minLength(2)]],
-      Email:[null, Validators.compose([
-        Validators.required, Validators.pattern (this.email_pattern)
-      ])],
-      SelectWorkshop:[null,Validators.required],
-      plan :[null,Validators.required],
-      team_array:this._fb.array([this.addmembersgroup()])
-  });
+    // this.clearFormArray(this.team_array)
+    //     this.userService.getCurrentWorkshops().subscribe((workshops) => {
+    //         this.currentWorkshops = workshops['workshops']
+    //         console.log(workshops)
+    //     }, (err) => {
+    //         console.log(err)
+    //     })
+  //   this.nestedForm = this._fb.group({
+  //     TeamName:[null,[Validators.required, Validators.minLength(2)]],
+  //     Email:[null, Validators.compose([
+  //       Validators.required, Validators.pattern (this.email_pattern)
+  //     ])],
+  //     SelectWorkshop:[null,Validators.required],
+  //     plan :[null,Validators.required],
+  //     team_array:this._fb.array([this.addmembersgroup()])
+  // });
 
   }
   ngAfterViewInit() {
-    this.nestedForm.controls['SelectWorkshop'].valueChanges.subscribe((value) => {
-        this.teamMembers= []
-        this.clearFormArray(this.team_array)
-        let workshops = this.currentWorkshops.filter(workshop => {
-            if (workshop['id'] == value) {
-                this.teamMembers = workshop['plans']
-                return (true)
-            }
-        })
-    });
+    // this.nestedForm.controls['SelectWorkshop'].valueChanges.subscribe((value) => {
+    //     this.teamMembers= []
+    //     this.clearFormArray(this.team_array)
+    //     let workshops = this.currentWorkshops.filter(workshop => {
+    //         if (workshop['id'] == value) {
+    //             this.teamMembers = workshop['plans']
+    //             return (true)
+    //         }
+    //     })
+    // });
     this.nestedForm.controls['plan'].valueChanges.subscribe((value) => {
-        this.clearFormArray(this.team_array)
-        let plans = this.teamMembers.filter(plan => {
-            if (plan['id'] == value) {
-                this.memberLimit = plan['team_limit']
-                return (true)
-            }
-        })
-        for (let i = 1; i < this.memberLimit; i++) {
-            this.addmembersgroup() 
-        }
 
-    });
+      this.clearFormArray(this.team_array)
+          if (this.plan.value == value) {
+              this.memberLimit = value
+              for (let i = 1; i < this.memberLimit; i++) {
+               this.addMembers()
+      }
+    }
+  });
 }
 
   addmembersgroup(){
@@ -101,6 +109,9 @@ export class RegistrationComponent implements OnInit {
     })
 
   }
+  get plan(){
+    return this.nestedForm.get('plan')
+  }
   get TeamName(){
     return this.nestedForm.get('TeamName');
   }
@@ -113,7 +124,7 @@ export class RegistrationComponent implements OnInit {
   get  teamarrayArray(){
     return <FormArray>this.nestedForm.get('team_array');
   }
-  addMembers(){
+  addMembers() : void{
     this. teamarrayArray.push(this.addmembersgroup());
   }
   clearFormArray = (formArray: FormArray) => {
@@ -122,9 +133,9 @@ export class RegistrationComponent implements OnInit {
     }
 }
   
-  removeMembers(index){
-    this. teamarrayArray.removeAt(index)
-  }
+  // removeMembers(index){
+  //   this. teamarrayArray.removeAt(index)
+  // }
   //submitting Team Registration
   submitHandler(){
     console.log(this.nestedForm.value)
@@ -135,6 +146,7 @@ export class RegistrationComponent implements OnInit {
           this.nestedForm.reset();
           this.button.click();
           this.submission = true;
+      
         }, (err) =>{
           this.submission= true;
           console.log(err);
@@ -142,4 +154,3 @@ export class RegistrationComponent implements OnInit {
     }
   }
 }
-

@@ -4,13 +4,15 @@
 @import "common";
 
 .breadcrumb_bg {
-	@include background("/assets/png1.png");
+  @include background("/assets/2.svg");
+  background-size: contain;
 }
 
 .breadcrumb {
 	position: relative;
 	z-index: 1;
-	text-align: center;
+  text-align: center;
+  background-color: white;
 
 	.breadcrumb_iner {
 		height: 475px;

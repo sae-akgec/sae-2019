@@ -1,119 +1,186 @@
-<ngx-hm-carousel #carousel [(ngModel)]="index" (ngModelChange)="indexChanged($event)" [autoplay-speed]="speed"
-    [autoplay]="autoplay" [autoplay-direction]="direction" [infinite]="infinite" [between-delay]="2000"
-    [mourse-enable]="true" [data]="avatars" [aniTime]="300" class="carousel c-accent">
-
-    <section ngx-hm-carousel-container class="content">
-        <article class="item cursor-pointer" ngx-hm-carousel-item *ngFor="let avatar of avatars">
-            <div class="img" [style.backgroundImage]="'url('+avatar.url+')'">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="breadcrumb_iner text-center">
-                                <div class="breadcrumb_iner_item">
-                                    <h2 class="fadeIn">INNOVACION</h2>
-                                    <h5 style="color: whitesmoke" class="fadeIn">Think . Create . Innovate</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </article>
-        <ng-template #infiniteContainer></ng-template>
-
-    </section>
-
-    <ng-template #carouselContent let-avatar let-i="index">
-        <article class="item cursor-pointer">
-            <div class="img" [style.backgroundImage]="'url('+avatar.url+')'">
-            </div>
-
-        </article>
-    </ng-template>
-
-    <ng-template #carouselPrev>
-        <div class="click-area">
-            <i class="material-icons">keyboard_arrow_left</i>
+<!-- Landing screen starts here -->
+<section class="breadcrumb_bg">
+<div class="container row">
+    <div class="text-center">
+         <button class="regbtn btn btn-lg" routerLink="/inno20-registration" type="button">Register</button>
+     </div>
+ </div>
+    <div class="col-12">
+    <img class="innnovacion img-fluid mx-auto " src="assets/innovacion.png"></div>
+    <img class="gear" src="assets/gear.png">
+    <img class="plus" src="assets/plus.png">
+    <img class="minus" src="assets/minus.png">
+    <img class="cross" src="assets/square.png">
+   
+         <!-- <div class="col-md-6 text-center pt-2">
+                <button class="loginbtn btn btn-lg" size="lg" type="button">Login</button>
+         </div> -->
+</section>
+<!-- Landing screeen ends here -->
+<!-- About starts here -->
+<div class="container-fluid pt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+            <img class="inovacion" src="assets/inovacion.png">
         </div>
-    </ng-template>
-    <ng-template #carouselNext>
-        <div class="click-area">
-            <i class="material-icons">keyboard_arrow_right</i>
-        </div>
-    </ng-template>
-    <ng-template #carouselDot let-model>
-        <div class="ball bg-accent" [class.visible]="model.index === model.currentIndex"></div>
-    </ng-template>
-
-</ngx-hm-carousel>
-<div class="container" style="padding-top: 20px">
-    <div class="row align-items-center justify-content-between">
-        <div class="col-md-6 col-lg-6">
-            <div class="about_us_text">
-                <h2>Innovacion 2019</h2>
-                <p>The workshop challenges young minds to learn, compete and provides a platform to be an
-                    innovator. The workshop is about making students aware of the possibilities that exist with
-                    micro-controllers and Sensors. We want to encourage the students to think, create
-                    and be the change maker. The workshop is organized in the month of FEB. 
-
-                </p>
+        <div class="col-sm-12 col-lg-6 fadeIn">
+            <div class="row d-flex justify-content-center pt-5">
+                <!-- Will add scroll reveal -->
+                <h1 style="color: black;" class="pt-3 " data-aos="fade-in">Innovacion 2020</h1>
             </div>
-        </div>
-        <div class="col-md-6 col-lg-6 floating">
-            <div class="learning_img ">
-                <img src="assets/43.png" alt="">
+            <div class="d-flex justify-content-center "  data-aos="flip-left">
+                <p class="para"><b>“Innovation is seeing what everybody has seen and thinking what nobody has
+                        thought”.</b>
+                    With the quote “Recreate Redesign Renovate let’s Innovate”
+                    The Collegiate club SAE-AKGEC presents “INNOVACION’20”, an inter-college workshop on Automation and
+                    IoT.The workshop challenges young minds to learn compete and provides a platform to be
+                    an innovator.The workshop is about making students aware of the possibilities that
+                    exist with micro-controllers and sensors.We want to encorage the change maker.
+                    The workshop is organized in the starting of Feb month.</p>
             </div>
         </div>
     </div>
 </div>
-<section class="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12 my-4">
-                <h1 style="font-weight: bold">Gallery</h1>
+<!-- About ends here -->
+
+<!-- Registration starts here -->
+<div class="container-fluid pt-3">
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-sm-12 col-lg-6 "  data-aos="fade-right">
+            <div class="row d-flex justify-content-center pt-5">
+                <h3 style="color: black;" class="pt-3">Registration Date</h3>
             </div>
-            <div class=" col-6 col-sm-6 col-md-4 col-lg-2 portfolio-item" *ngFor="let photo of photos">
-                <div class="demo">
-                    <figure><img data-toggle="modal" data-target="#bootstrapModel" style="border-radius:20px"
-                            src="{{photo.images}}" alt="example-image">
-                    </figure>
+            <div class="d-flex justify-content-center">
+                <!-- <h5>Coming Soon ......</h5> -->
+                <h2 class="text-center">1 / 2 Feburary</h2>
+            </div>
+            <div class="row d-flex justify-content-center pt-2">
+                <h3 style="color: black;" class="pt-3">Registration Plans</h3>
+            </div>
+            <div class="d-flex justify-content-center pt-3">
+                <div class="col-12">
+                    <!-- <h5 style="text-align: center;">Coming Soon.....</h5> -->
+                    <h3 class="text-center" *ngFor="let plan of plans">Members : {{plan.teamMember}} -- Amount
+                        :{{plan.planPrice}}Rs</h3>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12 my-4">
-                <h1 style="font-weight: bold">Videos</h1>
-            </div>
-            <div class=" col-6 col-sm-6 col-md-4 col-lg-2  portfolio-item" *ngFor="let video of videos">
-                <div class="demo">
-                    <figure><a href="{{video.links}}" target="blank"><img style="border-radius:20px"
-                                src="./assets/carousel/tempo.png" alt="example-image"></a>
-                    </figure>
+            <div class="text-center">
+                    <button class="btn btn-warning  btn-lg" routerLink="/inno20-registration" type="button">Register</button>
                 </div>
-            </div>
         </div>
-    </div>
-</section>
-<!-- open a modal window by clicking button-->
-
-
-<div id="bootstrapModel" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                 </div>     
-             <div class="modal-body" *ngFor="let photo of photos">
-                <img style="border-radius:20px" src="{{photo.images}}" alt="example-image">
-            </div>
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center inovacion">
+            <img style="width: 70%;" src="assets/2785427.jpg">
         </div>
     </div>
 </div>
+<!-- Registration ends here -->
+<!-- Workshop Description starts here -->
+<section class="fdb-block p-2">
+        <div class="container">
+          <div class="row align-items-center pb-xl-5">
+            <div class="col-12 col-md-7 col-xl-5">
+              <h1>About Workshop</h1>
+              <p class="lead">The workshop challenges young minds to learn compete and provides a platform to be an innovator.
+                  The workshop is about making students aware of the possibilities that exist with micro-controllers and sensors.We want to encorage the change maker. </p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 m-sm-auto mr-md-0 ml-md-auto pt-4 pt-md-0" >
+              <img alt="image"  data-aos="fade-in-up"class="img-fluid" src="/assets/5583.jpg">
+            </div>
+          </div>
+      
+          <div class="row pt-5" data-aos="zoom-in-up">
+            <div class="col-12 col-sm-6 col-md-3">
+              <h3><strong>Free Arduino Kit*</strong></h3>
+              <p>Arduino which consist of different micro-controllers and sensors..</p>
+            </div>
+      
+            <div class="col-12 col-sm-6 col-md-3 pt-3 pt-sm-0">
+              <h3><strong>Hands On Experience</strong></h3>
+              <p>College first Technical Workshop with Hands on Experience..</p>
+            </div>
+      
+            <div class="col-12 col-sm-6 col-md-3 pt-3 pt-md-0">
+              <h3><strong>Exciting Prizes</strong></h3>
+              <p>Winning team is awareded with different cash prizes on participation of workshop events..</p>
+            </div>
+      
+            <div class="col-12 col-sm-6 col-md-3 pt-3 pt-md-0">
+              <h3><strong>Events</strong></h3>
+              <p>Bot racing competition and quiz competition is held before and after the workshop..</p>
+            </div>
+          </div>
+        </div>
+</section>
+<!-- Workshop Description ends here -->
 
-     
-   
+<!-- Organiser secton -->
+<section class="organiser" >
+    <div class="container pt-5">
+        <div class="row text-center justify-content-center">
+            <div class="text-center">
+                <h1>Organiser's</h1>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center "  data-aos="fade-in">
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/pp.jpg">
+
+                <h3><strong>Alok Mishra</strong></h3>
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/gg.jpg">
+
+                <h3><strong>Deepanshu Tyagi</strong></h3>
+
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/12.jpg">
+
+                <h3><strong>Aditya rai</strong></h3>
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://scontent.fdel7-1.fna.fbcdn.net/v/t1.0-9/p960x960/72723140_1363515790477015_8029233053958144000_o.jpg?_nc_cat=100&_nc_ohc=v70aPFmhio4AX8SrbAy&_nc_ht=scontent.fdel7-1.fna&_nc_tp=1002&oh=699d6f4406795befe72d166e4317bd63&oe=5E9E1267">
+
+                <h3><strong>Abhinav Kumar</strong></h3>
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3  m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/27.jpg">
+
+                <h3><strong>Rohit Sinha</strong></h3>
+
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://scontent.fdel7-1.fna.fbcdn.net/v/t31.0-8/p960x960/15419608_369717523420419_7860271319023132862_o.jpg?_nc_cat=110&_nc_ohc=Ra-vuxBO6QMAX9FBMFh&_nc_ht=scontent.fdel7-1.fna&_nc_tp=1002&oh=e52b8dd0f5b71f8aaf3c95a6311a7eaf&oe=5EAB4BD6">
+
+                <h3><strong>Mishank Gautam</strong></h3>
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/7.JPG">
+
+                <h3><strong>Ananya Baranwal</strong></h3>
+            </div>
+
+            <div class="pad col-4 col-sm-2 col-lg-3 m-sm-auto">
+                <img alt="image" class="img-fluid rounded-circle"
+                    src="https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/18.jpg">
+
+                <h3><strong>Avneesh Kumar</strong></h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Organiser sections ends here -->
