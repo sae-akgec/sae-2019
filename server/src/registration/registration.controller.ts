@@ -3,7 +3,7 @@ import {  RegistrationService} from './registrattion.service';
 import { CreateRegisterationDTO } from './dto/create-registration.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
-import{ValidationPipe} from '@nestjs/common'
+
 @Controller('api/teamregistration')
 @ApiUseTags('Registration Endpoints') ///Register to Registration
 export class RegistrationController {
@@ -11,8 +11,6 @@ export class RegistrationController {
 
     // add a register
     @Post()
-    @UseGuards(AuthGuard('jwt'))
-    @UsePipes(new ValidationPipe())
     async addRegistration(@Res() res, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
         console.log(CreateRegisterationDTO)
