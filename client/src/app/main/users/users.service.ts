@@ -6,10 +6,8 @@ import { DOMAIN } from '../../shared/assets';
 })
 export class UsersService {
   domain: string;
-  authToken: any;
   constructor(private http: HttpClient) {
     this.domain = DOMAIN;
-    this.authToken = localStorage.getItem('id_token');
 
    }
    getCurrentWorkshops(){
@@ -18,13 +16,12 @@ export class UsersService {
       });
     return this.http.get(this.domain + '/api/workshops/', {headers:headers})
   }
-  createTeamRegistration(msg) {
+  createTeamRegistration(body: any) {
     const headers = new HttpHeaders(
       {
         'Content-Type': 'application/json; charset=utf-8',
-        'Authorization': 'JWT ' + this.authToken
       });
-      console.log(msg)
-    return this.http.post(this.domain + '/api/teamregistration/',msg, { headers: headers });
+    
+    return this.http.post(this.domain + '/api/teamregistration/',body, { headers: headers });
   }
 }

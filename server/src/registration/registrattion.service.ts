@@ -5,16 +5,15 @@ import { MailerService } from '@nest-modules/mailer';
 import {Registration} from './interface/registration.interface';
 import {CreateRegisterationDTO} from './dto/create-registration.dto';
 import { async } from 'rxjs/internal/scheduler/async';
-
-@Injectable()
-export class RegistrationService {
-
-    constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>,private readonly mailerService: MailerService) { }
-
-    
-
+import * as nodemailer from 'nodemailer';
+import * as sendgridTransport from 'nodemailer-sendgrid-transport';
+import {ConfigService} from '@nestjs/config'
  
 
+@Injectable()
+export class RegistrationService {    
+    constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>,private readonly configService: ConfigService) { }
+ 
     //fetching up all the registration 
     async getAllRegistration() : Promise<Registration[]> {
         const registrations = await this.registrationModel.find().exec();
@@ -22,42 +21,51 @@ export class RegistrationService {
     }
 
     // Get a single registeration
-    async getRegistration(registrationID) : Promise<Registration> {
+    async getRegistration(registrationID: any) : Promise<Registration> {
         const registeration = await this.registrationModel.findById(registrationID).exec();
         return registeration;
     }
      // posting a single registration
       async addRegistration(createRegisterationDTO:CreateRegisterationDTO): Promise<Registration> {
         const newRegistration = await this.registrationModel(createRegisterationDTO);
-        this.sendMail(createRegisterationDTO.TeamName , createRegisterationDTO.Email)
+        this.sendMail(createRegisterationDTO.TeamName , createRegisterationDTO.Email )
         return newRegistration.save();
     }
 
     //Editing registration details
-    async updateRegistration(registrationID,createRegisterationDTO:CreateRegisterationDTO): Promise<Registration>{
+    async updateRegistration(registrationID: any,createRegisterationDTO:CreateRegisterationDTO): Promise<Registration>{
         const updateRegistration = await this.registrationModel
             .findByIdAndUpdate(registrationID,createRegisterationDTO, {new:true});
         return updateRegistration;    
     }
 
     //Deleting a registration
-    async deleteRegistration(registrationID): Promise<any>{
+    async deleteRegistration(registrationID: any): Promise<any>{
         const deleteRegistration = await this.registrationModel.findByIdAndRemove(registrationID);
         return deleteRegistration;
-    }
-    public sendMail(TeamName , Email) {
-        this
-          .mailerService
-          .sendMail({
-            to: Email, // list of receivers
-            from: 'rishabh2401jain@gmail.com', // sender address
-            subject: 'You are successfully registered team' + TeamName, // Subject line
-            text: 'Confirm your seat by completing the payment process ', // plaintext body
-            html: '<b>welcome</b>', // HTML body content
-          })
-          .then(() => {})
-          .catch(() => {});
-      }
-    
+    }    
 
+
+
+    sendMail(TeamName: string, Email: string ) {     
+        const sendgrid = this.configService.get<String>('SENDGRID_API_KEY')   
+        const transporter = nodemailer.createTransport(sendgridTransport({
+            auth: {
+                api_key: sendgrid
+            }
+        }));
+        transporter.sendMail({
+            from: 'test@abc.com',
+            to: Email,   
+            subject: 'Registration Successful', 
+            html: `Your team ${TeamName} has been successfully registered for Innovacion'20
+                   Please complete the payment process by paying the registration fees via UPI : umangkhare1407@okhdfcbank
+                   `
+           })
+        .then(() => {})
+        .catch(() => {});
+        
+    }
 }
+
+

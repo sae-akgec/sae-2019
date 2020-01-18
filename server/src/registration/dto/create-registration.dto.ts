@@ -53,6 +53,8 @@ export class CreateRegisterationDTO {
     @Length(0, 1)
     readonly plan: string;
 
+
+
     @IsNotEmpty()
     @IsArray()
     @ApiModelProperty({
