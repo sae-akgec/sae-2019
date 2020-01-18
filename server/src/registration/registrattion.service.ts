@@ -60,8 +60,8 @@ export class RegistrationService {
             to: Email,   
             subject: 'Registration Successful', 
             html: `Your team ${TeamName} has been successfully registered for Innovacion'20.
-            Mail us screen shot at email : saeakgec.event@gmail.com ..
-            Please confirm your seat by completing the PAYMENT process by UPI : umangkhare1407@okhdfcbank`,
+            Please confirm your seat by completing the PAYMENT process by UPI : umangkhare1407@okhdfcbank,
+            Mail us payment screenshot at email : saeakgec.event@gmail.com ..`
 
            })
         .then(() => {})
