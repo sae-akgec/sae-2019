@@ -5,7 +5,29 @@
 
 .breadcrumb_bg {
 	@include background("/assets/4.svg");
-	
+	@media #{$small_mobile} {
+		background: ("/assets/4.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	@media #{$large_mobile} {
+		background: ("/assets/4.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	@media #{$tab_device} {
+		background: ("/assets/4.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	@media #{$medium_device} {
+		background: ("/assets/4.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
 }
 
 .breadcrumb {
