@@ -47,6 +47,7 @@ export class RegistrationService {
 
 
 
+  
     sendMail(TeamName: string, Email: string ) {     
         const sendgrid = this.configService.get<String>('SENDGRID_API_KEY')   
         const transporter = nodemailer.createTransport(sendgridTransport({
@@ -55,16 +56,17 @@ export class RegistrationService {
             }
         }));
         transporter.sendMail({
-            from: 'test@abc.com',
+            from: 'saeakgec.event@gmail.com',
             to: Email,   
             subject: 'Registration Successful', 
-            html: `Your team ${TeamName} has been successfully registered for Innovacion'20
-                   `
+            html: `Your team ${TeamName} has been successfully registered for Innovacion'20.
+            Mail us screen shot at email : saeakgec.event@gmail.com ..
+            Please confirm your seat by completing the PAYMENT process by UPI : umangkhare1407@okhdfcbank`,
+
            })
         .then(() => {})
         .catch(() => {});
         
     }
 }
-
 

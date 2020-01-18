@@ -3,8 +3,9 @@
 @import "button";
 @import "common";
 .breadcrumb_bg {
-	@include background("/assets/19265.jpg");
+	@include background("https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/1wefsd9265.png");
   background-position: center bottom;
+ background-color: #F7F7F7;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 10vw;

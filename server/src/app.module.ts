@@ -25,7 +25,7 @@ import { ConfigModule } from '@nestjs/config';
     RegistrationModule,
     WorkshopsModule,
     ConfigModule.forRoot({
-      envFilePath: './sendgrid.env',
+      envFilePath: 'sendgrid.env',
       isGlobal: true,
     })
       

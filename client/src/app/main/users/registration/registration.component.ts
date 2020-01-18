@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
   button:any;
   modal:any;
   email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  phone_pattern = /^[0-9]{10}/                          
+                          
   constructor(private _fb: FormBuilder, private userService:UsersService) {
     this.nestedForm = this._fb.group({
       'TeamName' : [null, Validators.compose([Validators.required, Validators.maxLength(100), Validators.minLength(3)])],
@@ -86,9 +86,9 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
       Branch:[null,Validators.required],
       CollegeName:[null,Validators.required],
       PhoneNumber:[null, Validators.compose([
-        Validators.required, Validators.pattern (this.phone_pattern)
+        Validators.required, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(9)])
       ])],
-      StudentNumber:[null, Validators.compose([Validators.required, Validators.maxLength(100), Validators.minLength(8)])],  
+      StudentNumber:[null, Validators.compose([Validators.required, Validators.maxLength(9), Validators.minLength(6)])],  
     })
 
   }
@@ -122,10 +122,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
     else if(memberLimit == 4){
       this.totalAmount=2400
       }
-    else {
-      this.totalAmount = 2500
-      }
-      return 0
+      return this.totalAmount
   }
   addMembers() : void{
     this. teamarrayArray.push(this.addmembersgroup());
