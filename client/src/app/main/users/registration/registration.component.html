@@ -53,7 +53,7 @@
                           <option [ngValue]="null" selected>Choose a plan</option>
                           <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select>
                           <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
-                          <label> Amount : <input  value= "{{totalAmount}} Rupees"></label>
+                          <label style="color: red;"> Amount : <input disabled  value= "{{totalAmount}} Rupees">  *Total amount to be paid </label> 
                   </div>
               
 
@@ -199,9 +199,12 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" >
                 Your team  has been registered successfully.. <br>
-                We have send you a confirmation email..
+                We have send you a confirmation email..<br>
+            To complete your payment <br>
+            Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
+           <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -223,19 +226,15 @@
                       <p class="text-muted">
                           <strong>Step 1:</strong> You are required to form a group [maximum members: 5, Inter-College, Inter-Branch or
                           Inter-Year]
+
                           <br>
-                          <strong>Step 2:</strong> All the members of the group are required to Sign-up on the website.
+                          <strong>Step 2:</strong> Anyone member of your group can now register your team for the workshop.
                           <br>
-                          <strong>Step 3:</strong> After signing up, you are required to verify the confirmation link on your registered
-                          mail.
+                          <strong>Step 3:</strong> The payment link would be sent to the teamleader member of the team.
                           <br>
-                          <strong>Step 4:</strong> Anyone member of your group can now register your team for the workshop.
+                          <strong>Step 4:</strong> Proceed for the payment.
                           <br>
-                          <strong>Step 5:</strong> The payment link would be sent to the first member of the team.
-                          <br>
-                          <strong>Step 6:</strong> Proceed for the payment.
-                          <br>
-                          <strong>Step 7:</strong> Whoa!! You are registered successfully for the workshop.
+                          <strong>Step 5:</strong> Whoa!! You are registered successfully for the workshop.
                           <br>
                       </p>
                   </div>
