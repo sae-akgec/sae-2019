@@ -26,11 +26,11 @@ export class MainService {
     });
     return this.http.post<any>(`${this.domain}/api/registration/`, body, { headers: headers })
   }
-  //DO NOT DELETE THIS -------RISHABH
+  //DO NOT DELETE THIS -------RISHABH 
   // createTeamRegistration(body:any){
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/json; charset=utf-8'
   //   });
   //   return this.http.post<any>(`${this.domain}/api/teamregistration/`, body, { headers: headers })
-  // }
+  // }  
 }

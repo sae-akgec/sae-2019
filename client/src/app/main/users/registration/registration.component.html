@@ -17,7 +17,7 @@
           
        <!-- main form -->
           <div class="row">
-            <form action="" style="width:100%;" [formGroup]="nestedForm">
+            <form action="" style="width:100%;" [formGroup]="nestedForm" id="form">
               <div class="col">
         
                 <!-- Team Info starts here-->
@@ -51,9 +51,12 @@
                       <select class="form-control"  formControlName="plan"  onkeyup="this.setAttribute('value', this.value);"
                           [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
                           <option [ngValue]="null" selected>Choose a plan</option>
-                          <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}} -- Amount:{{plan.planPrice}}Rs </option>                      </select>
-                      <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
+                          <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select>
+                          <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
+                          <label> Amount : <input  value= "{{totalAmount}} Rupees"></label>
                   </div>
+              
+
                           <!-- <div class="form-group col-6">
                            
                                   <label for="state">Select plan</label>
@@ -171,13 +174,49 @@
                 <!-- final action buttons -->
                 <div class="row justify-content-center">
                   <div>
-                      <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="nestedForm.invalid && submission" (click)="submitHandler()" id="submitbutton">Register</button>
+                      <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="nestedForm.invalid && submissionButton" (click)="submitHandler()" >Register</button>
                   </div>
                 </div>
               </div>
+              <div class="row" *ngIf="err">
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{err}}
+                    </div>
+                </div>
+            </div>
             </form>
           </div>
         </div>
+        <!-- modal -->
+        <!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="example">Form Submission</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Your team  has been registered successfully.. <br>
+                We have send you a confirmation email..
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+     
         <div class="modal fade"  id="instModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UsersModule } from './main/users/users.module'
 import { MainModule } from "./main/main.module";
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
@@ -27,7 +28,7 @@ import { BlogsDetailComponent } from './blogs/blogs-detail/blogs-detail.componen
     AppRoutingModule, FormsModule, ReactiveFormsModule,
     MainModule, AuthModule, AdminModule,
     BrowserAnimationsModule, HttpClientModule,
-    SharedModule
+    SharedModule,UsersModule
   ],
   providers: [BlogService],
   bootstrap: [AppComponent]
