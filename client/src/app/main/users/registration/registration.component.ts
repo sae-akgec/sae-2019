@@ -9,13 +9,26 @@ import { UsersService } from '../users.service'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit , AfterViewInit{
-  
+  randomstring ='';
+  codeGenerated = '';
+  evtMsg: any;
+  randomString() {
+ const chars = '0123456789';
+ const stringLength = 5;
+ let randomstring = '';
+ for (let i = 0; i < stringLength; i++) {
+ const rnum = Math.floor(Math.random() * chars.length);
+ randomstring += chars.substring(rnum, rnum + 1);
+}
+this.codeGenerated = randomstring;
+ return this.codeGenerated;
+}
   team_array:FormArray;
   totalAmount :any
   nestedForm:FormGroup;
   plans = [];
   submissionButton = true;
-
+  myfunction:any
   teamMembers:any[] = [];
    currentWorkshops:Array<String>= [
     'Innovacion'
@@ -37,6 +50,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
   email_pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                           
   constructor(private _fb: FormBuilder, private userService:UsersService) {
+      
     this.nestedForm = this._fb.group({
       'TeamName' : [null, Validators.compose([Validators.required, Validators.maxLength(100), Validators.minLength(3)])],
       'SelectWorkshop': [null,Validators.required],
@@ -44,13 +58,14 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
         Validators.required, Validators.pattern (this.email_pattern)
       ])],
       'plan': [null,Validators.required],
+    
       'team_array':this._fb.array([this.addmembersgroup()])
     })
     this.team_array = this.nestedForm.get('team_array') as FormArray
    }
 
   ngOnInit() {
-  
+    
     this.plans = [
       {planPrice: "2500",  teamMember: "5"},
       {planPrice: "2400",  teamMember: "4"},
@@ -58,16 +73,16 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
       {planPrice: "2200",  teamMember: "2"}, 
       {planPrice: "2000",  teamMember: "1"}  
     ];
-    console.log(this.plans)
     this.button = document.getElementById("submitbutton");
      }
   ngAfterViewInit() {
+
+    
     this.nestedForm.controls['plan'].valueChanges.subscribe((value) => {
       
       this.clearFormArray(this.team_array)
           if (this.plan.value == value) {
               this.memberLimit = value
-              console.log(this.memberLimit)
               this.amount(this.memberLimit)
               for (let i = 1; i < this.memberLimit; i++) {
               this.addMembers()
@@ -122,7 +137,10 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
     else if(memberLimit == 4){
       this.totalAmount=2400
       }
-      return this.totalAmount
+     else if(memberLimit >4) {
+      this.totalAmount = 2500
+     }
+     return this.totalAmount
   }
   addMembers() : void{
     this. teamarrayArray.push(this.addmembersgroup());
@@ -133,24 +151,19 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
     }
 }
   
-  // removeMembers(index){
-  //   this. teamarrayArray.removeAt(index)
-  // }
-  //submitting Team Registration
-  submitHandler(){
-    if(this.nestedForm.valid){
-      this.submissionButton = false;
-      this.userService.createTeamRegistration(this.nestedForm.value).subscribe(
-        (msg) =>{
-         console.log(this.nestedForm.value)
-          this.nestedForm.reset();
-          this.button.click();
-          this.submissionButton = true;
-        }, (err) =>{
-          this.submissionButton = true;
-          console.log(err);
-        })
-    }
+
+submitHandler(){
+  if(this.nestedForm.valid){
+    this.submissionButton = false;
+    this.userService.createTeamRegistration(this.nestedForm.value).subscribe(
+      (msg) =>{
+        this.nestedForm.value.reset();
+        this.button.click();
+        this.submissionButton = true;
+      }, (err) =>{
+        this.submissionButton = true;
+        console.log(err);
+      })
   }
- 
+}
 }

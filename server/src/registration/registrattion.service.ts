@@ -1,19 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { MailerService } from '@nest-modules/mailer';
 import {Registration} from './interface/registration.interface';
 import {CreateRegisterationDTO} from './dto/create-registration.dto';
 import { async } from 'rxjs/internal/scheduler/async';
-import * as nodemailer from 'nodemailer';
-import * as sendgridTransport from 'nodemailer-sendgrid-transport';
-import {ConfigService} from '@nestjs/config'
- 
+// import * as sendgridTransport from 'nodemailer-sendgrid-transport';
+// import {ConfigService} from '@nestjs/config'
+import { fail } from 'assert';
+
+
+const nodemailer = require("nodemailer");
+const hbs = require("nodemailer-express-handlebars");
+const handlebarOptions = {
+  viewEngine: {
+    extName: '.hbs',
+    partialsDir: 'src/views',
+    layoutsDir: 'src/views',
+    defaultLayout: 'email.body.hbs',
+  },
+  viewPath: 'src/views',
+  extName: '.hbs',
+};
 
 @Injectable()
 export class RegistrationService {    
-    constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>,private readonly configService: ConfigService) { }
- 
+    constructor(@InjectModel ('Registration') private readonly registrationModel : Model<Registration>) { }
+
+    
     //fetching up all the registration 
     async getAllRegistration() : Promise<Registration[]> {
         const registrations = await this.registrationModel.find().exec();
@@ -25,13 +38,6 @@ export class RegistrationService {
         const registeration = await this.registrationModel.findById(registrationID).exec();
         return registeration;
     }
-     // posting a single registration
-      async addRegistration(createRegisterationDTO:CreateRegisterationDTO): Promise<Registration> {
-        const newRegistration = await this.registrationModel(createRegisterationDTO);
-        this.sendMail(createRegisterationDTO.TeamName , createRegisterationDTO.Email )
-        return newRegistration.save();
-    }
-
     //Editing registration details
     async updateRegistration(registrationID: any,createRegisterationDTO:CreateRegisterationDTO): Promise<Registration>{
         const updateRegistration = await this.registrationModel
@@ -43,30 +49,41 @@ export class RegistrationService {
     async deleteRegistration(registrationID: any): Promise<any>{
         const deleteRegistration = await this.registrationModel.findByIdAndRemove(registrationID);
         return deleteRegistration;
-    }    
-
-
-
-  
-    sendMail(TeamName: string, Email: string ) {     
-        const sendgrid = this.configService.get<String>('SENDGRID_API_KEY')   
-        const transporter = nodemailer.createTransport(sendgridTransport({
-            auth: {
-                api_key: sendgrid
-            }
-        }));
-        transporter.sendMail({
-            from: 'saeakgec.event@gmail.com',
-            to: Email,   
-            subject: 'Registration Successful', 
-            html: `Your team ${TeamName} has been successfully registered for Innovacion'20.
-            Please confirm your seat by completing the PAYMENT process by UPI : umangkhare1407@okhdfcbank,
-            Mail us payment screenshot at email : saeakgec.event@gmail.com ..`
-
-           })
-        .then(() => {})
-        .catch(() => {});
-        
     }
-}
-
+   
+     // posting a single registration
+      async addRegistration(createRegisterationDTO:CreateRegisterationDTO): Promise<Registration> {
+        const newRegistration = await this.registrationModel(createRegisterationDTO);
+        this.sendMail(createRegisterationDTO.TeamName , createRegisterationDTO.Email )
+       return newRegistration.save();
+       
+      }
+        // create reusable transporter object using the default SMTP transport
+        sendMail(TeamName: string, Email: string) {
+          const transporter = nodemailer.createTransport({
+            service:'gmail',
+            host: 'smtp.gmail.email',
+            port: 465,
+            auth: {
+              user: 'saeakgec.event@gmail.com',
+              pass: ' innovation@2020'
+            },
+            tls: {
+              rejectUnauthorized: false
+            },
+            
+          });
+          transporter.use('compile' ,hbs(handlebarOptions));
+          transporter.sendMail({
+            to: Email, // list of receivers
+            from :'saeakgec.event@gmail.com',
+            subject: "Registration Successfull ✔", // Subject line
+            text: "Hello world?", // plain tex html: `vnjdf ` // html body
+            template:'email.body'
+            })
+          .then(() => {})
+          .catch(() => {});
+          console.log(Email)
+        }
+      
+  }

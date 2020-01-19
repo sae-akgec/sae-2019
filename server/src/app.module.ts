@@ -10,8 +10,7 @@ import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
 import { RegistrationModule} from './registration/registration.module'
-import { WorkshopsModule} from './workshops/workshops.module'
-import { ConfigModule } from '@nestjs/config';
+import { WorkshopsModule} from './workshops/workshops.module';
 
 @Module({
   imports: [
@@ -24,12 +23,14 @@ import { ConfigModule } from '@nestjs/config';
     RegisterModule,
     RegistrationModule,
     WorkshopsModule,
-    ConfigModule.forRoot({
-      envFilePath: 'sendgrid.env',
-      isGlobal: true,
-    })
-      
   ],
+    
+    
+    // ConfigModule.forRoot({
+    //   envFilePath: 'sendgrid.env',
+    //   isGlobal: true,
+    // })
+      
   
   controllers: [AppController],
   providers: [AppService],
@@ -45,4 +46,5 @@ export class AppModule implements NestModule {
         },
       );
   }
+
 }
