@@ -69,7 +69,7 @@
                           </div>
                         </div>
                 </div>    
-                <button (click)="randomString()" class="d-inline bg-primary btn-lg text-white" >Generate Team id: </button><br>
+                <button (click)="randomString()" class="d-inline bg-primary btn-lg text-white" id="disable" >Generate Team id: </button><br>
                <p style="font-weight:bolder"> Please note your teamId:</p><p  class="display-4 text-dark">{{codeGenerated}}</p>
 
             <!-- Member Form Portion-->
@@ -166,11 +166,13 @@
                     <hr>
                   </div>
                 </div>
-                
+                <div class="Formelement">
+                  <div class="g-recaptcha" data-sitekey="6Ld4ztAUAAAAAGIU7gJyfZlCN-It_AeS-NAVDJJs"></div>
+                </div>
                <!-- final action buttons -->
                 <div class="row justify-content-center">
                   <div>
-                      <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="nestedForm.invalid && submissionButton" (click)="submitHandler()" >Register</button>
+                      <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="!nestedForm.valid && submissionButton" (click)="submitHandler()" >Register</button>
                   </div>
                 </div>
               </div>
@@ -179,7 +181,7 @@
         </div>
         <!-- modal -->
         <!-- Button trigger modal -->
-        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      
 
         <button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
             Launch demo modal
@@ -197,8 +199,8 @@
                           </button>
                         </div>
                         <div class="modal-body" >
-                          Your team  has been registered successfully.. <br>
                           We have send you a confirmation email..<br>
+                          Confirm your seat by completing the payment process <br>
                       To complete your payment <br>
                       Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
                      <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">

@@ -13,6 +13,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
   codeGenerated = '';
   evtMsg: any;
   randomString() {
+document.getElementById("disable").setAttribute('disabled', 'disabled');
  const chars = '0123456789';
  const stringLength = 5;
  let randomstring = '';
@@ -65,7 +66,8 @@ this.codeGenerated = randomstring;
    }
 
   ngOnInit() {
-    
+   
+    this.button = document.getElementById("submitbutton");
     this.plans = [
       {planPrice: "2500",  teamMember: "5"},
       {planPrice: "2400",  teamMember: "4"},
@@ -73,7 +75,6 @@ this.codeGenerated = randomstring;
       {planPrice: "2200",  teamMember: "2"}, 
       {planPrice: "2000",  teamMember: "1"}  
     ];
-    this.button = document.getElementById("submitbutton");
      }
   ngAfterViewInit() {
 
@@ -154,10 +155,12 @@ this.codeGenerated = randomstring;
 
 submitHandler(){
   if(this.nestedForm.valid){
+    console.log(this.nestedForm.value)
     this.submissionButton = false;
     this.userService.createTeamRegistration(this.nestedForm.value).subscribe(
       (msg) =>{
-        this.nestedForm.value.reset();
+        console.log(this.nestedForm.value)
+        this.nestedForm.reset();
         this.button.click();
         this.submissionButton = true;
       }, (err) =>{
