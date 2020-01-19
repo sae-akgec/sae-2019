@@ -23,15 +23,7 @@ import { WorkshopsModule} from './workshops/workshops.module';
     RegisterModule,
     RegistrationModule,
     WorkshopsModule,
-  ],
-    
-    
-    // ConfigModule.forRoot({
-    //   envFilePath: 'sendgrid.env',
-    //   isGlobal: true,
-    // })
-      
-  
+  ],  
   controllers: [AppController],
   providers: [AppService],
 })

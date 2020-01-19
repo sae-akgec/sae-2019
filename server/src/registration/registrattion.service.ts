@@ -4,9 +4,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import {Registration} from './interface/registration.interface';
 import {CreateRegisterationDTO} from './dto/create-registration.dto';
 import { async } from 'rxjs/internal/scheduler/async';
-// import * as sendgridTransport from 'nodemailer-sendgrid-transport';
-// import {ConfigService} from '@nestjs/config'
-import { fail } from 'assert';
 
 
 const nodemailer = require("nodemailer");
@@ -77,13 +74,12 @@ export class RegistrationService {
           transporter.sendMail({
             to: Email, // list of receivers
             from :'saeakgec.event@gmail.com',
-            subject: "Registration Successfull ✔", // Subject line
+            subject: `Hello ${TeamName}`, // Subject line
             text: "Hello world?", // plain tex html: `vnjdf ` // html body
             template:'email.body'
             })
           .then(() => {})
           .catch(() => {});
-          console.log(Email)
         }
-      
+    
   }
