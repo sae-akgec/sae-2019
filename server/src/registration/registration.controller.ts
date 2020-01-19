@@ -3,6 +3,7 @@ import {  RegistrationService} from './registrattion.service';
 import { CreateRegisterationDTO } from './dto/create-registration.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { request } from 'https';
 
 @Controller('api/teamregistration')
 @ApiUseTags('Registration Endpoints') ///Register to Registration
@@ -11,13 +12,9 @@ export class RegistrationController {
 
     // add a register
     @Post()
-    async addRegistration(@Res() res, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
+    async addRegistration(@Res() res,req, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
-        console.log(CreateRegisterationDTO)
-        return res.status(HttpStatus.OK).json({
-            message: "Registeration has been created successfully",
-            registeration
-        })
+        console.log(CreateRegisterationDTO)       
     }
 
     // Retrieve registeration list
@@ -47,7 +44,9 @@ export class RegistrationController {
         if (!registeration) throw new NotFoundException('Register does not exist!');
         return res.status(HttpStatus.OK).json({
             message: 'Registeration has been done successfully updated',
-            registeration
+            registeration,
+            
+
         });
     }
 

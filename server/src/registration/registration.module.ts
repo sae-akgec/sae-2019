@@ -7,7 +7,8 @@ import{Registration} from './interface/registration.interface'
 
 @Module({
   imports: [
-  MongooseModule.forFeature([{ name: 'Registration', schema: RegisterationSchema }])],
+  MongooseModule.forFeature([{ name: 'Registration', schema: RegisterationSchema }])
+],
   
   
   controllers: [RegistrationController],

@@ -3,7 +3,9 @@
     <div>
         <h2 class="text-center text-muted  text"> Step by Step guide on how to register
             <button type="button" class="btn btn-dark"  data-target="#instModal" data-toggle="modal" style="float: right;">Know More</button>
-        </h2>
+            
+        </h2><br>
+
     </div>
     <!-- form header -->
         
@@ -19,9 +21,10 @@
           <div class="row">
             <form action="" style="width:100%;" [formGroup]="nestedForm" id="form">
               <div class="col">
-        
+               
                 <!-- Team Info starts here-->
                 <div class="row">
+                  
                   <div class="col-6">
                     <div class="form-group">
                       <label for="fnText" >Team Name</label>
@@ -51,9 +54,9 @@
                       <select class="form-control"  formControlName="plan"  onkeyup="this.setAttribute('value', this.value);"
                           [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
                           <option [ngValue]="null" selected>Choose a plan</option>
-                          <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select>
+                          <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select><br>
                           <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
-                          <label style="color: red;"> Amount : <input disabled  value= "{{totalAmount}} Rupees">  *Total amount to be paid </label> 
+                          <label style="color: red;"> Amount : <input disabled style="border: 1px black;font-weight: bolder;"  value= "{{totalAmount}} Rupees"></label> 
                   </div>
                   <div class="col-6">
                     <div class="form-group">
@@ -66,6 +69,9 @@
                           </div>
                         </div>
                 </div>    
+                <button (click)="randomString()" class="d-inline bg-primary btn-lg text-white" >Generate Team id: </button><br>
+               <p style="font-weight:bolder"> Please note your teamId:</p><p  class="display-4 text-dark">{{codeGenerated}}</p>
+
             <!-- Member Form Portion-->
                 <div class="row" formArrayName="team_array" >
                   <div class="col-12" *ngFor="let group of teamarrayArray.controls; let i = index;" [formGroupName]="i ">
@@ -160,8 +166,8 @@
                     <hr>
                   </div>
                 </div>
-        
-                <!-- final action buttons -->
+                
+               <!-- final action buttons -->
                 <div class="row justify-content-center">
                   <div>
                       <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="nestedForm.invalid && submissionButton" (click)="submitHandler()" >Register</button>
@@ -173,62 +179,65 @@
         </div>
         <!-- modal -->
         <!-- Button trigger modal -->
+        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
 
-<button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="example">Form Submission</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body" >
-                Your team  has been registered successfully.. <br>
-                We have send you a confirmation email..<br>
-            To complete your payment <br>
-            Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
-           <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-     
-        <div class="modal fade"  id="instModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
+        <button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
+            Launch demo modal
+          </button>
+          
+          
+          
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="example">Form Submission</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body" >
+                          Your team  has been registered successfully.. <br>
+                          We have send you a confirmation email..<br>
+                      To complete your payment <br>
+                      Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
+                     <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="modal-body">
-                      <p class="text-muted">
-                          <strong>Step 1:</strong> You are required to form a group [maximum members: 5, Inter-College, Inter-Branch or
-                          Inter-Year]
-
-                          <br>
-                          <strong>Step 2:</strong> Anyone member of your group can now register your team for the workshop.
-                          <br>
-                          <strong>Step 3:</strong> The payment link would be sent to the teamleader member of the team.
-                          <br>
-                          <strong>Step 4:</strong> Proceed for the payment.
-                          <br>
-                          <strong>Step 5:</strong> Whoa!! You are registered successfully for the workshop.
-                          <br>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
+               
+                  <div class="modal fade"  id="instModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-muted">
+                                    <strong>Step 1:</strong> You are required to form a group [maximum members: 5, Inter-College, Inter-Branch or
+                                    Inter-Year]
+          
+                                    <br>
+                                    <strong>Step 2:</strong> Anyone member of your group can now register your team for the workshop.
+                                    <br>
+                                    <strong>Step 3:</strong> Confirmation mail would be sent to the teamleader member of the team.
+                                    <br>
+                                    <strong>Step 4:</strong> Proceed for the payment.
+                                    <br>
+                                    <strong>Step 5:</strong> Mail us your payment screenshot with your teamId .
+                                    <br>
+                                    <strong>Step 5:</strong> Whoa!! You are registered successfully for the workshop.
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
