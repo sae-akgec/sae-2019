@@ -10,18 +10,13 @@ export class UsersService {
     this.domain = DOMAIN;
 
    }
-   getCurrentWorkshops(){
-    const headers = new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8'
-      });
-    return this.http.get(this.domain + '/api/workshops/', {headers:headers})
-  }
+   
   createTeamRegistration(body: any) {
     const headers = new HttpHeaders(
       {
         'Content-Type': 'application/json; charset=utf-8',
       });
     
-    return this.http.post(this.domain + '/api/teamregistration/',body, { headers: headers });
+    return this.http.post<any>(`${this.domain}/api/teamregistration/`,body, { headers: headers });
   }
 }

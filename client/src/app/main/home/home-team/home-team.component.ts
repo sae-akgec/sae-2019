@@ -109,7 +109,7 @@ export class HomeTeamComponent implements OnInit {
     },
     {
       id: '11',
-      image: 'https://raw.githubusercontent.com/sae-akgec/Nimish/master/Innovacion%20Organizer%20head/7.JPG',
+      image: 'https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/7.JPG',
       name: 'Ananya Baranwal',
       branch: 'Innovation',
       facebooklink: 'https://www.facebook.com/profile.php?id=100010772202173',

@@ -4,6 +4,8 @@ import { CreateRegisterationDTO } from './dto/create-registration.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
 import { request } from 'https';
+import { url } from 'inspector';
+import { isPrivate } from '@babel/types';
 
 @Controller('api/teamregistration')
 @ApiUseTags('Registration Endpoints') ///Register to Registration
@@ -12,9 +14,14 @@ export class RegistrationController {
 
     // add a register
     @Post()
-    async addRegistration(@Res() res,req, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
+    async addRegistration(@Res() res, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
+       
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
-        console.log(CreateRegisterationDTO)       
+        console.log(CreateRegisterationDTO)  
+         return res.status(HttpStatus.OK).json({
+            message: "Registration has been created successfully",
+            registeration
+        })     
     }
 
     // Retrieve registeration list
