@@ -2,13 +2,13 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundExcep
 import {  RegistrationService} from './registrattion.service';
 import { CreateRegisterationDTO } from './dto/create-registration.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import { request } from 'https';
 import { url } from 'inspector';
 import { isPrivate } from '@babel/types';
 
 @Controller('api/teamregistration')
-@ApiUseTags('Registration Endpoints') ///Register to Registration
+@ApiTags('Registration Endpoints') ///Register to Registration
 export class RegistrationController {
     constructor(private registerationService: RegistrationService) { }
 

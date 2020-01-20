@@ -1,10 +1,10 @@
 import { Controller, Get, HttpStatus, Param,Post,Body, NotFoundException, Res, UseGuards} from '@nestjs/common';
 import {WorkshopsService} from './workshops.service';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import {CreateWorkshopDTO} from './dto/workshops.dto'
 
 
-@ApiUseTags('Workshop Endpoint')
+@ApiTags('Workshop Endpoint')
 @Controller('api/workshops')
 export class WorkshopsController {
   constructor(private workshopService: WorkshopsService) { }

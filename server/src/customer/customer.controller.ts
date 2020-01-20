@@ -2,10 +2,10 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundExcep
 import { CustomerService } from './customer.service';
 import { CreateCustomerDTO } from './dto/create-customer.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('api/customers')
-@ApiUseTags('Customer Endpoints')
+@ApiTags('Customer Endpoints')
 export class CustomerController {
     constructor(private customerService: CustomerService) { }
 
