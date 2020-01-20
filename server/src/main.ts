@@ -9,8 +9,8 @@ import { CustomerModule } from './customer/customer.module';
 import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
-import {RegistrationModule} from './registration/registration.module'
-import {WorkshopsModule} from './workshops/workshops.module'
+import { RegistrationModule } from './registration/registration.module'
+import { WorkshopsModule } from './workshops/workshops.module'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -27,15 +27,15 @@ async function bootstrap() {
   }));
 
   const options = new DocumentBuilder()
-    .setTitle('Shopdot Api')
-    .setDescription('The Shopdot Api docs')
-    .addBearerAuth('Authorization', 'header')
+    .setTitle('SAE-AKGEC Api')
+    .setDescription('The SAE-AKGEC Api docs')
+    .addBearerAuth()
     .setVersion('1.0')
     .build();
 
   const catDocument = SwaggerModule.createDocument(app, options, {
     include: [AuthModule, UserModule, CustomerModule, BlogModule,
-       ContactModule, RegisterModule,RegistrationModule,WorkshopsModule],
+      ContactModule, RegisterModule, RegistrationModule, WorkshopsModule],
   });
   SwaggerModule.setup('api/docs', app, catDocument);
 

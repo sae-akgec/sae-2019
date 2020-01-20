@@ -1,10 +1,10 @@
 import { Controller, Get, HttpStatus, Param, NotFoundException, Res, UseGuards} from '@nestjs/common';
 import { UserService } from './user.service';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @UseGuards(AuthGuard('jwt'))
-@ApiUseTags('User Endpoints')
+@ApiTags('User Endpoints')
 @Controller('api/users')
 @ApiBearerAuth()
 export class UserController {

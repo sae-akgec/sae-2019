@@ -2,10 +2,10 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundExcep
 import { RegisterService } from './register.service';
 import { CreateRegisterDTO } from './dto/create-register.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('api/registration')
-@ApiUseTags('Register Endpoints')
+@ApiTags('Register Endpoints')
 export class RegisterController {
     constructor(private registerService: RegisterService) { }
 

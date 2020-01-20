@@ -2,10 +2,10 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundExcep
 import { CategoryService } from './category.service';
 import { CreateCategoryDTO } from './dto/create-category.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('api/blog/categories')
-@ApiUseTags('Blog Endpoints')
+@ApiTags('Blog Endpoints')
 export class CategoryController {
     constructor(private categoryService: CategoryService) { }
 

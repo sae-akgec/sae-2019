@@ -2,14 +2,14 @@ import { Controller, Get, Res, Req, HttpStatus, Post, Body, Put, Query, NotFound
 import { PostService } from './post.service';
 import { CreatePostDTO } from './dto/create-post.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import { JwtPayload } from 'src/auth/interface/jwt-payload.interface';
 import { CategoryService } from '../category/category.service';
 import { User } from '../../user/inteface/user.interface';
 import { CreateCommentDTO } from './dto/create-comment.dto';
 
 @Controller('api/blog/posts')
-@ApiUseTags('Blog Endpoints')
+@ApiTags('Blog Endpoints')
 export class PostController {
     constructor(private postService: PostService, private categoryService: CategoryService) { }
 

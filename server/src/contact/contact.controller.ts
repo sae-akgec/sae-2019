@@ -2,10 +2,10 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundExcep
 import { ContactService } from './contact.service';
 import { CreateContactDTO } from './dto/create-contact.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('api/contacts')
-@ApiUseTags('Contact Endpoints')
+@ApiTags('Contact Endpoints')
 export class ContactController {
     constructor(private contactService: ContactService) { }
 
