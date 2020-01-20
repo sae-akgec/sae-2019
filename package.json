@@ -9,7 +9,7 @@
     "install:server": "(cd ./server && npm install)",
     "build": "npm run build:client && npm run build:server",
     "build:client": "(cd ./client && npm run build:prod)",
-    "build:server": "(cd ./server && npm run build)",
+    "build:server": "(cd ./server &&npm run prebuild && npm run build)",
     "start": "npm run start:prod",
     "start:prod": "(cd ./server && npm run start:prod)",
     "start:dev": "npm run start:client & npm run start:server",
@@ -26,5 +26,4 @@
     "url": "https://github.com/deepanshut041/shopdot-temp/issues"
   },
   "homepage": "https://github.com/deepanshut041/shopdot-temp#readme"
- 
 }
