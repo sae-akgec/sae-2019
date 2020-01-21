@@ -23,7 +23,7 @@ import {HomeTeamComponent} from './home/home-team/home-team.component'
 const routes: Routes = [
   {
     path: "", component: MainComponent, children: [
-      { path: "", component: HomeComponent},
+      { path: "", component: InnovacionComponent},
       { path: "inno20-registration",component: RegistrationComponent},
       { path: "registration", component: AboutComponent },
       { path: "faqs", component: FaqsComponent },
@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: "supra", component: SupraComponent },
       { path: "privacy", component: PrivacyComponent },
       { path: "terms", component: TermsComponent },
-      { path: "innovacion", component: InnovacionComponent },
+      { path: "home", component: HomeComponent },
       { path: "aacar", component: AacarComponent },
       {path:  "team" , component:HomeTeamComponent},
       {
