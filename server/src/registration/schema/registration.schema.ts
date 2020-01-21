@@ -8,7 +8,7 @@ export const MemberRegistrationSchema = new mongoose.Schema({
     CollegeName : { type: String, required: true },
 })
 export const RegisterationSchema = new mongoose.Schema({    
-    TeamName: {type: String , required: true},
+    TeamName: {type: String , required: true,},
     SelectWorkshop: { type: String, required: true },
     plan: {type : String , required : true},
     Email: { type: String, required: true },

@@ -3,6 +3,8 @@ import {  RegistrationService} from './registrattion.service';
 import { CreateRegisterationDTO } from './dto/create-registration.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { MailerService } from '@nest-modules/mailer';                                 //mailer service
+
 import { request } from 'https';
 import { url } from 'inspector';
 import { isPrivate } from '@babel/types';
@@ -10,14 +12,15 @@ import { isPrivate } from '@babel/types';
 @Controller('api/teamregistration')
 @ApiTags('Registration Endpoints') ///Register to Registration
 export class RegistrationController {
-    constructor(private registerationService: RegistrationService) { }
+    constructor(private registerationService: RegistrationService, private readonly mailerService: MailerService) { }
 
     // add a register
     @Post()
     async addRegistration(@Res() res, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
        
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
-        console.log(CreateRegisterationDTO)  
+        this.send(CreateRegisterationDTO.TeamName,CreateRegisterationDTO.Email)
+         console.log(CreateRegisterationDTO)  
          return res.status(HttpStatus.OK).json({
             message: "Registration has been created successfully",
             registeration
@@ -69,4 +72,25 @@ export class RegistrationController {
             registeration
         })
     }
+    public send(TeamName: string, Email: string):void {
+        this
+          .mailerService
+          .sendMail({
+            to: Email,
+            from: 'saeakgec.event@gmail.com',
+            subject: 'Innovacion20 Registration',
+            template: 'email', // The `.pug` or `.hbs` extension is appended automatically.
+            context: {  // Data to be sent to template engine.
+              team : TeamName,
+              teamid : Math.random().toString().substr(2,5),
+            },      
+          })
+          .then(() => {
+              console.log("Message is send successfully")
+           })
+          .catch(() => { 
+              console.log("Messaage is not send to the team")
+          });
+          console.log(Email);
+      }
 }
