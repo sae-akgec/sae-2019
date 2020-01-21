@@ -9,21 +9,6 @@ import { UsersService } from '../users.service'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit , AfterViewInit{
-  randomstring ='';
-  codeGenerated = '';
-  evtMsg: any;
-  randomString() {
-document.getElementById("disable").setAttribute('disabled', 'disabled');
- const chars = '0123456789';
- const stringLength = 5;
- let randomstring = '';
- for (let i = 0; i < stringLength; i++) {
- const rnum = Math.floor(Math.random() * chars.length);
- randomstring += chars.substring(rnum, rnum + 1);
-}
-this.codeGenerated = randomstring;
- return this.codeGenerated;
-}
   team_array:FormArray;
   totalAmount :any
   nestedForm:FormGroup;
