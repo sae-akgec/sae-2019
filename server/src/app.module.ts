@@ -9,8 +9,11 @@ import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { ContactModule } from './contact/customer.module';
 import { RegisterModule } from './register/regsiter.module';
-import { RegistrationModule} from './registration/registration.module'
-import { WorkshopsModule} from './workshops/workshops.module';
+import { RegistrationModule } from './registration/registration.module'
+import { WorkshopsModule } from './workshops/workshops.module';
+//module for nestmailermodule
+import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
+
 
 @Module({
   imports: [
@@ -23,7 +26,21 @@ import { WorkshopsModule} from './workshops/workshops.module';
     RegisterModule,
     RegistrationModule,
     WorkshopsModule,
-  ],  
+    MailerModule.forRoot({
+        transport: 'smtps://rishabh2401jain@gmail.com:rishabhjain1407@smtp.gmail.com',
+        defaults: {
+          from: '"nest-modules" <modules@nestjs.com>',
+        },
+        
+        template: {
+         dir: './src/views',
+          adapter: new HandlebarsAdapter(),
+          options: {
+            strict: true,
+          }
+        },
+    })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

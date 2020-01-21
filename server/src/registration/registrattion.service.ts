@@ -36,13 +36,9 @@ export class RegistrationService {
   // posting a single registration
   async addRegistration(createRegisterationDTO: CreateRegisterationDTO): Promise<Registration> {
     const newRegistration = await this.registrationModel(createRegisterationDTO);
-    this.sendMail(createRegisterationDTO.TeamName, createRegisterationDTO.Email)
     return newRegistration.save();
 
   }
-  // create reusable transporter object using the default SMTP transport
-  sendMail(TeamName: string, Email: string) {
-    
-  }
-
 }
+
+
