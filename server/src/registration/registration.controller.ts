@@ -20,7 +20,6 @@ export class RegistrationController {
        
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
         this.send(CreateRegisterationDTO.TeamName,CreateRegisterationDTO.Email)
-         console.log(CreateRegisterationDTO)  
          return res.status(HttpStatus.OK).json({
             message: "Registration has been created successfully",
             registeration
