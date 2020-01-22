@@ -1,244 +1,244 @@
 <div class="box">
-<!-- modal goes here -->
-    <div>
-        <h2 class="text-center text-muted  text"> Step by Step guide on how to register
-            <button type="button" class="btn btn-dark"  data-target="#instModal" data-toggle="modal" style="float: right;">Know More</button>
-            
-        </h2><br>
-
-    </div>
-    <!-- form header -->
-        
-            <div class="row">
-              <div class="col-10">
-              <h2>Registration Form</h2> </div>
-              <div class="col-2">
-              <img  data-target="#instModal" data-toggle="modal" src="../../../../assets/round-help-button.png"></div>
-              <hr>
-            </div>
-          
-       <!-- main form -->
-          <div class="row">
-            <form action="" style="width:100%;"  id="form" [formGroup]="teamForm">
-              <div class="col">
-               
-                <!-- Team Info starts here-->
-                <div class="row">
-                  
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="fnText" >Team Name</label>
-                      <input type="text" class="form-control" id="fnText" formControlName="TeamName" placeholder="Enter Team name"
-                      [ngClass]="{'form-control': true,
-                      'is-invalid': TeamName.invalid && TeamName.touched,
-                      'is-valid': TeamName.valid}" id="fnText" >
-                      <small id="fnHelp" *ngIf="TeamName.errors?.required && TeamName.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                       <small id="fnHelp" *ngIf="TeamName.errors?.minlength && TeamName.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="workshops">SelectWorkshop</label>
-                      <select id="inputState" class="form-control" formControlName="SelectWorkshop">
-                        <option selected [ngValue]="null">Choose workshop</option>
-                        <option *ngFor="let workshop of currentWorkshops" [ngValue]="workshop" >{{workshop}}</option>
-                      </select>
-                      <small id="fnHelp" *ngIf="SelectWorkshop.errors?.required && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Select workshop</small>
-                      <small id="fnHelp" *ngIf="SelectWorkshop.errors?.minlength && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Please select a workshop</small>
-                    </div>
-                    <div>
-                    </div>
-                  </div>
-                  <div class="form-group col-6">
-                      <label>Select a plan</label>
-                      <select class="form-control"  formControlName="plan"  onkeyup="this.setAttribute('value', this.value);"
-                          [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
-                          <option [ngValue]="null" selected>Choose a plan</option>
-                          <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select><br>
-                          <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
-                          <label style="color: red;"> Amount : <input disabled style="border: 1px black;font-weight: bolder;"  value= "{{totalAmount}} Rupees"></label> 
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="fnText">Team Leader Email</label>
-                            <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email" id="fnText" [ngClass]="{'form-control': true,
-                            'is-invalid': Email.invalid && Email.touched,
-                            'is-valid': Email.valid}" id="fnText" >
-                            <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                             <small id="fnHelp" *ngIf="Email.errors?.pattern && Email.touched" class="form-text custom-invalid-feedback">Enter a valid Email Address</small>
-                          </div>
-                        </div>
-                </div>    
-
-
-            <!-- Member Form Portion-->
-                <div class="gform row" formArrayName="team_array"[formGroup]="nestedForm">
-                  <div class="col-12" *ngFor="let group of teamarrayArray.controls; let i = index;" [formGroupName]="i ">
-                    <div class="row">
-                   
-                      <div class="col-12">
-                          <div class="col-12 control-buttons">
-                    
-                       <hr>
-                       <div class="col-12">
-                            <h4>Member {{i+1}}</h4>
-                          </div>
-                        
-                        </div>
-                        <!-- <hr> -->
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="addText">Name</label>
-                          <input type="text" class="form-control" id="name" name="Name" formControlName="Name" placeholder="Enter your Name"
-                          [ngClass]="{'form-control': true,
-                          'is-invalid': group.controls.Name.invalid && group.controls.Name.touched,
-                          'is-valid': group.controls.Name.valid}">   
-                          <small id="fnHelp" *ngIf="group.controls.Name.errors?.required && group.controls.Name.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                          <small id="fnHelp" *ngIf="group.controls.Name.errors?.minlength && group.controls.Name.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>       
-                        </div>
-                      </div>
-                      <div class="col-6">
-                            <div class="form-group">
-                              <label for="Email">Email</label>
-                              <input type="text" class="form-control" id="Email" placeholder="Enter Email" name="Email" formControlName="Email" value="temporary" [ngClass]="{'form-control': true,
-                            'is-invalid': Email.invalid && Email.touched,
-                            'is-valid': Email.valid}" id="fnText" >
-                            <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                             <small id="fnHelp" *ngIf="Email.errors?.pattern && Email.touched" class="form-text custom-invalid-feedback">Enter a valid Email Address</small>
-                            </div>
-                              
-                      </div>
-                       <div class="col-6">
-                            <div class="form-group">
-                              <label for="branch">Branch</label>
-                              <select id="inputBranch" class="form-control" formControlName="Branch" name="Branch" [ngClass]="{'form-control': true,
-                              'is-invalid': group.controls.Branch.invalid && group.controls.Branch.touched,
-                              'is-valid': group.controls.Branch.valid}">
-                                <option selected [ngValue]="null">Choose your Branch</option>
-                                <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
-                              </select>
-                              <small *ngIf="group.controls.Branch.invalid && group.controls.Branch.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                            </div>
-                       </div>
-                       <div class="col-6">
-                              <div class="form-group">
-                                <label for="state">CollegeName</label>
-                                <select id="inputCollege" class="form-control" formControlName="CollegeName" name="college" [ngClass]="{'form-control': true,
-                                'is-invalid': group.controls.CollegeName.invalid && group.controls.CollegeName.touched,
-                                'is-valid': group.controls.CollegeName.valid}" >
-                                      <option selected [ngValue]="null">Choose your college</option>
-                                  <option *ngFor="let college of colleges" [value]="college">{{college}}</option>
-                                </select>
-                                <small *ngIf="group.controls.CollegeName.invalid && group.controls.CollegeName.touched" class="form-text custom-invalid-feedback">Field is required</small>
+  <!-- modal goes here -->
+      <div>
+          <h2 class="text-center text-muted  text"> Step by Step guide on how to register
+              <button type="button" class="btn btn-dark"  data-target="#instModal" data-toggle="modal" style="float: right;">Know More</button>
+              
+          </h2><br>
   
-                              </div>
-                         </div>
-                       <div class="col-6">
-                            <div class="form-group">
-                              <label for="phoneNumber">PhoneNumber</label>
-                              <input type="text" class="form-control" id="phoneNumber"  formControlName="PhoneNumber" name="phonenumber" placeholder="Enter your Phone Number"[ngClass]="{'form-control': true,
-                              'is-invalid': group.controls.PhoneNumber.invalid && group.controls.PhoneNumber.touched,
-                              'is-valid': group.controls.PhoneNumber.valid}">
-                              <small id="fnHelp" *ngIf="group.controls.PhoneNumber.errors?.required && group.controls.PhoneNumber.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                              <small id="fnHelp" *ngIf="group.controls.PhoneNumber.errors?.minlength && group.controls.PhoneNumber.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
-                            </div>
-                       </div>
-                       <div class="col-6">
-                              <div class="form-group">
-                                <label for="zipcode">StudentNumber</label>
-                                <input type="text" class="form-control" id="studentNumber" formControlName="StudentNumber" name="studentnumber"
-                                 placeholder="Enter your Student Number" [ngClass]="{'form-control': true,
-                                 'is-invalid': group.controls.StudentNumber.invalid && group.controls.StudentNumber.touched,
-                                 'is-valid': group.controls.StudentNumber.valid}">
-                                 <small id="fnHelp" *ngIf="group.controls.StudentNumber.errors?.required && group.controls.StudentNumber.touched" class="form-text custom-invalid-feedback">Field is required</small>
-                                 <small id="fnHelp" *ngIf="group.controls.StudentNumber.errors?.minlength && group.controls.StudentNumber.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
-                              </div>
-                         </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- seperator -->
-                <div class="row">
-                  <div class="col">
-                    <hr>
-                  </div>
-                </div>
-                <div class="Formelement">
-                  <div class="g-recaptcha" data-sitekey="6Ld4ztAUAAAAAGIU7gJyfZlCN-It_AeS-NAVDJJs"></div>
-                </div>
-               <!-- final action buttons -->
-                <div class="row justify-content-center">
-                  <div>
-                      <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="!nestedForm.valid && submissionButton" (click)="submitHandler()" >Register</button>
-                  </div>
-                </div>
+      </div>
+      <!-- form header -->
+          
+              <div class="row">
+                <div class="col-10">
+                <h2>Registration Form</h2> </div>
+                <div class="col-2">
+                <img  data-target="#instModal" data-toggle="modal" src="../../../../assets/round-help-button.png"></div>
+                <hr>
               </div>
-            </form>
-          </div>
-        </div>
-        <!-- modal -->
-        <!-- Button trigger modal -->
-      
-
-        <button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
-            Launch demo modal
-          </button>
-          
-          
-          
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="example">Form Submission</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+            
+         <!-- main form -->
+            <div class="row">
+              <form action="" style="width:100%;" [formGroup]="nestedForm" id="form">
+                <div class="col">
+                 
+                  <!-- Team Info starts here-->
+                  <div class="row">
+                    
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="fnText" >Team Name</label>
+                        <input type="text" class="form-control" id="fnText" formControlName="TeamName" placeholder="Enter Team name"
+                        [ngClass]="{'form-control': true,
+                        'is-invalid': TeamName.invalid && TeamName.touched,
+                        'is-valid': TeamName.valid}" id="fnText" >
+                        <small id="fnHelp" *ngIf="TeamName.errors?.required && TeamName.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                         <small id="fnHelp" *ngIf="TeamName.errors?.minlength && TeamName.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="workshops">SelectWorkshop</label>
+                        <select id="inputState" class="form-control" formControlName="SelectWorkshop">
+                          <option selected [ngValue]="null">Choose workshop</option>
+                          <option *ngFor="let workshop of currentWorkshops" [ngValue]="workshop" >{{workshop}}</option>
+                        </select>
+                        <small id="fnHelp" *ngIf="SelectWorkshop.errors?.required && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Select workshop</small>
+                        <small id="fnHelp" *ngIf="SelectWorkshop.errors?.minlength && SelectWorkshop.touched" class="form-text custom-invalid-feedback">Please select a workshop</small>
+                      </div>
+                      <div>
+                      </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label>Select a plan</label>
+                        <select class="form-control"  formControlName="plan"  onkeyup="this.setAttribute('value', this.value);"
+                            [ngStyle]="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched ?{'border-color': '#EF9A9A'}:{}">
+                            <option [ngValue]="null" selected>Choose a plan</option>
+                            <option *ngFor="let plan of plans" [ngValue]="plan.teamMember">Members:{{plan.teamMember}}</option></select><br>
+                            <label class="error text-right" *ngIf="!nestedForm.controls['plan'].valid && nestedForm.controls['plan'].touched">Please select a plan</label>
+                            <label style="color: red;"> Amount : <input disabled style="border: 1px black;font-weight: bolder;"  value= "{{totalAmount}} Rupees"></label> 
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="fnText">Team Leader Email</label>
+                              <input type="text" class="form-control" id="fnText" formControlName="Email" placeholder="Enter Team Email" id="fnText" [ngClass]="{'form-control': true,
+                              'is-invalid': Email.invalid && Email.touched,
+                              'is-valid': Email.valid}" id="fnText" >
+                              <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                               <small id="fnHelp" *ngIf="Email.errors?.pattern && Email.touched" class="form-text custom-invalid-feedback">Enter a valid Email Address</small>
+                            </div>
+                          </div>
+                  </div>    
+  
+  
+              <!-- Member Form Portion-->
+                  <div class="row" formArrayName="team_array" >
+                    <div class="col-12" *ngFor="let group of teamarrayArray.controls; let i = index;" [formGroupName]="i ">
+                      <div class="row">
+                     
+                        <div class="col-12">
+                            <div class="col-12 control-buttons">
+                      
+                         <hr>
+                         <div class="col-12">
+                              <h4>Member {{i+1}}</h4>
+                            </div>
+                          
+                          </div>
+                          <!-- <hr> -->
                         </div>
-                        <div class="modal-body" >
-                          We have send you a confirmation email..<br>
-                          Confirm your seat by completing the payment process <br>
-                      To complete your payment <br>
-                      Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
-                     <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="addText">Name</label>
+                            <input type="text" class="form-control" id="addText" formControlName="Name" placeholder="Enter your Name"
+                            [ngClass]="{'form-control': true,
+                            'is-invalid': group.controls.Name.invalid && group.controls.Name.touched,
+                            'is-valid': group.controls.Name.valid}">   
+                            <small id="fnHelp" *ngIf="group.controls.Name.errors?.required && group.controls.Name.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                            <small id="fnHelp" *ngIf="group.controls.Name.errors?.minlength && group.controls.Name.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>       
+                          </div>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div class="col-6">
+                              <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input type="text" class="form-control" id="Email" placeholder="Enter Email"  formControlName="Email" value="temporary" [ngClass]="{'form-control': true,
+                              'is-invalid': Email.invalid && Email.touched,
+                              'is-valid': Email.valid}" id="fnText" >
+                              <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                               <small id="fnHelp" *ngIf="Email.errors?.pattern && Email.touched" class="form-text custom-invalid-feedback">Enter a valid Email Address</small>
+                              </div>
+                                
                         </div>
+                         <div class="col-6">
+                              <div class="form-group">
+                                <label for="branch">Branch</label>
+                                <select id="inputBranch" class="form-control" formControlName="Branch" [ngClass]="{'form-control': true,
+                                'is-invalid': group.controls.Branch.invalid && group.controls.Branch.touched,
+                                'is-valid': group.controls.Branch.valid}">
+                                  <option selected [ngValue]="null">Choose your Branch</option>
+                                  <option *ngFor="let branch of branches" [value]="branch">{{branch}}</option>
+                                </select>
+                                <small *ngIf="group.controls.Branch.invalid && group.controls.Branch.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                              </div>
+                         </div>
+                         <div class="col-6">
+                                <div class="form-group">
+                                  <label for="state">CollegeName</label>
+                                  <select id="inputCollege" class="form-control" formControlName="CollegeName" [ngClass]="{'form-control': true,
+                                  'is-invalid': group.controls.CollegeName.invalid && group.controls.CollegeName.touched,
+                                  'is-valid': group.controls.CollegeName.valid}" >
+                                        <option selected [ngValue]="null">Choose your college</option>
+                                    <option *ngFor="let college of colleges" [value]="college">{{college}}</option>
+                                  </select>
+                                  <small *ngIf="group.controls.CollegeName.invalid && group.controls.CollegeName.touched" class="form-text custom-invalid-feedback">Field is required</small>
+    
+                                </div>
+                           </div>
+                         <div class="col-6">
+                              <div class="form-group">
+                                <label for="phoneNumber">PhoneNumber</label>
+                                <input type="text" class="form-control" id="phoneNumber"  formControlName="PhoneNumber" placeholder="Enter your Phone Number"[ngClass]="{'form-control': true,
+                                'is-invalid': group.controls.PhoneNumber.invalid && group.controls.PhoneNumber.touched,
+                                'is-valid': group.controls.PhoneNumber.valid}">
+                                <small id="fnHelp" *ngIf="group.controls.PhoneNumber.errors?.required && group.controls.PhoneNumber.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                                <small id="fnHelp" *ngIf="group.controls.PhoneNumber.errors?.minlength && group.controls.PhoneNumber.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
+                              </div>
+                         </div>
+                         <div class="col-6">
+                                <div class="form-group">
+                                  <label for="zipcode">StudentNumber</label>
+                                  <input type="text" class="form-control" id="studentNumber" formControlName="StudentNumber" 
+                                   placeholder="Enter your Student Number" [ngClass]="{'form-control': true,
+                                   'is-invalid': group.controls.StudentNumber.invalid && group.controls.StudentNumber.touched,
+                                   'is-valid': group.controls.StudentNumber.valid}">
+                                   <small id="fnHelp" *ngIf="group.controls.StudentNumber.errors?.required && group.controls.StudentNumber.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                                   <small id="fnHelp" *ngIf="group.controls.StudentNumber.errors?.minlength && group.controls.StudentNumber.touched" class="form-text custom-invalid-feedback">Value must contain atleast 2 characters</small>
+                                </div>
+                           </div>
                       </div>
                     </div>
                   </div>
-               
-                  <div class="modal fade"  id="instModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p class="text-muted">
-                                    <strong>Step 1:</strong> You are required to form a group [maximum members: 5, Inter-College, Inter-Branch or
-                                    Inter-Year]
           
-                                    <br>
-                                    <strong>Step 2:</strong> Anyone member of your group can now register your team for the workshop.
-                                    <br>
-                                    <strong>Step 3:</strong> Confirmation mail would be sent to the teamleader member of the team.
-                                    <br>
-                                    <strong>Step 4:</strong> Proceed for the payment.
-                                    <br>
-                                    <strong>Step 5:</strong> Mail us your payment screenshot with your teamId .
-                                    <br>
-                                    <strong>Step 5:</strong> Whoa!! You are registered successfully for the workshop.
-                                    <br>
-                                </p>
-                            </div>
-                        </div>
+                  <!-- seperator -->
+                  <div class="row">
+                    <div class="col">
+                      <hr>
                     </div>
+                  </div>
+                  <div class="Formelement">
+                    <div class="g-recaptcha" data-sitekey="6Ld4ztAUAAAAAGIU7gJyfZlCN-It_AeS-NAVDJJs"></div>
+                  </div>
+                 <!-- final action buttons -->
+                  <div class="row justify-content-center">
+                    <div>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block" [disabled]="!nestedForm.valid && submissionButton" (click)="submitHandler()" >Register</button>
+                    </div>
+                  </div>
                 </div>
-                
+              </form>
+            </div>
+          </div>
+          <!-- modal -->
+          <!-- Button trigger modal -->
+        
+  
+          <button type="button" class="btn btn-primary invisible" data-toggle="modal" id="submitbutton" data-target="#exampleModal">
+              Launch demo modal
+            </button>
+            
+            
+            
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="example">Form Submission</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body" >
+                            We have send you a confirmation email..<br>
+                            Confirm your seat by completing the payment process <br>
+                        To complete your payment <br>
+                        Scan here : <img style="width: 50%" src="https://raw.githubusercontent.com/sae-akgec/innovacion-back-end/master/Assets/Organizer%20heads/WhatsApp%20Image%202020-01-18%20at%2013.10.21.jpeg"><br>
+                       <label style="color: blue; font-weight: bold;"> Total amount to be paid: </label><input disabled  value= "{{totalAmount}} Rupees">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
+                    <div class="modal fade"  id="instModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                  <p class="text-muted">
+                                      <strong>Step 1:</strong> You are required to form a group [maximum members: 5, Inter-College, Inter-Branch or
+                                      Inter-Year]
+            
+                                      <br>
+                                      <strong>Step 2:</strong> Anyone member of your group can now register your team for the workshop.
+                                      <br>
+                                      <strong>Step 3:</strong> Confirmation mail would be sent to the teamleader member of the team.
+                                      <br>
+                                      <strong>Step 4:</strong> Proceed for the payment.
+                                      <br>
+                                      <strong>Step 5:</strong> Mail us your payment screenshot with your teamId .
+                                      <br>
+                                      <strong>Step 5:</strong> Whoa!! You are registered successfully for the workshop.
+                                      <br>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
