@@ -9,7 +9,7 @@ import { UsersService } from '../users.service'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit , AfterViewInit{
-  team_array:FormArray;
+  teamArray:FormArray;
   totalAmount :any
   nestedForm:FormGroup;
   plans = [];
@@ -45,9 +45,9 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
       ])],
       'plan': [null,Validators.required],
     
-      'team_array':this._fb.array([this.addmembersgroup()])
+      'teamArray':this._fb.array([this.addmembersgroup()])
     })
-    this.team_array = this.nestedForm.get('team_array') as FormArray
+    this.teamArray = this.nestedForm.get('teamArray') as FormArray
    }
 
   ngOnInit() {
@@ -66,7 +66,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
     
     this.nestedForm.controls['plan'].valueChanges.subscribe((value) => {
       
-      this.clearFormArray(this.team_array)
+      this.clearFormArray(this.teamArray)
           if (this.plan.value == value) {
               this.memberLimit = value
               this.amount(this.memberLimit)
@@ -107,7 +107,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
   }
   
   get  teamarrayArray(){
-    return <FormArray>this.nestedForm.get('team_array');
+    return <FormArray>this.nestedForm.get('teamArray');
   }
   
     amount(memberLimit){

@@ -4,6 +4,7 @@ export const MemberRegistrationSchema = new mongoose.Schema({
     Name: { type: String, required: true },
     PhoneNumber: { type: String, required: true },
     StudentNumber : { type : String , required : true},
+    Email: {type:String , required:true},
     Branch: { type: String, required: true },
     CollegeName : { type: String, required: true },
 })
