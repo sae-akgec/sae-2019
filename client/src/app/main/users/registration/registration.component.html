@@ -19,7 +19,7 @@
           
        <!-- main form -->
           <div class="row">
-            <form action="" style="width:100%;" [formGroup]="nestedForm" id="form">
+            <form action="" style="width:100%;"  id="form" [formGroup]="teamForm">
               <div class="col">
                
                 <!-- Team Info starts here-->
@@ -72,7 +72,7 @@
 
 
             <!-- Member Form Portion-->
-                <div class="row" formArrayName="team_array" >
+                <div class="gform row" formArrayName="team_array"[formGroup]="nestedForm">
                   <div class="col-12" *ngFor="let group of teamarrayArray.controls; let i = index;" [formGroupName]="i ">
                     <div class="row">
                    
@@ -90,7 +90,7 @@
                       <div class="col-6">
                         <div class="form-group">
                           <label for="addText">Name</label>
-                          <input type="text" class="form-control" id="addText" formControlName="Name" placeholder="Enter your Name"
+                          <input type="text" class="form-control" id="name" name="Name" formControlName="Name" placeholder="Enter your Name"
                           [ngClass]="{'form-control': true,
                           'is-invalid': group.controls.Name.invalid && group.controls.Name.touched,
                           'is-valid': group.controls.Name.valid}">   
@@ -101,7 +101,7 @@
                       <div class="col-6">
                             <div class="form-group">
                               <label for="Email">Email</label>
-                              <input type="text" class="form-control" id="Email" placeholder="Enter Email"  formControlName="Email" value="temporary" [ngClass]="{'form-control': true,
+                              <input type="text" class="form-control" id="Email" placeholder="Enter Email" name="Email" formControlName="Email" value="temporary" [ngClass]="{'form-control': true,
                             'is-invalid': Email.invalid && Email.touched,
                             'is-valid': Email.valid}" id="fnText" >
                             <small id="fnHelp" *ngIf="Email.errors?.required && Email.touched" class="form-text custom-invalid-feedback">Field is required</small>
@@ -112,7 +112,7 @@
                        <div class="col-6">
                             <div class="form-group">
                               <label for="branch">Branch</label>
-                              <select id="inputBranch" class="form-control" formControlName="Branch" [ngClass]="{'form-control': true,
+                              <select id="inputBranch" class="form-control" formControlName="Branch" name="Branch" [ngClass]="{'form-control': true,
                               'is-invalid': group.controls.Branch.invalid && group.controls.Branch.touched,
                               'is-valid': group.controls.Branch.valid}">
                                 <option selected [ngValue]="null">Choose your Branch</option>
@@ -124,7 +124,7 @@
                        <div class="col-6">
                               <div class="form-group">
                                 <label for="state">CollegeName</label>
-                                <select id="inputCollege" class="form-control" formControlName="CollegeName" [ngClass]="{'form-control': true,
+                                <select id="inputCollege" class="form-control" formControlName="CollegeName" name="college" [ngClass]="{'form-control': true,
                                 'is-invalid': group.controls.CollegeName.invalid && group.controls.CollegeName.touched,
                                 'is-valid': group.controls.CollegeName.valid}" >
                                       <option selected [ngValue]="null">Choose your college</option>
@@ -137,7 +137,7 @@
                        <div class="col-6">
                             <div class="form-group">
                               <label for="phoneNumber">PhoneNumber</label>
-                              <input type="text" class="form-control" id="phoneNumber"  formControlName="PhoneNumber" placeholder="Enter your Phone Number"[ngClass]="{'form-control': true,
+                              <input type="text" class="form-control" id="phoneNumber"  formControlName="PhoneNumber" name="phonenumber" placeholder="Enter your Phone Number"[ngClass]="{'form-control': true,
                               'is-invalid': group.controls.PhoneNumber.invalid && group.controls.PhoneNumber.touched,
                               'is-valid': group.controls.PhoneNumber.valid}">
                               <small id="fnHelp" *ngIf="group.controls.PhoneNumber.errors?.required && group.controls.PhoneNumber.touched" class="form-text custom-invalid-feedback">Field is required</small>
@@ -147,7 +147,7 @@
                        <div class="col-6">
                               <div class="form-group">
                                 <label for="zipcode">StudentNumber</label>
-                                <input type="text" class="form-control" id="studentNumber" formControlName="StudentNumber" 
+                                <input type="text" class="form-control" id="studentNumber" formControlName="StudentNumber" name="studentnumber"
                                  placeholder="Enter your Student Number" [ngClass]="{'form-control': true,
                                  'is-invalid': group.controls.StudentNumber.invalid && group.controls.StudentNumber.touched,
                                  'is-valid': group.controls.StudentNumber.valid}">

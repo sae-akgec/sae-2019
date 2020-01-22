@@ -9,6 +9,7 @@ import { UsersService } from '../users.service'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit , AfterViewInit{
+  
   team_array:FormArray;
   totalAmount :any
   nestedForm:FormGroup;
@@ -44,7 +45,6 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
         Validators.required, Validators.pattern (this.email_pattern)
       ])],
       'plan': [null,Validators.required],
-    
       'team_array':this._fb.array([this.addmembersgroup()])
     })
     this.team_array = this.nestedForm.get('team_array') as FormArray

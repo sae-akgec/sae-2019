@@ -15,4 +15,3 @@ export const RegisterationSchema = new mongoose.Schema({
     teamArray:[MemberRegistrationSchema],
     created_at: { type: Date, default: Date.now } 
 })
-
