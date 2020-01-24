@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
                             'Civil Engineering',
                             'Electronics and Instrumentation Engineerings',
                             ]
-  colleges:Array<String> = ['Ajay Kumar Garg Engineering College' ] 
+  colleges:Array<String> = ['Ajay Kumar Garg Engineering College' , 'IMS Engineering College' ,'Hi-Tech Engineering College' , 'ABES Engineering College'] 
   memberLimit:number;  
   finalAmount:any     
   submission=true;
