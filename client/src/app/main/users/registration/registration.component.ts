@@ -54,8 +54,8 @@ export class RegistrationComponent implements OnInit , AfterViewInit{
    
     this.button = document.getElementById("submitbutton");
     this.plans = [
-      {planPrice: "2500",  teamMember: "5"},
-      {planPrice: "2400",  teamMember: "4"},
+      // {planPrice: "2500",  teamMember: "5"},
+      // {planPrice: "2400",  teamMember: "4"},
       {planPrice: "2400",  teamMember: "3"},
       {planPrice: "2200",  teamMember: "2"}, 
       {planPrice: "2000",  teamMember: "1"}  
