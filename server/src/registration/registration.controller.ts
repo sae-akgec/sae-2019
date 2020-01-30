@@ -77,11 +77,10 @@ export class RegistrationController {
           .sendMail({
             to: Email,
             from: 'saeakgec.event@gmail.com',
-            subject: 'Innovacion20 Registration',
+            subject: 'Innovacion20 Workshop',
             template: 'email', // The `.pug` or `.hbs` extension is appended automatically.
             context: {  // Data to be sent to template engine.
-              team : TeamName,
-              teamid : Math.random().toString().substr(2,5),
+              team : TeamName
             },      
           })
           .then(() => {
