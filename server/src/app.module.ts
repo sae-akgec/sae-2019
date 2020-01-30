@@ -27,7 +27,7 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
     RegistrationModule,
     WorkshopsModule,
     MailerModule.forRoot({
-        transport: 'smtps://saeakgec.event@gmail.com:innovation@2020@smtp.gmail.com',
+        transport: 'smtps://saeakgec.event@gmail.com:innovacion@2020@smtp.gmail.com',
         defaults: {
           from: '"nest-modules" <modules@nestjs.com>',
         },
