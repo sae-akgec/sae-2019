@@ -19,7 +19,7 @@ export class RegistrationController {
     async addRegistration(@Res() res, @Body() CreateRegisterationDTO: CreateRegisterationDTO) {
        
         const registeration = await this.registerationService.addRegistration(CreateRegisterationDTO);
-        this.send(CreateRegisterationDTO.TeamName,CreateRegisterationDTO.Email)
+        // this.send(CreateRegisterationDTO.TeamName,CreateRegisterationDTO.Email)
          return res.status(HttpStatus.OK).json({
             message: "Registration has been created successfully",
             registeration
@@ -71,24 +71,5 @@ export class RegistrationController {
             registeration
         })
     }
-    public send(TeamName: string, Email: string):void {
-        this
-          .mailerService
-          .sendMail({
-            to: Email,
-            from: 'saeakgec.event@gmail.com',
-            subject: 'Innovacion20 Workshop',
-            template: 'email', // The `.pug` or `.hbs` extension is appended automatically.
-            context: {  // Data to be sent to template engine.
-              team : TeamName
-            },      
-          })
-          .then(() => {
-              console.log("Message is send successfully")
-           })
-          .catch(() => { 
-              console.log("Messaage is not send to the team")
-          });
-          console.log(Email);
-      }
+
 }
