@@ -17,13 +17,13 @@ export class AboutComponent implements OnInit {
     let emailFormat = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
     this.registerForm = fb.group({
       'name': [null, Validators.compose([Validators.required, Validators.maxLength(100), Validators.minLength(3)])],
-      'phone': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10)])],
-      'studentNo': [null, Validators.compose([Validators.required, Validators.maxLength(8), Validators.minLength(7)])],
+      'phone': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(9)])],
+      'studentNo': [null, Validators.compose([Validators.required, Validators.maxLength(8), Validators.minLength(5)])],
       'email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])],
-      'skills': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
-      'branch': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
-      'domain': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
-      'usp': [null, Validators.compose([Validators.required])]
+      // 'skills': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
+      'branch': [null, Validators.compose([Validators.required , Validators.minLength(2)])],
+      // 'domain': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
+      // 'usp': [null, Validators.compose([Validators.required])]
     });
   }
 
@@ -37,6 +37,7 @@ export class AboutComponent implements OnInit {
       this.submissionButton = false;
       this._mainService.createRegister(this.registerForm.value).subscribe(
         (msg) =>{
+          console.log(this.registerForm.value)
           this.registerForm.reset();
           this.button.click();
           this.submissionButton = true;

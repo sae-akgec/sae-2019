@@ -1,6 +1,6 @@
 .box{
   background-color: #a9a9a933;
-  padding: 100px;
+  padding: 600px;
   .text {
     font-size: 30px;
   } 
@@ -28,7 +28,8 @@
 
 @media(max-width:576px){
   .box {
-    padding-top: 25%;
+    padding-top: 65%;
+    padding-bottom: 60%;
     padding-left: 4%;
     padding-right: 4%;
   }

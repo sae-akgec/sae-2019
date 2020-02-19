@@ -16,13 +16,13 @@ export class CreateRegisterDTO {
     @ApiProperty({ description:"Phone Number of Student. Required in POST", required: true})
     readonly phone: string;
 
-    @IsString()
-    @ApiProperty({ description:"Domain of Student. Required in POST", required: true})
-    readonly domain: string;
+    // @IsString()
+    // @ApiProperty({ description:"Domain of Student. Required in POST", required: true})
+    // readonly domain: string;
 
-    @IsString()
-    @ApiProperty({ description:"Skills of Student. Required in POST", required: true})
-    readonly skills: string;
+    // @IsString()
+    // @ApiProperty({ description:"Skills of Student. Required in POST", required: true})
+    // readonly skills: string;
 
     @IsString()
     @ApiProperty({ description:"Student No of Student. Required in POST", required: true})
@@ -32,7 +32,7 @@ export class CreateRegisterDTO {
     @ApiProperty({ description:"Branch of Student. Required in POST", required: true})
     readonly branch: string;
 
-    @IsString()
-    @ApiProperty({ description:"Usp of Student. Required in POST", required: true})
-    readonly usp: string;
+    // @IsString()
+    // @ApiProperty({ description:"Usp of Student. Required in POST", required: true})
+    // readonly usp: string;
 }

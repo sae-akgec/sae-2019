@@ -20,6 +20,7 @@ export class RegisterService {
     // post a single register
     async addRegister(createRegisterDTO: CreateRegisterDTO): Promise<Register> {
         const newRegister = await this.registerModel(createRegisterDTO);
+        console.log(createRegisterDTO)
         return newRegister.save();
     }
     // Edit register details

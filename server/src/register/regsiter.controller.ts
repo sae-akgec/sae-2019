@@ -3,16 +3,18 @@ import { RegisterService } from './register.service';
 import { CreateRegisterDTO } from './dto/create-register.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { MailerService } from '@nest-modules/mailer';                                 //mailer service
 
 @Controller('api/registration')
 @ApiTags('Register Endpoints')
 export class RegisterController {
-    constructor(private registerService: RegisterService) { }
+    constructor(private registerService: RegisterService ,private readonly mailerService: MailerService) { }
 
     // add a register
     @Post()
     async addRegister(@Res() res, @Body() createRegisterDTO: CreateRegisterDTO) {
         const register = await this.registerService.addRegister(createRegisterDTO);
+        this.send(createRegisterDTO.name ,createRegisterDTO.email)
         return res.status(HttpStatus.OK).json({
             message: "Register has been created successfully",
             register
@@ -62,4 +64,24 @@ export class RegisterController {
             register
         })
     }
+     public send(name: string, email: string):void {
+        this
+          .mailerService
+          .sendMail({
+            to: email,
+            from: 'saeakgec.event@gmail.com',
+            subject: 'Aacar 7.0 Workshop',
+            template: 'email', // The `.pug` or `.hbs` extension is appended automatically.
+            context: {  // Data to be sent to template engine.
+              team : name
+            },      
+          })
+          .then(() => {
+              console.log("Message is send successfully")
+           })
+          .catch(() => { 
+              console.log("Messaage is not send to the team")
+          });
+          console.log(email);
+      }
 }
