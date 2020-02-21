@@ -33,6 +33,32 @@
             </div>
             <div class="col-sm-6 col-12">
               <div class="form-group">
+                <label for="branch">Branch</label>
+                <select class="form-control" formControlName="branch">
+                  <option [value]="null">----Select Branch ---</option>
+                  <option [value]="'civil'">Civil Engineering</option>
+                  <option [value]="'cse'">Computer Science </option>
+                  <option [value]="'csit'">Computer Science & Information Technology </option>                  
+                  <option [value]="'ece'">Electronics and Communication</option>
+                  <option [value]="'eee'">Electrical and Electronics</option>
+                  <option [value]="'ite'">Information Technology</option>
+                  <option [value]="'mechanical'">Mechanical Engineering</option>
+                  <option [value]="'eie'">Electronics and Instrumentation</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <div class="form-group">
+                <label for="branch">Gender</label>
+                <select class="form-control" formControlName="gender">
+                  <option [value]="null">----Select Gender ---</option>
+                  <option [value]="'male'">Male</option>
+                  <option [value]="'female'">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <div class="form-group">
                 <label for="phoneNumber">PhoneNumber</label>
                 <input class="form-control" formControlName="phone" id="name" type="text"
                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number'"
@@ -68,22 +94,7 @@
                   placeholder='Enter your Student Number'>
               </div>
             </div>
-            <div class="col-sm-6 col-12">
-              <div class="form-group">
-                <label for="branch">Branch</label>
-                <select class="form-control" formControlName="branch">
-                  <option [value]="null">----Select Branch ---</option>
-                  <option [value]="'civil'">Civil Engineering</option>
-                  <option [value]="'cse'">Computer Science </option>
-                  <option [value]="'csit'">Computer Science & Information Technology </option>                  
-                  <option [value]="'ece'">Electronics and Communication</option>
-                  <option [value]="'eee'">Electrical and Electronics</option>
-                  <option [value]="'ite'">Information Technology</option>
-                  <option [value]="'mechanical'">Mechanical Engineering</option>
-                  <option [value]="'eie'">Electronics and Instrumentation</option>
-                </select>
-              </div>
-            </div>
+            
             <!-- <div class="col-12">
               <div class="form-group">
                 <input class="form-control" formControlName="skills" id="subject" type="text"

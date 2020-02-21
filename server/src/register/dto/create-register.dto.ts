@@ -32,6 +32,10 @@ export class CreateRegisterDTO {
     @ApiProperty({ description:"Branch of Student. Required in POST", required: true})
     readonly branch: string;
 
+    @IsString()
+    @ApiProperty({ description:"Gender of Student. Required in POST", required: true})
+    readonly gender: string;
+
     // @IsString()
     // @ApiProperty({ description:"Usp of Student. Required in POST", required: true})
     // readonly usp: string;
