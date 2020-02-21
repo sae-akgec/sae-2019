@@ -6,6 +6,8 @@ export interface Register extends Document {
     readonly phone: string;
     // readonly domain: string;
     readonly branch: string;
+    readonly gender: string;
+
     readonly studentNo: string;
     // readonly skills: string;
     // readonly usp: string;

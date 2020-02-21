@@ -22,6 +22,7 @@ export class AboutComponent implements OnInit {
       'email': [null, Validators.compose([Validators.required, Validators.pattern(emailFormat)])],
       // 'skills': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
       'branch': [null, Validators.compose([Validators.required , Validators.minLength(2)])],
+      'gender': [null, Validators.compose([Validators.required , Validators.minLength(2)])]
       // 'domain': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
       // 'usp': [null, Validators.compose([Validators.required])]
     });
