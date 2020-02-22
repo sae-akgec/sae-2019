@@ -3,12 +3,12 @@ language:
   node_js
 
 node_js:
-  - 10
+  - 12
 
 deploy:
   provider: heroku
   api_key :
-    secure : $HEROKU_TOKEN
+    secure : 61e470b6-65e9-4d2b-b27f-74eb9fc03377
   app:
     master: sae-akgec
     
