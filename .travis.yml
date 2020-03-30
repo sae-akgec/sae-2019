@@ -8,6 +8,6 @@ node_js:
 deploy:
   provider: heroku
   api_key :
-    secure : efa9d4bc-48ee-4074-8585-05d12568c621
+    secure : $HEROKU_TOKEN
   app:
     master: sae-akgec
