@@ -1,13 +1,17 @@
 sudo: required
+
 language: node_js
+
 node_js:
 - 10
+
 deploy:
   provider: heroku
+
   api_key:
     secure: "$HEROKU_TOKEN"
+    
   app:
     master: sae-akgec
-env:
-  global:
-    secure: Di8WrutVp/UrJD/tDoyl4jkbCfwvKvnLWH+JEPJ2iXZYvkkcLqKB+PrVfkKM6hELcY8oEOhwPheO+cDL7D3YZ5iGzscVBNiIk6JO45ghrZhnMY3PEu2koN2JixLjrPZLDHmo595vKerEQ9niHRlIlgxlfU3MLb6hXqaiBEsr3UWhGLAWpkLt13eNVSGxjFlzu3CUmFEC/uosV5F2COJ/a556APb2eERacV9MjyZB+kPJZlT3XWrCF0g+IX8g9r76Eo2Z/DdDapxPkdNXWtM2q/4gm0aVXTo82g84GQbmzsoaA3pMnTPvzKkZP4wqtZI8SwUiy23lSVq8OG8G8huxpAAmwOcFmmDqfT7TgYOmWBjKBf1oAWtONf6Saee5QqSHKfAs9rdXoFofCAyICiSaLQOpC16qXr56TLjwXEkxVEDsgf6hTP2kf/Pkl6ECrxcMbLiVvlPvjwaJ0PT2gkW7l2RDAhL1KNEUa5HIMVE7aiibuzIqNMSzwfBW/1Nny63G02V2uSRlkKE09D3DngjG565NXO+rPK3aUdFAEiTZR+piu8HhM+fFzib7WxRVwiNMR2IT3HPgB+U58SISyrYM2O+z+bgaEjNx4ueWSGqr6bCxW5RPG5MHQ5WkcHFWX78go1OYlongc0d52ESCp6OAAq7map8+dow95TRf6w0oif4=
+    
+
