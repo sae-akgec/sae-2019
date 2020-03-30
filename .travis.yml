@@ -5,7 +5,7 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: mgxF2w6X3Wb4Z0jnabMlXp3F/6luBbrDrEDxGKjioY1dCsNIfHWCT/NkPUV/rOv0zx5klIu4kXOBU2k/IXBRbrncoj3kps5Hirj/1UN42SerOmLTyNvm9L8tmoYuFAUnLcQI1ajoFPpTlCZpw5TKkLIkJKzN22+PUsHo2QFTqpdmHVFJo1IX0FQV4PmnayAISBC194iCsVcXF+ALwAumLp7sVy+yd4UTnHR1O3N+MyTyxfbk7G2DSSvJAVGYCBANo7R1ZzD3ng8mZUIaboxbjnZhLW26rFDq3CjGeiyPV295i/wTye/LeNIKtlt+9aEU6hqk1ATWvnq4mA+P1FczVLbn5WpO79hQN7Zr1inbKk1bWqZixDtTNWlek6daDD7u+ptHx5s7O62P7/zVaB4M8cDK7RQb6txtovqsHpq5LS0P3NsIjcvt0iiWFfy6sSMCATAiT7zv3SFpQPbOni1P/rkYpJPc8FAZ7ttAiq4ZQKFXkrnDtM1/hfcMVjFPzb2qToA2+VdUK+X73Da9deGT+bZcIc1RGJh4aAjaVBmgUSr4eDf88UV1SBE9SE6AYxqC4Va4j1LGfrZ8oKzrLK0Lji79Bj3YcRM3oV9xJ+atMsSYeNws1SygBRKb8+Kcg+iIFDbMhlkoQ3N5Qw6sMsg1LTt7+o/UGc8rFvsxTxcN9i0=
+    secure: $WEB_TOKEN
   app:
     master: sae-akgec
 
