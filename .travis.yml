@@ -7,9 +7,9 @@ node_js:
 deploy:
   provider: heroku
 
-  api_key:
+  api_key: 
     secure: HEROKU_TOKEN
-
+ 
   app:
     master: sae-akgec
 
