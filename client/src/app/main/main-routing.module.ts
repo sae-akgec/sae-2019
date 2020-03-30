@@ -19,16 +19,18 @@ import { InnovacionComponent } from './innovacion/innovacion.component';
 import { AacarComponent } from './aacar/aacar.component';
 import {RegistrationComponent} from '../main/users/registration/registration.component';
 import {HomeTeamComponent} from './home/home-team/home-team.component'
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   {
     path: "", component: MainComponent, children: [
-      { path: "", component: InnovacionComponent},
+      { path: "", component: HomeComponent},
       { path: "inno20-registration",component: RegistrationComponent},
       { path: "registration", component: AboutComponent },
-      { path: "faqs", component: FaqsComponent },
+      { path: "aacar_tutorials", component: FaqsComponent },
       { path: "contact", component: ContactComponent },
       { path: "efficar", component: EfficarComponent },
+      {path:"inno_tutorials" , component: BookingComponent},
       { path: "efficycle", component: EfficycleComponent },
       { path: "supra", component: SupraComponent },
       { path: "privacy", component: PrivacyComponent },
