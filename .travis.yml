@@ -10,7 +10,7 @@ deploy:
 
   api_key:
     secure: efa9d4bc-48ee-4074-8585-05d12568c621
-    
+   
   app:
     master: sae-akgec
     
