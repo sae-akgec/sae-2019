@@ -11,5 +11,3 @@ deploy:
     secure : 61e470b6-65e9-4d2b-b27f-74eb9fc03377
   app:
     master: sae-akgec
-    
-
