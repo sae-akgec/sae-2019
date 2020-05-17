@@ -5,6 +5,6 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: YzjbLJtKj3xDQgMLwKx9wYsXUIUoU9A/jdebeRt3tPZAn/Du5yJ34AE38Tyuc0bs70pawJKwzUVkCsbJV6+YjM6ENq2VA3SDP6PL5XGofyUYLhxK52UZOBfPi80ujYM1hhQ322FtvB7hyFCJgBLQbIcO+jm6DK+0oVAEOMB0oXHsnqg4DFPdDRlROyMwHskeRwj1y+Q8vNKzg0yXYRz/SO/Z56jkTQ8+/ZuASXSypSgCj+TdpvKDNH1pUX1P2y4B+d81Oyl+2g5aDi25lDXKi4XjuXzQQ6SN17YJPG+3mTvh8BP0Zxhlt7IlqFnI6ckVSCYUT8Wkbd3TcFAi9un5bBmsiCmoh7bTs+jaM742SS7EwoVUnMmkIcawoiIzIlc/qFQP98GBm43qwCwk0bK05HuGtvNp0sngranJnm8BVSL0gC7eG23UUpVtLArjLVpIsastSrm6BPScXRmSSTg1U4F/VKXb51Y4uR+E6ZHQJ/IS2CG0jp1zgWwvH54smzX1lZyZ8Z4yy4IoiAJzABsDWB1XU39Dr2XAFihasiFvWWBH7fMga/utv505vOKXD9hHlkCd2ilfZmwdbgo+Olqe1vheicklF0tSQbt7eJUR/DFmxcgAVHtwqmkCHRJ9vtYBgEwfp/tVtw0Utb5WvHnoDq+ZINdS/22ImIRQ1Ls+Ru0=
+    secure: $HEROKU_TOKEN
   app:
     master: sae-akgec
