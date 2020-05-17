@@ -6,4 +6,5 @@ deploy:
   provider: heroku
   app:
     master: sae-akgec
-Looking for git in: git
+   api_key:
+    secure: dRRqBuRTBnPfFe475+cQjaB9oLK5ILVfOH830sxONQiis+qSmuCZ+RYg68zdOsckIhdQIiZUm7ZGvN5eRGIPnVA4KBsKac01cr1HOgQO8YCHk8HDGIZAnfnSMRc/an4z5ywqoxcKNrttkL+EW9n2vboCPJ83RTzTWonsjxFWQP6H7/Ahp3+bGajP9HzhD2VI71/KzRqnj+SIYpj2tNLCXWgZWAW1RNF/w2PrilKzeXE2NSpak2DG/sOETkLIunf85Yo0UUNAIXWp7iHfjb3Np6Z8rHBkSrIvtJcvIBcWmh+7DTs1jeylMmY1IA95x0jmWWIozzJQU0GAxKB4UMXx2FPItJf8iXbke4e7HiIHIp/vLyzk+QCMSkCVVquDv9MMElxkegQOVojpxZ1M4O2343Qcgz65PvIpM3Kzf9Hx/zZ2l51+J+0hDhVHlk/UFFH+9OngI2d+6486kDf9pBEvAqsErR9cBu3JMDDYhcP7CB+1JWWGzdauj0st7/6Zjyiv3X79QPAFfytlt0Y1/ZSdPjfQlm47vog+Q1yLxwvfJPJrKqSBjDQlyZWV6C8/SsPM1sXtKTtxymFZrMx8pCs0Bsr5whw7A3NJwAxtN2jlY/xXAw5vQstTUM+OKn0j0pv2++elpnz0t1wZxNPlWfdHhpAnleW4+oEDhELD77Sb2BI=
