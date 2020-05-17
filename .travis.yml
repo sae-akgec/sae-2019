@@ -5,6 +5,7 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: $HEROKU_TOKEN
+    secure: mkUi2ryLYI2nG9+U361GGee4obKHt8hkoZSNaJbBl3ar6bDda0sukSIAmDHpS3lr4/a4uoTYa5jAeS05pzw9Tci34h+btkF7d075Y7CbVG1AFHsAjtcsA8R05W4W92zaVWrjvCnRbwqG/RWCO/bKhacKWxjYJKXekRnOEy2Lfhzh/GW9pybmleM0xT6xiwNWbvraw/Ze8dNUo7WdCCkqiQliFOSg6z33NcoskwPH2ECWRuoTr/A/Lfx5y7rpqo0MJ6l9N69lZtA2cdmQNWzpCnEnNV9WT9AOyOzzQRL9q13rNxbIXSqW3K9bLO20m2m8l9a4H8TxMh+2SBf+oe6fBgwNRjIP0c357W7BHfA5mOQbvr7Cvm+Q+tfMMs9Omz447ayyIM73YsnF+uOO19ptVJXovwR7JdsrJa/tD/gUzGqBfe5yFPrRcTdWIUTGgbsiCo7oMj/BR3vr45CjOlj5ruzhtXqXDlKdajRrkzrRd4Kh//DjTiNq2YSOr6N8x7RpJos3VwNtEhDG9Y3Lu5leiwhIVdqbMa0phExsCrIc2d9sNYVnbFxuob/K0lYZ8ELODTZmdEedEpFHVPvkIya3XaYIKmg6XIgE+FiAcayBJS2+zHYd6ElMUE3xyImAdzLIIp+RjBgzzYORFF+PvMuAwoj9IthbVm/FD3/sLThBl3Y=
   app:
     master: sae-akgec
+Looking for git in: git
